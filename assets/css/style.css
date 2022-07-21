@@ -48,3 +48,23 @@ header {
   flex-grow: 1;
   margin: 0 2.5% 0 0;
 }
+
+/* Footer */
+footer {
+  font-weight: 300;
+  text-align: center;
+  overflow: hidden;
+  background-color: #333;
+  min-height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+footer * {
+  color: azure;
+}
+
+footer div {
+  padding: 10px 0;
+  justify-content: center;
+}
