@@ -74,6 +74,12 @@ input, textarea {
   border: 1px solid #333;
   flex-grow: 1;
   margin: 0 2.5% 0 0;
+  padding: 5px;
+}
+
+#template1 {
+  background-color: #0D050E;
+  color:#FAFAFA;
 }
 
 #result-container {
