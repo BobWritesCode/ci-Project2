@@ -2,6 +2,7 @@ console.log("connected");
 
 const multipleWinsHTML = document.getElementById("multiple-wins");
 const resultContainerHTML = document.getElementById("result-container");
+const resultsListHTML = document.getElementById("results-list");
 
 window.addEventListener('DOMContentLoaded', function() {
   console.log("DOMContentLoaded");
@@ -13,7 +14,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 function loadGenerator() {
   const btnLoad = document.getElementById('btn-load');
-  //btnLoad.style.display = "none";
+  btnLoad.style.display = "none";
   resultContainerHTML.style.backgroundColor = "red";
   
   resultContainerHTML.style.position = "absolute";
@@ -38,20 +39,38 @@ function sortOptions() {
   let timeBetween = document.getElementById("time-between-results").value;
   let options = document.getElementById("options").value;
   options = options.split(',');
-  createRandomResults(options)
+  createRandomResults(options, transitionTime, timeBetween)
 }
 
-function createRandomResults(options) {
+function createRandomResults(options, transitionTime, timeBetween) {
   const results = [];
   let loopAmount = document.getElementById("number-of-results").value;
   for (let i = 0; i < loopAmount; i++){
     let result = Math.floor(Math.random() * options.length); 
-    console.log(result)
     results.push(options[result].trim());
-    console.log(results)
     if (!multipleWinsHTML.checked) {
       options.splice(result, 1)
     }
   }
-  console.log(results)
+  show1By1(results, transitionTime, timeBetween)
+}
+
+function show1By1(results, transitionTime, timeBetween) {
+  for (let i of results){
+    let newLi = document.createElement('li');
+    newLi.className = "box";
+    newLi.appendChild(document.createTextNode(i));
+    resultsListHTML.appendChild(newLi);
+    console.log(newLi)
+  }
+  setTimeout(function() {
+    let elements = document.querySelectorAll("ul#results-list > li");
+    let delay = 0
+    for (let element of elements) {
+      element.style.transitionDuration  = `${transitionTime}s`
+      delay = delay + parseInt(timeBetween);
+      element.style.transitionDelay  = `${delay}s`;
+      element.classList.toggle("show");
+    }
+  }, 1);
 }
