@@ -1,28 +1,29 @@
-console.log("connected");
-
 const multipleWinsHTML = document.getElementById("multiple-wins");
 const resultContainerHTML = document.getElementById("result-container");
 const resultsListHTML = document.getElementById("results-list");
+const btnClose = document.getElementById('btn-close');
+const btnLoad = document.getElementById('btn-load');
+
+const results = [];
 
 window.addEventListener('DOMContentLoaded', function() {
-  console.log("DOMContentLoaded");
-  document.getElementById("btn-load").addEventListener("click", function () {
+  btnLoad.addEventListener("click", function () {
     loadGenerator();
     sortOptions();
+  });
+  btnClose.addEventListener("click", function () {
+    exitGenerator();
   });
 });
 
 function loadGenerator() {
-  const btnLoad = document.getElementById('btn-load');
   btnLoad.style.display = "none";
   resultContainerHTML.style.backgroundColor = "#0D050E";
-  
   resultContainerHTML.style.position = "absolute";
   resultContainerHTML.style.top = "0px";
   resultContainerHTML.style.right = "0px";
   resultContainerHTML.style.bottom = "0px";
   resultContainerHTML.style.left = "0px";
-  
   // Credit for fullscreen code: https://www.w3schools.com/howto/howto_js_fullscreen.asp
   if (resultContainerHTML.requestFullscreen) {
     resultContainerHTML.requestFullscreen();
@@ -31,7 +32,23 @@ function loadGenerator() {
   } else if (resultContainerHTML.msRequestFullscreen) { /* IE11 */
   resultContainerHTML.msRequestFullscreen();
   }
+  btnClose.style.display = "block"
+}
 
+function exitGenerator() {
+  results.length = 0;
+  resultsListHTML.innerHTML = "";
+  resultContainerHTML.style.backgroundColor = "#FAFAFA";
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+  document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+  document.msExitFullscreen();
+  }
+  resultContainerHTML.style.position = "initial";
+  btnClose.style.display = "none"
+  btnLoad.style.display = "block";
 }
 
 function sortOptions() {
@@ -43,7 +60,6 @@ function sortOptions() {
 }
 
 function createRandomResults(options, transitionTime, timeBetween) {
-  const results = [];
   let loopAmount = document.getElementById("number-of-results").value;
   for (let i = 0; i < loopAmount; i++){
     let result = Math.floor(Math.random() * options.length); 
@@ -61,7 +77,6 @@ function show1By1(results, transitionTime, timeBetween) {
     newLi.className = "box";
     newLi.appendChild(document.createTextNode(i));
     resultsListHTML.appendChild(newLi);
-    console.log(newLi)
   }
   setTimeout(function() {
     let elements = document.querySelectorAll("ul#results-list > li");
