@@ -4,7 +4,10 @@ const resultsListHTML = document.getElementById("results-list");
 const btnClose = document.getElementById('btn-close');
 const btnLoad = document.getElementById('btn-load');
 const btnStart = document.getElementById('btn-start');
-
+const templateHTML = document.getElementsByClassName('template');
+const template1HTML = document.getElementById('template1');
+const template2HTML = document.getElementById('template2');
+const template3HTML = document.getElementById('template3');
 const results = [];
 
 window.addEventListener('DOMContentLoaded', function() {
@@ -17,7 +20,28 @@ window.addEventListener('DOMContentLoaded', function() {
   btnClose.addEventListener("click", function () {
     exitGenerator();
   });
-});
+})
+
+function templateSelected(i){
+  console.log(i);
+  switch (i) {
+    case 1:
+      template1HTML.style.border = "3px solid green";
+      template2HTML.style.border = "0";
+      template3HTML.style.border = "0";
+      break;
+    case 2:
+      template1HTML.style.border = "0";
+      template2HTML.style.border = "3px solid green";
+      template3HTML.style.border = "0";
+      break;
+    case 3:
+      template1HTML.style.border = "0";
+      template2HTML.style.border = "0";
+      template3HTML.style.border = "3px solid green";
+      break;
+  }
+}
 
 function loadGenerator() {
   btnLoad.style.display = "none";
