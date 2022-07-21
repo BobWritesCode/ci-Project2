@@ -3,12 +3,15 @@ const resultContainerHTML = document.getElementById("result-container");
 const resultsListHTML = document.getElementById("results-list");
 const btnClose = document.getElementById('btn-close');
 const btnLoad = document.getElementById('btn-load');
+const btnStart = document.getElementById('btn-start');
 
 const results = [];
 
 window.addEventListener('DOMContentLoaded', function() {
   btnLoad.addEventListener("click", function () {
     loadGenerator();
+  });
+  btnStart.addEventListener("click", function () {
     sortOptions();
   });
   btnClose.addEventListener("click", function () {
@@ -32,7 +35,8 @@ function loadGenerator() {
   } else if (resultContainerHTML.msRequestFullscreen) { /* IE11 */
   resultContainerHTML.msRequestFullscreen();
   }
-  btnClose.style.display = "block"
+  btnStart.style.display = "block";
+  btnClose.style.display = "block";
 }
 
 function exitGenerator() {
@@ -52,6 +56,7 @@ function exitGenerator() {
 }
 
 function sortOptions() {
+  btnStart.style.display = "none";
   let transitionTime = document.getElementById("transisiton-time").value;
   let timeBetween = document.getElementById("time-between-results").value;
   let options = document.getElementById("options").value;
