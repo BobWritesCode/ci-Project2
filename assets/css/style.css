@@ -1,6 +1,14 @@
 /* Import Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
+/* Resetting broswer default stylesheets */
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  color: #333;
+}
+
 body > * {
   display: flex;
   justify-content: center;
