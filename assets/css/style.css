@@ -41,7 +41,7 @@ h1 {
   -webkit-text-stroke-color: #711A75;
 }
 
-#all-options-container, #templates-container {
+#options-container, #templates-container {
   margin: 0 0 30px 0;
 }
 
@@ -55,6 +55,7 @@ h1 {
   border: 1px solid #333;
   flex-grow: 1;
   margin: 0 2.5% 0 0;
+  padding: 10px;
 }
 
 #templates-container {
