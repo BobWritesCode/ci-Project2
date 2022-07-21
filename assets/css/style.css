@@ -10,7 +10,7 @@ font-family: 'Luckiest Guy', cursive;
 #711A75
 #711A75
 #F47CA4
-#F47CA4
+#0D050E
 */
 
 /* Resetting broswer default stylesheets */
@@ -74,6 +74,10 @@ input, textarea {
   border: 1px solid #333;
   flex-grow: 1;
   margin: 0 2.5% 0 0;
+}
+
+#result-container {
+  align-items: center;
 }
 
 button {
