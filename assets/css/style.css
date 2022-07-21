@@ -1,3 +1,7 @@
+#all-options-area, #templates-container {
+  margin: 0 0 30px 0;
+}
+
 #all-options-area {
   display: flex;
   flex-wrap: wrap;
@@ -10,3 +14,14 @@
   margin: 0 2.5% 0 0;
 }
 
+#templates-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 0 2.5%;
+}
+
+.template {
+  border: 1px solid #333;
+  flex-grow: 1;
+  margin: 0 2.5% 0 0;
+}
