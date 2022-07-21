@@ -29,13 +29,13 @@ body > * {
 }
 
 header {
-  font-family: 'Luckiest Guy', cursive;
   text-transform: uppercase;
   font-size:xx-large ;
   letter-spacing: 2px;
 }
 
 h1 {
+  font-family: 'Luckiest Guy', cursive;
   color: #F10086;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #711A75;
