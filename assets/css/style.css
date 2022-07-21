@@ -1,6 +1,14 @@
 /* Import Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
+/* Colour Pallette
+#0D050E
+#711A75
+#711A75
+#F47CA4
+#F47CA4
+*/
+
 /* Resetting broswer default stylesheets */
 * {
   padding: 0;
@@ -19,6 +27,12 @@ header {
   text-transform: uppercase;
   font-size:xx-large ;
   letter-spacing: 2px;
+}
+
+h1 {
+  color: #F10086;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #711A75;
 }
 
 #all-options-area, #templates-container {
