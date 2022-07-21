@@ -10,6 +10,7 @@ header {
   font-family: 'Luckiest Guy', cursive;
   text-transform: uppercase;
   font-size:xx-large ;
+  letter-spacing: 2px;
 }
 
 #all-options-area, #templates-container {
