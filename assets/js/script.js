@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', function() {
 function loadGenerator() {
   const btnLoad = document.getElementById('btn-load');
   btnLoad.style.display = "none";
-  resultContainerHTML.style.backgroundColor = "red";
+  resultContainerHTML.style.backgroundColor = "#0D050E";
   
   resultContainerHTML.style.position = "absolute";
   resultContainerHTML.style.top = "0px";
