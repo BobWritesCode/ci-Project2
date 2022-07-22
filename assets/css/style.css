@@ -101,6 +101,11 @@ input, textarea {
   align-items: center;
 }
 
+#results-list {
+  display: flex;
+  flex-direction: column;
+}
+
 button {
   background-color: #711A75; /* Green */
   border: none;

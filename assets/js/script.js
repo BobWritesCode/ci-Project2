@@ -102,6 +102,15 @@ function createRandomResults(options, transitionTime, timeBetween) {
 }
 
 function show1By1(results, transitionTime, timeBetween) {
+  let vertOrHorValue = document.getElementById('vert-or-hor').value;
+  switch (vertOrHorValue) {
+    case "vertical":
+      resultsListHTML.style.flexDirection = "column";
+      break;
+    case "horizontol":
+      resultsListHTML.style.flexDirection = "row";
+      break;
+  }
   for (let i of results){
     let newLi = document.createElement('li');
     newLi.className = "box";
