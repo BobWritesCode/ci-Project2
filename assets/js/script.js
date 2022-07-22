@@ -5,9 +5,9 @@ const btnClose = document.getElementById('btn-close');
 const btnLoad = document.getElementById('btn-load');
 const btnStart = document.getElementById('btn-start');
 const templateHTML = document.getElementsByClassName('template');
-const template1HTML = document.getElementById('template1');
-const template2HTML = document.getElementById('template2');
-const template3HTML = document.getElementById('template3');
+const template1ContainerHTML = document.getElementById('template1-container');
+const template2ContainerHTML = document.getElementById('template2-container');
+const template3ContainerHTML = document.getElementById('template3-container');
 const results = [];
 
 window.addEventListener('DOMContentLoaded', function() {
@@ -26,19 +26,19 @@ function templateSelected(i){
   console.log(i);
   switch (i) {
     case 1:
-      template1HTML.style.border = "3px solid green";
-      template2HTML.style.border = "0";
-      template3HTML.style.border = "0";
+      template1ContainerHTML.style.border = "3px solid green";
+      template2ContainerHTML.style.border = "3px solid transparent";
+      template3ContainerHTML.style.border = "3px solid transparent";
       break;
     case 2:
-      template1HTML.style.border = "0";
-      template2HTML.style.border = "3px solid green";
-      template3HTML.style.border = "0";
+      template1ContainerHTML.style.border = "3px solid transparent";
+      template2ContainerHTML.style.border = "3px solid green";
+      template3ContainerHTML.style.border = "3px solid transparent";
       break;
     case 3:
-      template1HTML.style.border = "0";
-      template2HTML.style.border = "0";
-      template3HTML.style.border = "3px solid green";
+      template1ContainerHTML.style.border = "3px solid transparent";
+      template2ContainerHTML.style.border = "3px solid transparent";
+      template3ContainerHTML.style.border = "3px solid green";
       break;
   }
 }
