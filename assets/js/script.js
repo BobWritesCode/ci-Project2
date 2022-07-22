@@ -75,7 +75,8 @@ function exitGenerator() {
   document.msExitFullscreen();
   }
   resultContainerHTML.style.position = "initial";
-  btnClose.style.display = "none"
+  btnClose.style.display = "none";
+  btnStart.style.display = "none";
   btnLoad.style.display = "block";
 }
 
