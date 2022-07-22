@@ -37,11 +37,16 @@ header {
 h1 {
   font-family: 'Luckiest Guy', cursive;
   color: #F10086;
+  text-align: center;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #711A75;
 }
 
-#options-container, #templates-container {
+h2 {
+  text-align: center;
+}
+
+#options-container {
   margin: 0 0 30px 0;
 }
 
@@ -64,10 +69,19 @@ input, textarea {
   border: 0;
 }
 
+#parent-templates-container {
+  flex-direction: column;
+}
+
 #templates-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  padding: 0 0 0 2.5%;
+}
+
+.template-container {
+  width: 25%;
+  min-width: 300px;
 }
 
 .template {
