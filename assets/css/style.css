@@ -104,6 +104,14 @@ input, textarea {
 #results-list {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+#results-list > * {
+  flex: 1 1 80px;
+  white-space: nowrap;
 }
 
 button {
