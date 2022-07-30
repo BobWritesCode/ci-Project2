@@ -17,11 +17,11 @@
       <textarea id="options" name="options" rows="10" cols="50">Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu
       </textarea>
       <p><label for="number-of-results">How many final results:</label>
-      <br><input id="number-of-results" name="number-of-results" type="text" value="10"> </p>
+        <br><input id="number-of-results" name="number-of-results" type="text" value="10"> </p>
       <p><label for="transisiton-time">Transition time for each result to appear in seconds:</label>
-      <br><input id="transisiton-time" name="transisiton-time" type="text" value="0.2"> </p>
+        <br><input id="transisiton-time" name="transisiton-time" type="text" value="0.2"> </p>
       <p><label for="time-between-results">How long between each result in seconds:</label>
-      <br><input id="time-between-results" name="time-between-results" type="text" value="2"> </p>
+        <br><input id="time-between-results" name="time-between-results" type="text" value="2"> </p>
       <label for="multiple-wins">Can an option win multiple times:</label>
       <br><input type="checkbox" id="multiple-wins" name="multiple-wins" value="yes">
       <br>
@@ -37,7 +37,8 @@
       <label for="reveal2">Remove 1 by 1</label><br>  
     </div>
     <div class="options-box">
-      Option 2 area
+      <p><label for="gen-title-user">Title of generator:</label>
+        <br><input id="gen-title-user" name="gen-title-user" type="text" value="Example Title"></p>
     </div>
   </div>
   <div id="parent-templates-container">
@@ -63,9 +64,11 @@
     </div>
   </div>
   <div id="result-container">
+    <div id="result-top"><span id="gen-title-span"></span></div>
+    <div id="result-mid"><span id="results-list"></span></div>
+    <div id="result-bottom"><span id="gen-tail-span">Example</span></div>
     <button id="btn-load">Load the generator</button>
     <button id="btn-start">Start</button>
-    <ul id="results-list"></ul>
     <button id="btn-close">Close</button>
   </div>
   <footer>

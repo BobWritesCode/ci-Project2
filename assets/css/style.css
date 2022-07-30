@@ -98,20 +98,63 @@ input, textarea {
 }
 
 #result-container {
-  align-items: center;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px auto 100px; 
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+#result-top {
+  display: none;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+}
+
+#result-mid {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  width: 100%;
+  align-self: center;
+}
+
+#result-bottom {
+  display: none;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
 }
 
 #results-list {
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  flex-direction: row;
   flex-wrap: wrap;
-  align-content: center;
 }
 
 #results-list > * {
-  flex: 1 1 80px;
-  white-space: nowrap;
+  flex: 1 1 30%;
+}
+
+#gen-title-span {
+  color: #ffc400;
+  font-size: 5vw;
+}
+
+#gen-tail-span {
+  color: #ffc400;
+  font-size: 5vw;
+  align-self: flex-end;
 }
 
 button {
@@ -160,15 +203,17 @@ button {
 }
 
 .box {
-  display: none;
+  display: inline-block;
   padding: 0;
   margin: 0;
   color: rgb(255, 217, 0);
   display: inline-block;
   color: rgba(0, 0, 0, 0);
   background-color: rgba(0, 0, 0, 0);
-  font-size: 0;
-  transition-property: background-color, font-size, color,  padding, margin;
+  padding: 10px;
+  font-size: 5vw;
+  transform-origin: center;
+  transition-property: background-color, color,  padding, margin;
   transition-timing-function: ease-in-out;
   transition-duration: 3s;
   text-align: center;
@@ -180,8 +225,8 @@ button {
   background-color: rgba(0, 0, 0, 0);
   padding: 10px;
   margin: auto;
-  font-size: 5vw;
-  transition-property: background-color, font-size, color, padding, margin;
+  transform-origin: center;
+  transition-property: background-color, color, padding, margin;
   transition-timing-function: ease-in-out;
 }  
 
