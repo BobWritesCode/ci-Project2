@@ -1,4 +1,3 @@
-const multipleWinsHTML = document.getElementById("multiple-wins");
 const resultContainerHTML = document.getElementById("result-container");
 const resultsListHTML = document.getElementById("results-list");
 const btnClose = document.getElementById('btn-close');
@@ -55,14 +54,18 @@ function loadGenerator() {
   resultContainerHTML.style.right = "0px";
   resultContainerHTML.style.bottom = "0px";
   resultContainerHTML.style.left = "0px";
-  // Credit for fullscreen code: https://www.w3schools.com/howto/howto_js_fullscreen.asp
-  if (resultContainerHTML.requestFullscreen) {
-    resultContainerHTML.requestFullscreen();
-  } else if (resultContainerHTML.webkitRequestFullscreen) { /* Safari */
-  resultContainerHTML.webkitRequestFullscreen();
-  } else if (resultContainerHTML.msRequestFullscreen) { /* IE11 */
-  resultContainerHTML.msRequestFullscreen();
+  let fullScreen = document.getElementById("full-screen"); 
+  if (fullScreen.checked) {
+    // Credit for fullscreen code: https://www.w3schools.com/howto/howto_js_fullscreen.asp
+    if (resultContainerHTML.requestFullscreen) {
+      resultContainerHTML.requestFullscreen();
+    } else if (resultContainerHTML.webkitRequestFullscreen) { /* Safari */
+    resultContainerHTML.webkitRequestFullscreen();
+    } else if (resultContainerHTML.msRequestFullscreen) { /* IE11 */
+    resultContainerHTML.msRequestFullscreen();
+    }
   }
+
   resultTop.style.display = "block";
   criteriaGenerator.style.display = "flex";
   resultBottom.style.display = "block";
@@ -111,6 +114,7 @@ function sortOptions() {
 
 function createRandomResults(options, transitionTime, timeBetween) {
   let loopAmount = document.getElementById("number-of-results").value;
+  let multipleWinsHTML = document.getElementById("multiple-wins");
   for (let i = 0; i < loopAmount; i++){
     let result = Math.floor(Math.random() * options.length); 
     results.push(options[result].trim());
