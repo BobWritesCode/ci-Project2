@@ -10,6 +10,7 @@ const template2ContainerHTML = document.getElementById('template2-container');
 const template3ContainerHTML = document.getElementById('template3-container');
 const results = [];
 const resultTop = document.getElementById('result-top');
+const criteriaGenerator = document.getElementById('criteria-generator');
 const resultBottom = document.getElementById('result-bottom');
 
 
@@ -63,12 +64,16 @@ function loadGenerator() {
   resultContainerHTML.msRequestFullscreen();
   }
   resultTop.style.display = "block";
+  criteriaGenerator.style.display = "flex";
   resultBottom.style.display = "block";
   btnStart.style.display = "block";
   btnClose.style.display = "block";
   const userGenTitle = document.getElementById('gen-title-user').value;
   const spanGenTitle = document.getElementById('gen-title-span');
   spanGenTitle.innerText = userGenTitle
+  const userGenCriteria = document.getElementById('criteria-user').value;
+  const spanGenCriteria = document.getElementById('gen-criteria-span');
+  spanGenCriteria.innerText = userGenCriteria
   const userGenTail = document.getElementById('gen-tail-user').value;
   const spanGenTail = document.getElementById('gen-tail-span');
   spanGenTail.innerText = userGenTail
@@ -90,10 +95,12 @@ function exitGenerator() {
   btnStart.style.display = "none";
   resultTop.style.display = "none";
   resultBottom.style.display = "none";
+  criteriaGenerator.style.display = "none";
   btnLoad.style.display = "block";
 }
 
 function sortOptions() {
+  criteriaGenerator.style.display = "none";
   btnStart.style.display = "none";
   let transitionTime = document.getElementById("transisiton-time").value;
   let timeBetween = document.getElementById("time-between-results").value;

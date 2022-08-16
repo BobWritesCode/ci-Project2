@@ -39,8 +39,8 @@
     <div class="options-box">
       <p><label for="gen-title-user">Title of generator:</label>
         <br><input id="gen-title-user" name="gen-title-user" type="text" value="STREAMER GIVEAWAY"></p>
-      <p><label for="options">Enter body text for Random Result Generator:</label></p>
-      <textarea id="options" name="options" rows="10" cols="50">Eligbility Criteria
+      <p><label for="criteria-user">Enter body text for Random Result Generator:</label></p>
+      <textarea id="criteria-user" name="criteria-user" rows="10" cols="50">Eligbility Criteria
         - Like the channel
         - Subscribe to the channel
         - Type !giveaway in chat
@@ -74,10 +74,11 @@
   <div id="result-container">
     <div id="result-top"><span id="gen-title-span"></span></div>
     <div id="result-mid">
+      <div id="criteria-generator"><span id="gen-criteria-span">Example</span></div>
       <span id="results-list"></span>
       <button id="btn-start">Start</button>
     </div>
-    <div id="result-bottom"><span id="gen-tail-span">Example</span></div>
+    <div id="result-bottom"><span id="gen-tail-span"></span></div>
     <button id="btn-load">Load the generator</button>
     <button id="btn-close">Close</button>
   </div>
