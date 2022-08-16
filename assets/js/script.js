@@ -67,10 +67,11 @@ function loadGenerator() {
   btnStart.style.display = "block";
   btnClose.style.display = "block";
   const userGenTitle = document.getElementById('gen-title-user').value;
-  console.log(userGenTitle)
   const spanGenTitle = document.getElementById('gen-title-span');
-  console.log(spanGenTitle)
   spanGenTitle.innerText = userGenTitle
+  const userGenTail = document.getElementById('gen-tail-user').value;
+  const spanGenTail = document.getElementById('gen-tail-span');
+  spanGenTail.innerText = userGenTail
 }
 
 function exitGenerator() {
