@@ -12,7 +12,6 @@ const resultTop = document.getElementById('result-top');
 const criteriaGenerator = document.getElementById('criteria-generator');
 const resultBottom = document.getElementById('result-bottom');
 
-
 window.addEventListener('DOMContentLoaded', function() {
   btnLoad.addEventListener("click", function () {
     loadGenerator();
@@ -84,6 +83,7 @@ function loadGenerator() {
 
 function exitGenerator() {
   results.length = 0;
+  countdown(true);
   resultsListHTML.innerHTML = "";
   resultContainerHTML.style.backgroundColor = "#FAFAFA";
   if (document.exitFullscreen) {
@@ -105,7 +105,7 @@ function exitGenerator() {
 function startGenerator() {
   criteriaGenerator.style.display = "none";
   btnStart.style.display = "none";
-  countdown();
+  countdown(false);
 }
 
 function sortOptions () {
@@ -159,18 +159,29 @@ function show1By1(results, transitionTime, timeBetween) {
   }, 1);
 }
 
-function countdown () {
+/**
+ * Creates a countdown before results are shown.
+ */
+function countdown (countdownReset) {
   const countdownHTML = document.getElementById('countdown-generator');
-  /* Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and modified by me*/
+  // Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and then modified by me
   var timeleft = 10;
-  var downloadTimer = setInterval(function(){
-    if(timeleft <= 0){
-      clearInterval(downloadTimer);
-      countdownHTML.innerHTML = "";
-      sortOptions()
-    } else {
-      countdownHTML.innerHTML = timeleft + "";
-    }
-    timeleft -= 1;
-  }, 2000);
+  if (countdownReset) {
+    console.log("here");
+    timeleft = 0;
+    clearInterval(countdownTimer);
+    countdownHTML.innerHTML = "";
+  } else {
+    countdownTimer = setInterval(function(){
+      if(timeleft <= 0){
+        clearInterval(countdownTimer);
+        countdownHTML.innerHTML = "";
+        sortOptions();
+      } else {
+        countdownHTML.innerHTML = timeleft + "";
+      }
+      timeleft -= 1;
+    }, 2000);
+  }
+
 }
