@@ -11,6 +11,7 @@ const results = [];
 const resultTop = document.getElementById('result-top');
 const criteriaGenerator = document.getElementById('criteria-generator');
 const resultBottom = document.getElementById('result-bottom');
+var countdownTimer;
 
 window.addEventListener('DOMContentLoaded', function() {
   btnLoad.addEventListener("click", function () {
