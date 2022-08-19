@@ -12,6 +12,7 @@ const resultTop = document.getElementById('result-top');
 const criteriaGenerator = document.getElementById('criteria-generator');
 const resultBottom = document.getElementById('result-bottom');
 var countdownTimer;
+const resultRandomAnim = [];
 
 window.addEventListener('DOMContentLoaded', function() {
   btnLoad.addEventListener("click", function () {
@@ -65,7 +66,6 @@ function loadGenerator() {
     resultContainerHTML.msRequestFullscreen();
     }
   }
-
   resultTop.style.display = "block";
   criteriaGenerator.style.display = "flex";
   resultBottom.style.display = "block";
@@ -127,10 +127,10 @@ function createRandomResults(options, transitionTime, timeBetween) {
       options.splice(result, 1)
     }
   }
-  show1By1(results, transitionTime, timeBetween)
+  show1By1(results, transitionTime, timeBetween, options)
 }
 
-function show1By1(results, transitionTime, timeBetween) {
+function show1By1(results, transitionTime, timeBetween, options) {
   /*let vertOrHorValue = document.getElementById('vert-or-hor').value;
    switch (vertOrHorValue) {
     case "vertical":
@@ -141,34 +141,70 @@ function show1By1(results, transitionTime, timeBetween) {
       break;
   }
   */
-  for (let i of results){
+  for (let result of results){
     let newDiv = document.createElement('div');
     newDiv.className = "box";
-    newDiv.appendChild(document.createTextNode(i));
+    newDiv.appendChild(document.createTextNode(result));
     resultsListHTML.appendChild(newDiv);
   }
 
   setTimeout(function() {
     let elements = document.querySelectorAll("span#results-list > div");
-    let delay = 0
+    let delay = 0;
+    let i = 0;
     for (let element of elements) {
       element.style.transitionDuration  = `${transitionTime}s`
-      delay = delay + parseInt(timeBetween);
+      if (i >= 1) {
+        delay = delay + parseInt(timeBetween);
+      }
       element.style.transitionDelay  = `${delay}s`;
       element.classList.toggle("show");
+      resultRandomAnimFunc(i, element, delay, timeBetween, false, options, element.innerHTML, 0, 0);
+      i++;
     }
   }, 1);
 }
 
 /**
+ * Cycles very quickly randomly through all options until showing final result after defined time has passed
+*/
+function resultRandomAnimFunc(i, element, delay, y2, bool, options, result, y, x){
+  var x = x;
+  var result = result;
+  var y = y;
+  var y2 = y2;
+  if (!(bool)) {
+    delay = delay * 1000;
+  }
+  setTimeout(function(){
+    if (x * 1000 < delay) {
+      if (!(bool)) {
+        delay = 1;
+      }
+      x = x + 1000;
+      resultRandomAnimFunc(i, element, delay, y2, true, options, result, y, x);
+    } else {
+      setTimeout(function() {
+        y++;
+        if (y <= (y2 * 18)) {
+          element.innerHTML = options[Math.floor(Math.random() * options.length)];
+          resultRandomAnimFunc(i, element, delay, y2, true, options, result, y, x);
+        } else {
+          element.innerHTML = result;
+        }
+      }, 50);
+    }
+  },delay)
+}
+
+/**
  * Creates a countdown before results are shown.
- */
+*/
 function countdown (countdownReset) {
   const countdownHTML = document.getElementById('countdown-generator');
   // Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and then modified by me
-  var timeleft = 10;
+  var timeleft = 2;
   if (countdownReset) {
-    console.log("here");
     timeleft = 0;
     clearInterval(countdownTimer);
     countdownHTML.innerHTML = "";
