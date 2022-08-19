@@ -151,6 +151,12 @@ input, textarea {
   font-size: 5vw;
 }
 
+#countdown-generator {
+  color: #ffc400;
+  font-size: 20vw;
+  text-align: center;
+}
+
 #criteria-generator {
   justify-content: center;
   display: none;

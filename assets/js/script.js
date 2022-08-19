@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', function() {
     loadGenerator();
   });
   btnStart.addEventListener("click", function () {
-    sortOptions();
+    startGenerator();
   });
   btnClose.addEventListener("click", function () {
     exitGenerator();
@@ -102,9 +102,13 @@ function exitGenerator() {
   btnLoad.style.display = "block";
 }
 
-function sortOptions() {
+function startGenerator() {
   criteriaGenerator.style.display = "none";
   btnStart.style.display = "none";
+  countdown();
+}
+
+function sortOptions () {
   let transitionTime = document.getElementById("transisiton-time").value;
   let timeBetween = document.getElementById("time-between-results").value;
   let options = document.getElementById("options").value;
@@ -153,4 +157,20 @@ function show1By1(results, transitionTime, timeBetween) {
       element.classList.toggle("show");
     }
   }, 1);
+}
+
+function countdown () {
+  const countdownHTML = document.getElementById('countdown-generator');
+  /* Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and modified by me*/
+  var timeleft = 10;
+  var downloadTimer = setInterval(function(){
+    if(timeleft <= 0){
+      clearInterval(downloadTimer);
+      countdownHTML.innerHTML = "";
+      sortOptions()
+    } else {
+      countdownHTML.innerHTML = timeleft + "";
+    }
+    timeleft -= 1;
+  }, 3000);
 }
