@@ -172,5 +172,5 @@ function countdown () {
       countdownHTML.innerHTML = timeleft + "";
     }
     timeleft -= 1;
-  }, 3000);
+  }, 2000);
 }
