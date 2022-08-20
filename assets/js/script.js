@@ -51,7 +51,10 @@ function templateSelected(i){
 function loadGenerator() {
   globalReset = false;
   btnLoad.style.display = "none";
-  resultContainerHTML.style.backgroundColor = "#0D050E";
+  resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
+  document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
+  document.getElementById('gen-criteria-span').style.color = document.getElementById('body-text-color').value;
+  document.getElementById('gen-tail-span').style.color = document.getElementById('tail-color').value;
   resultContainerHTML.style.position = "absolute";
   resultContainerHTML.style.top = "0px";
   resultContainerHTML.style.right = "0px";
