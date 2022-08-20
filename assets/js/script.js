@@ -99,12 +99,14 @@ function exitGenerator() {
   countdown(true);
   resultsListHTML.innerHTML = "";
   resultContainerHTML.style.backgroundColor = "#FAFAFA";
-  if (document.exitFullscreen) {
-    document.exitFullscreen();
-  } else if (document.webkitExitFullscreen) { /* Safari */
-  document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) { /* IE11 */
-  document.msExitFullscreen();
+  if ((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+    }
   }
   resultContainerHTML.style.position = "initial";
   btnClose.style.display = "none";
