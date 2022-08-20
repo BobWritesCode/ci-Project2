@@ -74,6 +74,7 @@ function templateSelected(i){
 function loadGenerator() {
   scrollToTop();
   globalReset = false;
+  z = 0;
   btnLoad.style.display = "none";
   resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
   document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
