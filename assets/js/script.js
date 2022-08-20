@@ -14,6 +14,9 @@ const resultBottom = document.getElementById('result-bottom');
 var countdownTimer;
 const resultRandomAnim = [];
 let globalReset = true;
+let finalColor;
+let randomColor;
+let z = 0;
 
 window.addEventListener('DOMContentLoaded', function() {
   btnLoad.addEventListener("click", function () {
@@ -55,6 +58,9 @@ function loadGenerator() {
   document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
   document.getElementById('gen-criteria-span').style.color = document.getElementById('body-text-color').value;
   document.getElementById('gen-tail-span').style.color = document.getElementById('tail-color').value;
+  document.getElementById('countdown-generator').style.color = document.getElementById('countdown-color').value;
+  randomColor = document.getElementById('result-random-color').value;
+  finalColor = document.getElementById('result-final-color').value;
   resultContainerHTML.style.position = "absolute";
   resultContainerHTML.style.top = "0px";
   resultContainerHTML.style.right = "0px";
@@ -163,7 +169,7 @@ function show1By1(results, transitionTime, timeBetween, options) {
       if (i >= 1) {
         delay = delay + parseInt(timeBetween);
       }
-      element.style.transitionDelay  = `${delay}s`;
+      /*element.style.transitionDelay  = `${delay}s`;*/
       element.classList.toggle("show");
       resultRandomAnimFunc(i, element, delay, timeBetween, false, options, element.innerHTML, 0, 0);
       i++;
@@ -180,7 +186,8 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, options, result, y, x
   var y = y;
   var y2 = y2;
   if (!(bool)) {
-    delay = delay * 1000;
+    delay = ((delay * 1000) + (z * 2000));
+    z++;
   }
   if (!(globalReset)) {
     setTimeout(function(){
@@ -194,10 +201,12 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, options, result, y, x
         setTimeout(function() {
           y++;
           if (y <= (y2 * 18)) {
+            element.style.color = randomColor;
             element.innerHTML = options[Math.floor(Math.random() * options.length)];
             resultRandomAnimFunc(i, element, delay, y2, true, options, result, y, x);
           } else {
             element.innerHTML = result;
+            element.style.color = finalColor;
           }
         }, 50);
       }
