@@ -13,6 +13,7 @@ const criteriaGenerator = document.getElementById('criteria-generator');
 const resultBottom = document.getElementById('result-bottom');
 var countdownTimer;
 const resultRandomAnim = [];
+let globalReset = true;
 
 window.addEventListener('DOMContentLoaded', function() {
   btnLoad.addEventListener("click", function () {
@@ -48,6 +49,7 @@ function templateSelected(i){
 }
 
 function loadGenerator() {
+  globalReset = false;
   btnLoad.style.display = "none";
   resultContainerHTML.style.backgroundColor = "#0D050E";
   resultContainerHTML.style.position = "absolute";
@@ -83,6 +85,7 @@ function loadGenerator() {
 }
 
 function exitGenerator() {
+  globalReset = true;
   results.length = 0;
   countdown(true);
   resultsListHTML.innerHTML = "";
@@ -176,25 +179,27 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, options, result, y, x
   if (!(bool)) {
     delay = delay * 1000;
   }
-  setTimeout(function(){
-    if (x * 1000 < delay) {
-      if (!(bool)) {
-        delay = 1;
-      }
-      x = x + 1000;
-      resultRandomAnimFunc(i, element, delay, y2, true, options, result, y, x);
-    } else {
-      setTimeout(function() {
-        y++;
-        if (y <= (y2 * 18)) {
-          element.innerHTML = options[Math.floor(Math.random() * options.length)];
-          resultRandomAnimFunc(i, element, delay, y2, true, options, result, y, x);
-        } else {
-          element.innerHTML = result;
+  if (!(globalReset)) {
+    setTimeout(function(){
+      if (x * 1000 < delay) {
+        if (!(bool)) {
+          delay = 1;
         }
-      }, 50);
-    }
-  },delay)
+        x = x + 1000;
+        resultRandomAnimFunc(i, element, delay, y2, true, options, result, y, x);
+      } else {
+        setTimeout(function() {
+          y++;
+          if (y <= (y2 * 18)) {
+            element.innerHTML = options[Math.floor(Math.random() * options.length)];
+            resultRandomAnimFunc(i, element, delay, y2, true, options, result, y, x);
+          } else {
+            element.innerHTML = result;
+          }
+        }, 50);
+      }
+    },delay)
+  }
 }
 
 /**
