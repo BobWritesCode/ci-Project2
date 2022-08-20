@@ -52,6 +52,7 @@ function templateSelected(i){
 }
 
 function loadGenerator() {
+  scrollToTop();
   globalReset = false;
   btnLoad.style.display = "none";
   resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
@@ -240,4 +241,9 @@ function countdown (countdownReset) {
     }, 2000);
   }
 
+}
+
+function scrollToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
