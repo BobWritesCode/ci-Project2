@@ -31,22 +31,42 @@ window.addEventListener('DOMContentLoaded', function() {
 })
 
 function templateSelected(i){
-  console.log(i);
   switch (i) {
     case 1:
       template1ContainerHTML.style.border = "3px solid green";
       template2ContainerHTML.style.border = "3px solid transparent";
       template3ContainerHTML.style.border = "3px solid transparent";
+      document.getElementById('background-color').value = "#0D050E";
+      document.getElementById('title-color').value = "#FAFAFA";
+      document.getElementById('body-text-color').value = "#FAFAFA";
+      document.getElementById('tail-color').value = "#FAFAFA";
+      document.getElementById('countdown-color').value = "#FAFAFA";
+      document.getElementById('result-random-color').value = "#FF0000";
+      document.getElementById('result-final-color').value = "#FFFF00";
       break;
     case 2:
       template1ContainerHTML.style.border = "3px solid transparent";
       template2ContainerHTML.style.border = "3px solid green";
       template3ContainerHTML.style.border = "3px solid transparent";
+      document.getElementById('background-color').value = "#6441a5";
+      document.getElementById('title-color').value = "#FAFAFA";
+      document.getElementById('body-text-color').value = "#FAFAFA";
+      document.getElementById('tail-color').value = "#FAFAFA";
+      document.getElementById('countdown-color').value = "#FAFAFA";
+      document.getElementById('result-random-color').value = "#18181B";
+      document.getElementById('result-final-color').value = "#FAFAFA";
       break;
     case 3:
       template1ContainerHTML.style.border = "3px solid transparent";
       template2ContainerHTML.style.border = "3px solid transparent";
       template3ContainerHTML.style.border = "3px solid green";
+      document.getElementById('background-color').value = "#00FF00";
+      document.getElementById('title-color').value = "#FAFAFA";
+      document.getElementById('body-text-color').value = "#FAFAFA";
+      document.getElementById('tail-color').value = "#FAFAFA";
+      document.getElementById('countdown-color').value = "#FAFAFA";
+      document.getElementById('result-random-color').value = "#FF0000";
+      document.getElementById('result-final-color').value = "#FFFF00";
       break;
   }
 }

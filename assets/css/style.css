@@ -104,6 +104,16 @@ input[type="color"] {
   color:#FAFAFA;
 }
 
+#template2 {
+  background-color: #6441a5;
+  color:#FAFAFA;
+}
+
+#template3 {
+  background-color: #00FF00;
+  color:#FAFAFA;
+}
+ 
 #result-container {
   display: grid;
   grid-template-columns: 100%;
