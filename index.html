@@ -11,7 +11,7 @@
   <header>
     <h1>Random Result Generator</h1>
   </header>
-  <div id="options-container">
+  <div class="options-container">
     <div class="options-box">
       <p><label for="options">Enter potential results for Random Result Generator:</label></p>
       <textarea id="options" name="options" rows="10" cols="50">Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu
@@ -37,16 +37,23 @@
       <label for="reveal2">Remove 1 by 1</label><br>  
     </div>
     <div class="options-box">
-      <p><label for="gen-title-user">Title of generator:</label>
-        <br><input id="gen-title-user" name="gen-title-user" type="text" value="STREAMER GIVEAWAY"></p>
+      <p>
+        <label for="gen-title-user">Title of generator:</label>
+        <br><input id="gen-title-user" name="gen-title-user" type="text" value="STREAMER GIVEAWAY">
+      </p> 
       <p><label for="criteria-user">Enter body text for Random Result Generator:</label></p>
       <textarea id="criteria-user" name="criteria-user" rows="10" cols="50">Eligbility Criteria
         - Like the channel
         - Subscribe to the channel
         - Type !giveaway in chat
       </textarea>
-      <p><label for="gen-tail-user">Tail of generator:</label>
-        <br><input id="gen-tail-user" name="gen-tail-user" type="text" value="www.StreamerWebsite.com"></p>
+      <br>Color 1: <input type="color" id="head" name="gen-title-color" value="#ffc400">
+      <br>Color 2: <input type="color" id="head" name="gen-title-color" value="#ffc400">
+      <p>
+        <label for="gen-tail-user">Tail of generator:</label>
+        <br><input id="gen-tail-user" name="gen-tail-user" type="text" value="www.StreamerWebsite.com">
+        <input type="color" id="head" name="gen-trail-color" value="#ffc400">
+      </p>
         <label for="full-screen">Load generator in full screen mode:</label>
         <br><input type="checkbox" id="full-screen" name="full-screen" value="yes">
     </div>
@@ -71,6 +78,17 @@
           Example text
         </div>
       </div>
+    </div>
+  </div>
+  <div class="options-container">
+    <div class="options-box">
+      <div>
+        <p>Choose your generator colors:</p>
+      </div>
+      <p>
+        Placeholder
+        <input type="color" id="head" name="gen-title-color" value="#ffc400">
+      </p>
     </div>
   </div>
   <div id="result-container">
