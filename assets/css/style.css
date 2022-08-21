@@ -1,5 +1,5 @@
 /* Import Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Kanit&display=swap');
 /*
 font-family: 'Kanit', sans-serif;
 font-family: 'Luckiest Guy', cursive;
@@ -41,11 +41,11 @@ header {
 }
 
 h1 {
-  font-family: 'Luckiest Guy', cursive;
-  color: #F10086;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 3vw;
+  color: #FAFAFA;
   text-align: center;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #711A75;
+  -webkit-text-stroke-color: #FAFAFA;
 }
 
 h2 {
