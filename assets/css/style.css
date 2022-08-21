@@ -24,7 +24,7 @@ font-family: 'Luckiest Guy', cursive;
 }
 
 body {
-  background-color: #bb9eff;
+  background-color: #373E98;
 }
 
 body > * {
@@ -36,7 +36,7 @@ header {
   text-transform: uppercase;
   font-size:xx-large ;
   letter-spacing: 2px;
-  background-color: #6441a5;
+  background-color: #2a308a;
   margin-bottom: 20px;
 }
 
