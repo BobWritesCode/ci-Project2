@@ -23,6 +23,10 @@ font-family: 'Luckiest Guy', cursive;
   font-weight: 500;
 }
 
+body {
+  background-color: #bb9eff;
+}
+
 body > * {
   display: flex;
   justify-content: center;
@@ -32,6 +36,8 @@ header {
   text-transform: uppercase;
   font-size:xx-large ;
   letter-spacing: 2px;
+  background-color: #6441a5;
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -47,10 +53,6 @@ h2 {
 }
 
 .options-container {
-  margin: 0 5% 30px 2.5%;
-}
-
-.options-container {
   display: flex;
   flex-wrap: wrap;
   padding: 0 0 0 2.5%;
@@ -58,7 +60,7 @@ h2 {
 
 .options-box {
   background-color: #FAFAFA;
-  border: solid #333 1px;
+
   flex-grow: 1;
   margin: 0 2.5% 0 0;
   padding: 10px;
