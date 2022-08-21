@@ -148,14 +148,14 @@ function startGenerator() {
 }
 
 function sortOptions () {
-  let transitionTime = document.getElementById("transisiton-time").value;
-  let timeBetween = document.getElementById("time-between-results").value;
+  let timeUntilShow = document.getElementById("time-until-show").value;
+  let timeUntilResult = document.getElementById("time-until-result").value;
   let options = document.getElementById("options").value;
   options = options.split(',');
-  createRandomResults(options, transitionTime, timeBetween)
+  createRandomResults(options, timeUntilShow, timeUntilResult)
 }
 
-function createRandomResults(options, transitionTime, timeBetween) {
+function createRandomResults(options, timeUntilShow, timeUntilResult) {
   let loopAmount = document.getElementById("number-of-results").value;
   let multipleWinsHTML = document.getElementById("multiple-wins");
   for (let i = 0; i < loopAmount; i++){
@@ -165,10 +165,10 @@ function createRandomResults(options, transitionTime, timeBetween) {
       options.splice(result, 1)
     }
   }
-  show1By1(results, transitionTime, timeBetween, options)
+  show1By1(results, timeUntilShow, timeUntilResult, options)
 }
 
-function show1By1(results, transitionTime, timeBetween, options) {
+function show1By1(results, timeUntilShow, timeUntilResult, options) {
   /*let vertOrHorValue = document.getElementById('vert-or-hor').value;
    switch (vertOrHorValue) {
     case "vertical":
@@ -191,13 +191,13 @@ function show1By1(results, transitionTime, timeBetween, options) {
     let delay = 0;
     let i = 0;
     for (let element of elements) {
-      element.style.transitionDuration  = `${transitionTime}s`
+      element.style.transitionDuration  = `${timeUntilShow}s`
       if (i >= 1) {
-        delay = delay + parseInt(timeBetween);
+        delay = delay + parseInt(timeUntilResult);
       }
       /*element.style.transitionDelay  = `${delay}s`;*/
       element.classList.toggle("show");
-      resultRandomAnimFunc(i, element, delay, timeBetween, false, options, element.innerHTML, 0, 0);
+      resultRandomAnimFunc(i, element, delay, timeUntilResult, false, options, element.innerHTML, 0, 0);
       i++;
     }
   }, 1);
