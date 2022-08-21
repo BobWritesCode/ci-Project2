@@ -72,6 +72,12 @@ input, textarea {
   padding: 0 5px;
 }
 
+input[type="text"] {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
 input[type="color"] {
   padding: 0;
   border: none;
@@ -291,4 +297,9 @@ footer div {
 .break {
   flex-basis: 100%;
   height: 0;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
