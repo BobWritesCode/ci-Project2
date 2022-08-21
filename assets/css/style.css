@@ -116,7 +116,7 @@ input[type="color"] {
 }
  
 #result-container {
-  display: grid;
+  display: none;
   grid-template-columns: 100%;
   grid-template-rows: 100px auto 100px; 
   column-gap: 10px;
@@ -211,7 +211,7 @@ button {
   font-size: 30px;
   background-color: #FFC400; 
   color: #000000; 
-  margin-top: 20px;
+  margin-bottom: 20px;
   border: 2px solid #FAFAFA;
 }
 

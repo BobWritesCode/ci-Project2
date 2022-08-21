@@ -76,6 +76,7 @@ function loadGenerator() {
   globalReset = false;
   z = 0;
   btnLoad.style.display = "none";
+  resultContainerHTML.style.display = "grid";
   resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
   document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
   document.getElementById('gen-criteria-span').style.color = document.getElementById('body-text-color').value;
@@ -130,6 +131,7 @@ function exitGenerator() {
     document.msExitFullscreen();
     }
   }
+  resultContainerHTML.style.display = "none";
   resultContainerHTML.style.position = "initial";
   btnClose.style.display = "none";
   btnStart.style.display = "none";
