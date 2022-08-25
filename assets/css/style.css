@@ -273,7 +273,20 @@ button {
   transform-origin: center;
   transition-property: background-color, color, padding, margin;
   transition-timing-function: ease-in-out;
-}  
+}
+
+.error-message {
+  color: red;
+  display: none;
+}
+
+.error {
+  background-color: rgba(255, 0, 0, 0.486);
+}
+
+.error {
+  border: solid red 1px;
+}
 
 /* Footer */
 footer {

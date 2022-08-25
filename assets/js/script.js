@@ -79,18 +79,65 @@ function templateSelected(i){
 */
 function formValidation(){
   validation = true;
-  if (!(document.getElementById("options").value)) {
+  let options = document.getElementById("options");
+  let numberOfResults = document.getElementById("number-of-results");
+  let timeUntilResult = document.getElementById("time-until-result");
+  let timeUntilShow = document.getElementById("time-until-show");
+  let optionsErrorMsg1 = document.getElementById("options-message-1");
+  let numberOfResultsMsg1 = document.getElementById("number-of-results-message-1");
+  let timeUntilResultMsg1 = document.getElementById("time-until-result-message-1");
+  let timeUntilShowErrorMsg1 = document.getElementById("time-until-show-message-1");
+
+  // Checking to make sure non of the vital imputs have been left blank
+  if (!(options.value)) {
+    if (!(options.classList.contains("error"))) {
+      options.classList.add("error");
+    }
+    optionsErrorMsg1.style.display = "block";
     validation = false;
+  } else {
+    if (options.classList.contains("error")) {
+      options.classList.remove("error");
+    }
+    optionsErrorMsg1.style.display = "none";
   }
-  if (!(document.getElementById("number-of-results").value)) {
+  if (!(numberOfResults.value)) {
+    if (!(numberOfResults.classList.contains("error"))) {
+      numberOfResults.classList.add("error");
+    }
+    numberOfResultsMsg1.style.display = "block";
     validation = false;
+  } else {
+    if (numberOfResults.classList.contains("error")) {
+      numberOfResults.classList.remove("error");
+    }
+    numberOfResultsMsg1.style.display = "none";
   }
-  if (!(document.getElementById("time-until-result").value)) {
+  if (!(timeUntilResult.value)) {
+    if (!(timeUntilResult.classList.contains("error"))) {
+      timeUntilResult.classList.add("error");
+    }
+    timeUntilResultMsg1.style.display = "block";
     validation = false;
+  } else {
+    if (timeUntilResult.classList.contains("error")) {
+      timeUntilResult.classList.remove("error");
+    }
+    timeUntilResultMsg1.style.display = "none";
   }
-  if (!(document.getElementById("time-until-show").value)) {
+  if (!(timeUntilShow.value)) {
+    if (!(timeUntilShow.classList.contains("error"))) {
+      timeUntilShow.classList.add("error");
+    }
+    timeUntilShowErrorMsg1.style.display = "block";
     validation = false;
+  } else {
+    if (timeUntilShow.classList.contains("error")) {
+      timeUntilShow.classList.remove("error");
+    }
+    timeUntilShowErrorMsg1.style.display = "none";
   }
+  
   return validation;
 }
 

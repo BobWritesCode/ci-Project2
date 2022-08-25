@@ -13,6 +13,7 @@
   </header>
   <div class="options-container">
     <div class="options-box">
+      <span class="error-message" id="options-message-1">Do not leave blank<br></span>
       <p>
         <label for="options">Enter potential results for Random Result Generator:</label>
       </p>
@@ -20,18 +21,22 @@
       </textarea>
       <hr>
       <p>
+        <span class="error-message" id="number-of-results-message-1">Do not leave blank<br></span>
         <label for="number-of-results">How many final results:</label>
         <br><input id="number-of-results" name="number-of-results" type="number" value="10" min="1" max="20"> <em>(max 20)</em>
       </p>
       <hr>
       <p>
+        <span class="error-message" id="time-until-result-message-1">Do not leave blank<br></span>
         <label for="time-until-result">How long each result randomises before showing final result:</label>
         <br><input id="time-until-result" name="time-until-result" type="number" value="10" min="1" max="600"> second(s). <em>(max 600)</em>
       </p>
       <hr>
       <p>
+        <span class="error-message" id="time-until-show-message-1">Do not leave blank<br></span>
         <label for="time-until-show">How quickly results fade in and change color:</label>
-        <br><input id="time-until-show" name="time-until-show" type="number" value="2" min="1" max="600"> second(s). <em>(max 20)</em>
+        <br><input id="time-until-show" name="time-until-show" type="number" value="2" min="1" max="20"> second(s). <em>(max 20)</em>
+        
       </p>
       <hr>
       <label for="multiple-wins">Can an option win multiple times:</label>
