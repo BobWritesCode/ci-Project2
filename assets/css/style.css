@@ -38,7 +38,6 @@ header {
   letter-spacing: 2px;
   background-color: #2a308a;
   margin-bottom: 20px;
-
 }
 
 h1 {
@@ -51,6 +50,10 @@ h1 {
 
 h2 {
   text-align: center;
+}
+
+label {
+  font-weight: 700;
 }
 
 .options-container {
@@ -66,6 +69,10 @@ h2 {
   margin: 0 2.5% 20px 0;
   padding: 10px;
   border-radius: 10px;
+}
+
+#fullscreen-options-box {
+  text-align: center;
 }
 
 input, textarea {
