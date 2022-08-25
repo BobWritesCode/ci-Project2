@@ -38,11 +38,12 @@ header {
   letter-spacing: 2px;
   background-color: #2a308a;
   margin-bottom: 20px;
+
 }
 
 h1 {
   font-family: 'Archivo Black', sans-serif;
-  font-size: 3vw;
+  font-size: 70px;
   color: #FAFAFA;
   text-align: center;
   -webkit-text-stroke-color: #FAFAFA;
@@ -302,4 +303,10 @@ footer div {
 hr {
   margin-top: 10px;
   margin-bottom: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 40px;
+  }
 }
