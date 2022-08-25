@@ -1,22 +1,22 @@
-const resultContainerHTML = document.getElementById("result-container");
-const resultsListHTML = document.getElementById("results-list");
-const btnClose = document.getElementById('btn-close');
-const btnLoad = document.getElementById('btn-load');
-const btnStart = document.getElementById('btn-start');
-const templateHTML = document.getElementsByClassName('template');
-const template1ContainerHTML = document.getElementById('template1-container');
-const template2ContainerHTML = document.getElementById('template2-container');
-const template3ContainerHTML = document.getElementById('template3-container');
-const results = [];
-const resultTop = document.getElementById('result-top');
-const criteriaGenerator = document.getElementById('criteria-generator');
-const resultBottom = document.getElementById('result-bottom');
+var resultContainerHTML = document.getElementById("result-container");
+var resultsListHTML = document.getElementById("results-list");
+var btnClose = document.getElementById('btn-close');
+var btnLoad = document.getElementById('btn-load');
+var btnStart = document.getElementById('btn-start');
+var templateHTML = document.getElementsByClassName('template');
+var template1ContainerHTML = document.getElementById('template1-container');
+var template2ContainerHTML = document.getElementById('template2-container');
+var template3ContainerHTML = document.getElementById('template3-container');
+var results = [];
+var resultTop = document.getElementById('result-top');
+var criteriaGenerator = document.getElementById('criteria-generator');
+var resultBottom = document.getElementById('result-bottom');
 var countdownTimer;
-const resultRandomAnim = [];
-let globalReset = true;
-let finalColor;
-let randomColor;
-let z = 0;
+var resultRandomAnim = [];
+var globalReset = true;
+var finalColor;
+var randomColor;
+var z = 0;
 
 window.addEventListener('DOMContentLoaded', function() {
   btnLoad.addEventListener("click", function () {
@@ -205,7 +205,7 @@ function loadGenerator() {
     resultContainerHTML.style.right = "0px";
     resultContainerHTML.style.bottom = "0px";
     resultContainerHTML.style.left = "0px";
-    let fullScreen = document.getElementById("full-screen"); 
+    var fullScreen = document.getElementById("full-screen"); 
     if (fullScreen.checked) {
       // Credit for fullscreen code: https://www.w3schools.com/howto/howto_js_fullscreen.asp
       if (resultContainerHTML.requestFullscreen) {
@@ -221,14 +221,14 @@ function loadGenerator() {
     resultBottom.style.display = "block";
     btnStart.style.display = "block";
     btnClose.style.display = "block";
-    const userGenTitle = document.getElementById('gen-title-user').value;
-    const spanGenTitle = document.getElementById('gen-title-span');
+    var userGenTitle = document.getElementById('gen-title-user').value;
+    var spanGenTitle = document.getElementById('gen-title-span');
     spanGenTitle.innerText = userGenTitle;
-    const userGenCriteria = document.getElementById('criteria-user').value;
-    const spanGenCriteria = document.getElementById('gen-criteria-span');
+    var userGenCriteria = document.getElementById('criteria-user').value;
+    var spanGenCriteria = document.getElementById('gen-criteria-span');
     spanGenCriteria.innerText = userGenCriteria;
-    const userGenTail = document.getElementById('gen-tail-user').value;
-    const spanGenTail = document.getElementById('gen-tail-span');
+    var userGenTail = document.getElementById('gen-tail-user').value;
+    var spanGenTail = document.getElementById('gen-tail-span');
     spanGenTail.innerText = userGenTail;
   }
   scrollToTop();
@@ -275,9 +275,9 @@ function startGenerator() {
  * Take user input options and sor them into a table.
 */
 function sortOptions () {
-  let timeUntilShow = document.getElementById("time-until-show").value;
-  let timeUntilResult = document.getElementById("time-until-result").value;
-  let options = document.getElementById("options").value;
+  var timeUntilShow = document.getElementById("time-until-show").value;
+  var timeUntilResult = document.getElementById("time-until-result").value;
+  var options = document.getElementById("options").value;
   options = options.split(',');
   createRandomResults(options, timeUntilShow, timeUntilResult);
 }
@@ -286,10 +286,10 @@ function sortOptions () {
  * Take random results in table and put them into a results table.
 */
 function createRandomResults(options, timeUntilShow, timeUntilResult) {
-  let loopAmount = document.getElementById("number-of-results").value;
-  let multipleWinsHTML = document.getElementById("multiple-wins");
-  for (let i = 0; i < loopAmount; i++){
-    let result = Math.floor(Math.random() * options.length); 
+  var loopAmount = document.getElementById("number-of-results").value;
+  var multipleWinsHTML = document.getElementById("multiple-wins");
+  for (var i = 0; i < loopAmount; i++){
+    var result = Math.floor(Math.random() * options.length); 
     results.push(options[result].trim());
     if (!multipleWinsHTML.checked) {
       options.splice(result, 1);
@@ -302,17 +302,17 @@ function createRandomResults(options, timeUntilShow, timeUntilResult) {
  * Creates DIVs from results table and adds CSS styling to reveal results 1 by 1.
 */
 function show1By1(results, timeUntilShow, timeUntilResult, options) {
-  for (let result of results){
-    let newDiv = document.createElement('div');
+  for (var result of results){
+    var newDiv = document.createElement('div');
     newDiv.className = "box";
     newDiv.appendChild(document.createTextNode(result));
     resultsListHTML.appendChild(newDiv);
   }
   setTimeout(function() {
-    let elements = document.querySelectorAll("span#results-list > div");
-    let delay = 0;
-    let i = 0;
-    for (let element of elements) {
+    var elements = document.querySelectorAll("span#results-list > div");
+    var delay = 0;
+    var i = 0;
+    for (var element of elements) {
       element.style.transitionDuration  = `${timeUntilShow}s`;
       if (i >= 1) {
         delay = delay + parseInt(timeUntilResult);
@@ -365,7 +365,7 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, options, result, y, x
  * Creates a countdown before results are shown.
 */
 function countdown (countdownReset) {
-  const countdownHTML = document.getElementById('countdown-generator');
+  var countdownHTML = document.getElementById('countdown-generator');
   // Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and then modified by me
   var timeleft = 2;
   if (countdownReset) {
