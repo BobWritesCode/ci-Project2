@@ -11,124 +11,126 @@
   <header>
     <h1>Random<br>Result<br>Generator</h1>
   </header>
-  <div class="options-container">
-    <div class="options-box">
-      <span class="error-message" id="options-message-1">Do not leave blank<br></span>
-      <p>
-        <label for="options">Enter potential results for Random Result Generator:</label>
-        <br><em>Make sure to seperate each option with a comma. For example: Apple, Banana, Carrot, Durian, etc...'</em>
-      </p>
-      <textarea id="options" name="options" rows="10" cols="50">Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu
-      </textarea>
-      <hr>
-      <p>
-        <span class="error-message" id="number-of-results-message-1">Do not leave blank<br></span>
-        <span class="error-message" id="number-of-results-message-2">Make sure input is between or equal to min and max allowance<br></span>
-        <label for="number-of-results">How many final results:</label>
-        <br><input id="number-of-results" name="number-of-results" type="number" value="10"> <em>(max 20)</em>
-      </p>
-      <hr>
-      <p>
-        <span class="error-message" id="time-until-result-message-1">Do not leave blank<br></span>
-        <span class="error-message" id="time-until-result-message-2">Make sure input is between or equal to min and max allowance<br></span>
-        <label for="time-until-result">How long each result randomises before showing final result:</label>
-        <br><input id="time-until-result" name="time-until-result" type="number" value="10"> second(s). <em>(max 600)</em>
-      </p>
-      <hr>
-      <p>
-        <span class="error-message" id="time-until-show-message-1">Do not leave blank<br></span>
-        <span class="error-message" id="time-until-show-message-2">Make sure input is between or equal to min and max allowance<br></span>
-        <label for="time-until-show">How quickly results fade in and change color:</label>
-        <br><input id="time-until-show" name="time-until-show" type="number" value="2" min="1" max="20"> second(s). <em>(max 20)</em>
-        
-      </p>
-      <hr>
-      <label for="multiple-wins">Can an option win multiple times:</label>
-      <br><input type="checkbox" id="multiple-wins" name="multiple-wins" value="yes">
-    </div>
-    <div class="options-box">
-      <p>
-        <label for="gen-title-user">Title of generator:</label>
-        <br><input id="gen-title-user" name="gen-title-user" type="text" value="STREAMER GIVEAWAY">
-      </p> 
-      <hr>
-      <p>
-        <label for="criteria-user">Enter body text for Random Result Generator:</label>
-      </p>
-      <textarea id="criteria-user" name="criteria-user" rows="10" cols="50">Eligbility Criteria
-        - Like the channel
-        - Subscribe to the channel
-        - Type !giveaway in chat
-      </textarea>
-      <hr>
-      <p>
-        <label for="gen-tail-user">Tail of generator:</label>
-        <br><input id="gen-tail-user" name="gen-tail-user" type="text" value="www.StreamerWebsite.com">
-      </p>
-      <hr>
-        <label for="full-screen">Load generator in full screen mode:</label>
-        <br><input type="checkbox" id="full-screen" name="full-screen" value="yes">
-    </div>
-    <div class="options-box">
-      <div>
-        <h2>Select preset template to use</h2>
+  <div id="page-container">
+    <div class="options-container">
+      <div class="options-box">
+        <span class="error-message" id="options-message-1">Do not leave blank<br></span>
+        <p>
+          <label for="options">Enter potential results for Random Result Generator:</label>
+          <br><em>Make sure to seperate each option with a comma. For example: Apple, Banana, Carrot, Durian, etc...'</em>
+        </p>
+        <textarea id="options" name="options" rows="10" cols="50">Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu
+        </textarea>
+        <hr>
+        <p>
+          <span class="error-message" id="number-of-results-message-1">Do not leave blank<br></span>
+          <span class="error-message" id="number-of-results-message-2">Make sure input is between or equal to min and max allowance<br></span>
+          <label for="number-of-results">How many final results:</label>
+          <br><input id="number-of-results" name="number-of-results" type="number" value="10"> <em>(max 20)</em>
+        </p>
+        <hr>
+        <p>
+          <span class="error-message" id="time-until-result-message-1">Do not leave blank<br></span>
+          <span class="error-message" id="time-until-result-message-2">Make sure input is between or equal to min and max allowance<br></span>
+          <label for="time-until-result">How long each result randomises before showing final result:</label>
+          <br><input id="time-until-result" name="time-until-result" type="number" value="10"> second(s). <em>(max 600)</em>
+        </p>
+        <hr>
+        <p>
+          <span class="error-message" id="time-until-show-message-1">Do not leave blank<br></span>
+          <span class="error-message" id="time-until-show-message-2">Make sure input is between or equal to min and max allowance<br></span>
+          <label for="time-until-show">How quickly results fade in and change color:</label>
+          <br><input id="time-until-show" name="time-until-show" type="number" value="2" min="1" max="20"> second(s). <em>(max 20)</em>
+          
+        </p>
+        <hr>
+        <label for="multiple-wins">Can an option win multiple times:</label>
+        <br><input type="checkbox" id="multiple-wins" name="multiple-wins" value="yes">
       </div>
-      <div id="templates-container">
-        <div id="template1-container" class="template-container">
-          <div id="template1" class="template" onclick="templateSelected(1)">
-            Example text
+      <div class="options-box">
+        <p>
+          <label for="gen-title-user">Title of generator:</label>
+          <br><input id="gen-title-user" name="gen-title-user" type="text" value="STREAMER GIVEAWAY">
+        </p> 
+        <hr>
+        <p>
+          <label for="criteria-user">Enter body text for Random Result Generator:</label>
+        </p>
+        <textarea id="criteria-user" name="criteria-user" rows="10" cols="50">Eligbility Criteria
+          - Like the channel
+          - Subscribe to the channel
+          - Type !giveaway in chat
+        </textarea>
+        <hr>
+        <p>
+          <label for="gen-tail-user">Tail of generator:</label>
+          <br><input id="gen-tail-user" name="gen-tail-user" type="text" value="www.StreamerWebsite.com">
+        </p>
+        <hr>
+          <label for="full-screen">Load generator in full screen mode:</label>
+          <br><input type="checkbox" id="full-screen" name="full-screen" value="yes">
+      </div>
+      <div class="options-box">
+        <div>
+          <h2>Select preset template to use</h2>
+        </div>
+        <div id="templates-container">
+          <div id="template1-container" class="template-container">
+            <div id="template1" class="template" onclick="templateSelected(1)">
+              Example text
+            </div>
+          </div>
+          <div id="template2-container" class="template-container">
+            <div id="template2" class="template" onclick="templateSelected(2)">
+              Example text
+            </div>
+          </div>
+          <div id="template3-container" class="template-container">
+            <div id="template3" class="template" onclick="templateSelected(3)">
+              Example text
+            </div>
           </div>
         </div>
-        <div id="template2-container" class="template-container">
-          <div id="template2" class="template" onclick="templateSelected(2)">
-            Example text
-          </div>
-        </div>
-        <div id="template3-container" class="template-container">
-          <div id="template3" class="template" onclick="templateSelected(3)">
-            Example text
-          </div>
-        </div>
       </div>
-    </div>
-    <div class="break">
-    </div>
-    <div class="options-box">
-      <div>
-        <p>Choose your generator colors:</p>
+      <div class="break">
       </div>
-      <p>
-        Background colour:
-        <input type="color" id="background-color" name="gen-title-color" value="#fff">
-      </p>
-      <p>
-        Title colour:
-        <input type="color" id="title-color" name="gen-title-color" value="#ffc400">
-      </p>
-      <p>
-        Body text colour:
-        <input type="color" id="body-text-color" name="gen-title-color" value="#ffc400">
-      </p>
-      <p>
-        Tail text colour:
-        <input type="color" id="tail-color" name="gen-title-color" value="#ffc400">
-      </p>
-      <p>
-        Countdown colour:
-        <input type="color" id="countdown-color" name="gen-title-color" value="#ffc400">
-      </p>
-      <p>
-        Result colour (while randomising):
-        <input type="color" id="result-random-color" name="gen-title-color" value="#BF1212">
-      </p>
-      <p>
-        Result colour (after randomising):
-        <input type="color" id="result-final-color" name="gen-title-color" value="#25DB00">
-      </p>
+      <div class="options-box">
+        <div>
+          <p>Choose your generator colors:</p>
+        </div>
+        <p>
+          Background colour:
+          <input type="color" id="background-color" name="gen-title-color" value="#fff">
+        </p>
+        <p>
+          Title colour:
+          <input type="color" id="title-color" name="gen-title-color" value="#ffc400">
+        </p>
+        <p>
+          Body text colour:
+          <input type="color" id="body-text-color" name="gen-title-color" value="#ffc400">
+        </p>
+        <p>
+          Tail text colour:
+          <input type="color" id="tail-color" name="gen-title-color" value="#ffc400">
+        </p>
+        <p>
+          Countdown colour:
+          <input type="color" id="countdown-color" name="gen-title-color" value="#ffc400">
+        </p>
+        <p>
+          Result colour (while randomising):
+          <input type="color" id="result-random-color" name="gen-title-color" value="#BF1212">
+        </p>
+        <p>
+          Result colour (after randomising):
+          <input type="color" id="result-final-color" name="gen-title-color" value="#25DB00">
+        </p>
+      </div>
+      <div class="break">
+      </div>
+      <button id="btn-load">Load the generator</button>
     </div>
-    <div class="break">
-    </div>
-    <button id="btn-load">Load the generator</button>
   </div>
   <div id="result-container">
     <div id="result-top"><span id="gen-title-span"></span>

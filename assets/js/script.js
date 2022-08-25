@@ -1,3 +1,4 @@
+var pageContainer = document.getElementById("page-container");
 var resultContainerHTML = document.getElementById("result-container");
 var resultsListHTML = document.getElementById("results-list");
 var btnClose = document.getElementById('btn-close');
@@ -189,6 +190,7 @@ function loadGenerator() {
   if (formValidation()) {
     globalReset = false;
     z = 0;
+    pageContainer.style.display = "none";
     btnLoad.style.display = "none";
     resultContainerHTML.style.display = "grid";
     resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
@@ -258,6 +260,7 @@ function exitGenerator() {
   resultBottom.style.display = "none";
   criteriaGenerator.style.display = "none";
   btnLoad.style.display = "block";
+  pageContainer.style.display = "block";
 }
 
 /**
