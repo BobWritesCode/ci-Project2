@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', function() {
   btnClose.addEventListener("click", function () {
     exitGenerator();
   });
-})
+});
 
 /**
  * When user chooses one of the preset templates this will set those values ready for when user loads generator.
@@ -78,17 +78,22 @@ function templateSelected(i){
  * Form Validation
 */
 function formValidation(){
-  validation = true;
-  let options = document.getElementById("options");
-  let numberOfResults = document.getElementById("number-of-results");
-  let timeUntilResult = document.getElementById("time-until-result");
-  let timeUntilShow = document.getElementById("time-until-show");
-  let optionsErrorMsg1 = document.getElementById("options-message-1");
-  let numberOfResultsMsg1 = document.getElementById("number-of-results-message-1");
-  let timeUntilResultMsg1 = document.getElementById("time-until-result-message-1");
-  let timeUntilShowErrorMsg1 = document.getElementById("time-until-show-message-1");
+  var validation = true;
 
-  // Checking to make sure non of the vital imputs have been left blank
+  var options = document.getElementById("options");
+  var numberOfResults = document.getElementById("number-of-results");
+  var timeUntilResult = document.getElementById("time-until-result");
+  var timeUntilShow = document.getElementById("time-until-show");
+
+  var optionsErrorMsg1 = document.getElementById("options-message-1");
+  var numberOfResultsMsg1 = document.getElementById("number-of-results-message-1");
+  var numberOfResultsMsg2 = document.getElementById("number-of-results-message-2");
+  var timeUntilResultMsg1 = document.getElementById("time-until-result-message-1");
+  var timeUntilResultMsg2 = document.getElementById("time-until-result-message-2");
+  var timeUntilShowMsg1 = document.getElementById("time-until-show-message-1");
+  var timeUntilShowMsg2 = document.getElementById("time-until-show-message-2");
+
+  // Checking to make sure non of the vital imputs have been left blank, if so display error message.
   if (!(options.value)) {
     if (!(options.classList.contains("error"))) {
       options.classList.add("error");
@@ -101,43 +106,81 @@ function formValidation(){
     }
     optionsErrorMsg1.style.display = "none";
   }
+
+  // Checking to make sure vital imput has been left blank, if so display error message.
   if (!(numberOfResults.value)) {
     if (!(numberOfResults.classList.contains("error"))) {
       numberOfResults.classList.add("error");
     }
     numberOfResultsMsg1.style.display = "block";
+    numberOfResultsMsg2.style.display = "none";
     validation = false;
+  // Checking input value is within the min and max range, if so display error message.
+  } else if ((parseInt(numberOfResults.value) < 1) || (parseInt(numberOfResults.value) > 20)){
+    if (!(numberOfResults.classList.contains("error"))) {
+      numberOfResults.classList.add("error");
+    }
+    numberOfResultsMsg1.style.display = "none";
+    numberOfResultsMsg2.style.display = "block";
+    validation = false;
+  // If no errors and there were errors previously stop displaying errors messages.
   } else {
     if (numberOfResults.classList.contains("error")) {
       numberOfResults.classList.remove("error");
     }
     numberOfResultsMsg1.style.display = "none";
+    numberOfResultsMsg2.style.display = "none";
   }
+
+  // Checking to make sure vital imput has been left blank, if so display error message.
   if (!(timeUntilResult.value)) {
     if (!(timeUntilResult.classList.contains("error"))) {
       timeUntilResult.classList.add("error");
     }
     timeUntilResultMsg1.style.display = "block";
+    timeUntilResultMsg2.style.display = "none";
     validation = false;
+  // Checking input value is within the min and max range, if so display error message.
+  } else if ((parseInt(timeUntilResult.value) < 1) || (parseInt(timeUntilResult.value) > 600)){
+    if (!(timeUntilResult.classList.contains("error"))) {
+      timeUntilResult.classList.add("error");
+    }
+    timeUntilResultMsg1.style.display = "none";
+    timeUntilResultMsg2.style.display = "block";
+    validation = false;
+  // If no errors and there were errors previously stop displaying errors messages.
   } else {
     if (timeUntilResult.classList.contains("error")) {
       timeUntilResult.classList.remove("error");
     }
     timeUntilResultMsg1.style.display = "none";
+    timeUntilResultMsg2.style.display = "none";
   }
+
+  // Checking to make sure vital imput has been left blank, if so display error message.
   if (!(timeUntilShow.value)) {
     if (!(timeUntilShow.classList.contains("error"))) {
       timeUntilShow.classList.add("error");
     }
-    timeUntilShowErrorMsg1.style.display = "block";
+    timeUntilShowMsg1.style.display = "block";
+    timeUntilShowMsg2.style.display = "none";
     validation = false;
+  // Checking input value is within the min and max range, if so display error message.
+} else if ((parseInt(timeUntilShow.value) < 1) || (parseInt(timeUntilShow.value) > 20)){
+  if (!(timeUntilShow.classList.contains("error"))) {
+    timeUntilShow.classList.add("error");
+  }
+  timeUntilShowMsg1.style.display = "none";
+  timeUntilShowMsg2.style.display = "block";
+  validation = false;
   } else {
     if (timeUntilShow.classList.contains("error")) {
       timeUntilShow.classList.remove("error");
     }
-    timeUntilShowErrorMsg1.style.display = "none";
+    timeUntilShowMsg1.style.display = "none";
+    timeUntilShowMsg2.style.display = "none";
   }
-  
+
   return validation;
 }
 
@@ -180,13 +223,13 @@ function loadGenerator() {
     btnClose.style.display = "block";
     const userGenTitle = document.getElementById('gen-title-user').value;
     const spanGenTitle = document.getElementById('gen-title-span');
-    spanGenTitle.innerText = userGenTitle
+    spanGenTitle.innerText = userGenTitle;
     const userGenCriteria = document.getElementById('criteria-user').value;
     const spanGenCriteria = document.getElementById('gen-criteria-span');
-    spanGenCriteria.innerText = userGenCriteria
+    spanGenCriteria.innerText = userGenCriteria;
     const userGenTail = document.getElementById('gen-tail-user').value;
     const spanGenTail = document.getElementById('gen-tail-span');
-    spanGenTail.innerText = userGenTail
+    spanGenTail.innerText = userGenTail;
   }
   scrollToTop();
 }
@@ -236,7 +279,7 @@ function sortOptions () {
   let timeUntilResult = document.getElementById("time-until-result").value;
   let options = document.getElementById("options").value;
   options = options.split(',');
-  createRandomResults(options, timeUntilShow, timeUntilResult)
+  createRandomResults(options, timeUntilShow, timeUntilResult);
 }
 
 /**
@@ -249,10 +292,10 @@ function createRandomResults(options, timeUntilShow, timeUntilResult) {
     let result = Math.floor(Math.random() * options.length); 
     results.push(options[result].trim());
     if (!multipleWinsHTML.checked) {
-      options.splice(result, 1)
+      options.splice(result, 1);
     }
   }
-  show1By1(results, timeUntilShow, timeUntilResult, options)
+  show1By1(results, timeUntilShow, timeUntilResult, options);
 }
 
 /**
@@ -270,7 +313,7 @@ function show1By1(results, timeUntilShow, timeUntilResult, options) {
     let delay = 0;
     let i = 0;
     for (let element of elements) {
-      element.style.transitionDuration  = `${timeUntilShow}s`
+      element.style.transitionDuration  = `${timeUntilShow}s`;
       if (i >= 1) {
         delay = delay + parseInt(timeUntilResult);
       }
@@ -285,10 +328,10 @@ function show1By1(results, timeUntilShow, timeUntilResult, options) {
  * Cycles very quickly randomly through all options until showing final result after defined time has passed
 */
 function resultRandomAnimFunc(i, element, delay, y2, bool, options, result, y, x){
-  var x = x;
-  var result = result;
-  var y = y;
-  var y2 = y2;
+  x = x;
+  result = result;
+  y = y;
+  y2 = y2;
   if (!(bool)) {
     delay = ((delay * 1000) + (z * 2000));
     z++;
@@ -314,7 +357,7 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, options, result, y, x
           }
         }, 50);
       }
-    },delay)
+    },delay);
   }
 }
 
