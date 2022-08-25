@@ -21,17 +21,17 @@
       <hr>
       <p>
         <label for="number-of-results">How many final results:</label>
-        <br><input id="number-of-results" name="number-of-results" type="text" value="10">
+        <br><input id="number-of-results" name="number-of-results" type="number" value="10" min="1" max="20"> <em>(max 20)</em>
       </p>
       <hr>
       <p>
         <label for="time-until-result">How long each result randomises before showing final result:</label>
-        <br><input id="time-until-result" name="time-until-result" type="text" value="2"> second(s).
+        <br><input id="time-until-result" name="time-until-result" type="number" value="10" min="1" max="600"> second(s). <em>(max 600)</em>
       </p>
       <hr>
       <p>
         <label for="time-until-show">How quickly results fade in and change color:</label>
-        <br><input id="time-until-show" name="time-until-show" type="text" value="2"> second(s).
+        <br><input id="time-until-show" name="time-until-show" type="number" value="2" min="1" max="600"> second(s). <em>(max 20)</em>
       </p>
       <hr>
       <label for="multiple-wins">Can an option win multiple times:</label>

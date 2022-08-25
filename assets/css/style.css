@@ -73,7 +73,7 @@ input, textarea {
   padding: 0 5px;
 }
 
-input[type="text"] {
+input[type="text"], input[type="number"]{
   border-top: 0;
   border-left: 0;
   border-right: 0;
