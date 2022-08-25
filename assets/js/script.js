@@ -30,6 +30,9 @@ window.addEventListener('DOMContentLoaded', function() {
   });
 })
 
+/**
+ * When user chooses one of the preset templates this will set those values ready for when user loads generator.
+*/
 function templateSelected(i){
   switch (i) {
     case 1:
@@ -71,6 +74,9 @@ function templateSelected(i){
   }
 }
 
+/**
+ * When user clicks Load Generator this sets up the webpage and set some variables.
+*/
 function loadGenerator() {
   scrollToTop();
   globalReset = false;
@@ -116,6 +122,9 @@ function loadGenerator() {
   spanGenTail.innerText = userGenTail
 }
 
+/**
+ * Close generator and reset values.
+*/
 function exitGenerator() {
   globalReset = true;
   results.length = 0;
@@ -141,12 +150,18 @@ function exitGenerator() {
   btnLoad.style.display = "block";
 }
 
+/**
+ * When user clicks start on generator this fuctions starts everything.
+*/
 function startGenerator() {
   criteriaGenerator.style.display = "none";
   btnStart.style.display = "none";
   countdown(false);
 }
 
+/**
+ * Take user input options and sor them into a table.
+*/
 function sortOptions () {
   let timeUntilShow = document.getElementById("time-until-show").value;
   let timeUntilResult = document.getElementById("time-until-result").value;
@@ -155,6 +170,9 @@ function sortOptions () {
   createRandomResults(options, timeUntilShow, timeUntilResult)
 }
 
+/**
+ * Take random results in table and put them into a results table.
+*/
 function createRandomResults(options, timeUntilShow, timeUntilResult) {
   let loopAmount = document.getElementById("number-of-results").value;
   let multipleWinsHTML = document.getElementById("multiple-wins");
@@ -168,6 +186,9 @@ function createRandomResults(options, timeUntilShow, timeUntilResult) {
   show1By1(results, timeUntilShow, timeUntilResult, options)
 }
 
+/**
+ * Creates DIVs from results table and adds CSS styling to reveal results 1 by 1.
+*/
 function show1By1(results, timeUntilShow, timeUntilResult, options) {
   for (let result of results){
     let newDiv = document.createElement('div');
@@ -175,7 +196,6 @@ function show1By1(results, timeUntilShow, timeUntilResult, options) {
     newDiv.appendChild(document.createTextNode(result));
     resultsListHTML.appendChild(newDiv);
   }
-
   setTimeout(function() {
     let elements = document.querySelectorAll("span#results-list > div");
     let delay = 0;
@@ -185,7 +205,6 @@ function show1By1(results, timeUntilShow, timeUntilResult, options) {
       if (i >= 1) {
         delay = delay + parseInt(timeUntilResult);
       }
-      /*element.style.transitionDelay  = `${delay}s`;*/
       element.classList.toggle("show");
       resultRandomAnimFunc(i, element, delay, timeUntilResult, false, options, element.innerHTML, 0, 0);
       i++;
@@ -256,6 +275,9 @@ function countdown (countdownReset) {
 
 }
 
+/**
+ * Scrolls webpage to top
+*/
 function scrollToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
