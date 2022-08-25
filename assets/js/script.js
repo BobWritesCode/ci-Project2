@@ -75,51 +75,73 @@ function templateSelected(i){
 }
 
 /**
+ * Form Validation
+*/
+function formValidation(){
+  validation = true;
+  if (!(document.getElementById("options").value)) {
+    validation = false;
+  }
+  if (!(document.getElementById("number-of-results").value)) {
+    validation = false;
+  }
+  if (!(document.getElementById("time-until-result").value)) {
+    validation = false;
+  }
+  if (!(document.getElementById("time-until-show").value)) {
+    validation = false;
+  }
+  return validation;
+}
+
+/**
  * When user clicks Load Generator this sets up the webpage and set some variables.
 */
 function loadGenerator() {
-  scrollToTop();
-  globalReset = false;
-  z = 0;
-  btnLoad.style.display = "none";
-  resultContainerHTML.style.display = "grid";
-  resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
-  document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
-  document.getElementById('gen-criteria-span').style.color = document.getElementById('body-text-color').value;
-  document.getElementById('gen-tail-span').style.color = document.getElementById('tail-color').value;
-  document.getElementById('countdown-generator').style.color = document.getElementById('countdown-color').value;
-  randomColor = document.getElementById('result-random-color').value;
-  finalColor = document.getElementById('result-final-color').value;
-  resultContainerHTML.style.position = "absolute";
-  resultContainerHTML.style.top = "0px";
-  resultContainerHTML.style.right = "0px";
-  resultContainerHTML.style.bottom = "0px";
-  resultContainerHTML.style.left = "0px";
-  let fullScreen = document.getElementById("full-screen"); 
-  if (fullScreen.checked) {
-    // Credit for fullscreen code: https://www.w3schools.com/howto/howto_js_fullscreen.asp
-    if (resultContainerHTML.requestFullscreen) {
-      resultContainerHTML.requestFullscreen();
-    } else if (resultContainerHTML.webkitRequestFullscreen) { /* Safari */
-    resultContainerHTML.webkitRequestFullscreen();
-    } else if (resultContainerHTML.msRequestFullscreen) { /* IE11 */
-    resultContainerHTML.msRequestFullscreen();
+  if (formValidation()) {
+    globalReset = false;
+    z = 0;
+    btnLoad.style.display = "none";
+    resultContainerHTML.style.display = "grid";
+    resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
+    document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
+    document.getElementById('gen-criteria-span').style.color = document.getElementById('body-text-color').value;
+    document.getElementById('gen-tail-span').style.color = document.getElementById('tail-color').value;
+    document.getElementById('countdown-generator').style.color = document.getElementById('countdown-color').value;
+    randomColor = document.getElementById('result-random-color').value;
+    finalColor = document.getElementById('result-final-color').value;
+    resultContainerHTML.style.position = "absolute";
+    resultContainerHTML.style.top = "0px";
+    resultContainerHTML.style.right = "0px";
+    resultContainerHTML.style.bottom = "0px";
+    resultContainerHTML.style.left = "0px";
+    let fullScreen = document.getElementById("full-screen"); 
+    if (fullScreen.checked) {
+      // Credit for fullscreen code: https://www.w3schools.com/howto/howto_js_fullscreen.asp
+      if (resultContainerHTML.requestFullscreen) {
+        resultContainerHTML.requestFullscreen();
+      } else if (resultContainerHTML.webkitRequestFullscreen) { /* Safari */
+      resultContainerHTML.webkitRequestFullscreen();
+      } else if (resultContainerHTML.msRequestFullscreen) { /* IE11 */
+      resultContainerHTML.msRequestFullscreen();
+      }
     }
+    resultTop.style.display = "block";
+    criteriaGenerator.style.display = "flex";
+    resultBottom.style.display = "block";
+    btnStart.style.display = "block";
+    btnClose.style.display = "block";
+    const userGenTitle = document.getElementById('gen-title-user').value;
+    const spanGenTitle = document.getElementById('gen-title-span');
+    spanGenTitle.innerText = userGenTitle
+    const userGenCriteria = document.getElementById('criteria-user').value;
+    const spanGenCriteria = document.getElementById('gen-criteria-span');
+    spanGenCriteria.innerText = userGenCriteria
+    const userGenTail = document.getElementById('gen-tail-user').value;
+    const spanGenTail = document.getElementById('gen-tail-span');
+    spanGenTail.innerText = userGenTail
   }
-  resultTop.style.display = "block";
-  criteriaGenerator.style.display = "flex";
-  resultBottom.style.display = "block";
-  btnStart.style.display = "block";
-  btnClose.style.display = "block";
-  const userGenTitle = document.getElementById('gen-title-user').value;
-  const spanGenTitle = document.getElementById('gen-title-span');
-  spanGenTitle.innerText = userGenTitle
-  const userGenCriteria = document.getElementById('criteria-user').value;
-  const spanGenCriteria = document.getElementById('gen-criteria-span');
-  spanGenCriteria.innerText = userGenCriteria
-  const userGenTail = document.getElementById('gen-tail-user').value;
-  const spanGenTail = document.getElementById('gen-tail-span');
-  spanGenTail.innerText = userGenTail
+  scrollToTop();
 }
 
 /**
