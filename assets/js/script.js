@@ -4,9 +4,11 @@ var resultsListHTML = document.getElementById("results-list");
 var btnClose = document.getElementById('btn-close');
 var btnLoad = document.getElementById('btn-load');
 var btnStart = document.getElementById('btn-start');
+var resultMidPre = document.getElementById('result-mid-pre');
 var template1ContainerHTML = document.getElementById('template1-container');
 var template2ContainerHTML = document.getElementById('template2-container');
 var template3ContainerHTML = document.getElementById('template3-container');
+var countdownHTML = document.getElementById('countdown-generator');
 var results = [];
 var resultTop = document.getElementById('result-top');
 var criteriaGenerator = document.getElementById('criteria-generator');
@@ -15,7 +17,7 @@ var countdownTimer;
 var globalReset = true;
 var finalColor;
 var randomColor;
-var z = 0;
+var zGlobal = 0;
 
 window.addEventListener('DOMContentLoaded', function() {
   btnLoad.addEventListener("click", function () {
@@ -193,7 +195,10 @@ function formValidation(){
 function loadGenerator() {
   if (formValidation()) {
     globalReset = false;
-    z = 0;
+    zGlobal = 0;
+    countdownHTML.style.display = "none";
+    resultsListHTML.style.display = "none";
+    resultMidPre.style.display = "block";
     pageContainer.style.display = "none";
     btnLoad.style.display = "none";
     resultContainerHTML.style.display = "grid";
@@ -271,8 +276,7 @@ function exitGenerator() {
  * When user clicks start on generator this fuctions starts everything.
 */
 function startGenerator() {
-  criteriaGenerator.style.display = "none";
-  btnStart.style.display = "none";
+  resultMidPre.style.display = "none";
   countdown(false);
 }
 
@@ -308,6 +312,10 @@ function createRandomResults(options) {
  * Creates DIVs from results table and adds CSS styling to reveal results 1 by 1.
 */
 function show1By1(results, timeUntilShow, timeUntilResult, options) {
+  var height = document.querySelector('#result-mid').offsetHeight;
+  console.log(height);
+  var x = 10 - (results.length * 0.3);
+  console.log(x);
   for (var result of results){
     var newDiv = document.createElement('div');
     newDiv.className = "box";
@@ -319,7 +327,10 @@ function show1By1(results, timeUntilShow, timeUntilResult, options) {
     var delay = 0;
     var i = 0;
     for (var element of elements) {
-      element.style.transitionDuration  = `${timeUntilShow}s`;
+      element.style.transitionDuration = `${timeUntilShow}s`;
+      element.style.fontSize = `9vh`;
+      element.style.lineHeight = `90%`;
+      //element.style.fontSize = `${x}vw`;
       if (i >= 1) {
         delay = delay + parseInt(timeUntilResult);
       }
@@ -339,8 +350,8 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, options, result, y, x
   y = y;
   y2 = y2;
   if (!(bool)) {
-    delay = ((delay * 1000) + (z * 2000));
-    z++;
+    delay = ((delay * 1000) + (zGlobal * 2000));
+    zGlobal++;
   }
   if (!(globalReset)) {
     setTimeout(function(){
@@ -371,7 +382,7 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, options, result, y, x
  * Creates a countdown before results are shown.
 */
 function countdown (countdownReset) {
-  var countdownHTML = document.getElementById('countdown-generator');
+  countdownHTML.style.display = "block";
   // Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and then modified by me
   var timeleft = 2;
   if (countdownReset) {
@@ -383,6 +394,8 @@ function countdown (countdownReset) {
       if(timeleft <= 0){
         clearInterval(countdownTimer);
         countdownHTML.innerHTML = "";
+        countdownHTML.style.display = "none";
+        resultsListHTML.style.display = "flex";
         //sortOptions();
         createRandomResults();
       } else {
