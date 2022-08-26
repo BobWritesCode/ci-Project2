@@ -10,6 +10,7 @@ var template2ContainerHTML = document.getElementById('template2-container');
 var template3ContainerHTML = document.getElementById('template3-container');
 var countdownHTML = document.getElementById('countdown-generator');
 var results = [];
+var allOptions = [];
 var resultTop = document.getElementById('result-top');
 var criteriaGenerator = document.getElementById('criteria-generator');
 var resultBottom = document.getElementById('result-bottom');
@@ -82,6 +83,7 @@ function formValidation(){
   var validation = true;
 
   var options = sortOptions();
+  allOptions = options;
   var optionsHTML = document.getElementById("options");
 
   var numberOfResults = document.getElementById("number-of-results");
@@ -292,8 +294,9 @@ function sortOptions () {
 /**
  * Take random results in table and put them into a results table.
 */
-function createRandomResults(options) {
+function createRandomResults() {
   options = sortOptions();
+  
   var timeUntilShow = document.getElementById("time-until-show").value;
   var timeUntilResult = document.getElementById("time-until-result").value;
   var loopAmount = document.getElementById("number-of-results").value;
@@ -305,17 +308,16 @@ function createRandomResults(options) {
       options.splice(result, 1);
     }
   }
-  show1By1(results, timeUntilShow, timeUntilResult, options);
+  show1By1(results, timeUntilShow, timeUntilResult);
 }
 
 /**
  * Creates DIVs from results table and adds CSS styling to reveal results 1 by 1.
 */
-function show1By1(results, timeUntilShow, timeUntilResult, options) {
+function show1By1(results, timeUntilShow, timeUntilResult) {
   var height = document.querySelector('#result-mid').offsetHeight;
   console.log(height);
   var x = 10 - (results.length * 0.3);
-  console.log(x);
   for (var result of results){
     var newDiv = document.createElement('div');
     newDiv.className = "box";
@@ -335,7 +337,7 @@ function show1By1(results, timeUntilShow, timeUntilResult, options) {
         delay = delay + parseInt(timeUntilResult);
       }
       element.classList.toggle("show");
-      resultRandomAnimFunc(i, element, delay, timeUntilResult, false, options, element.innerHTML, 0, 0);
+      resultRandomAnimFunc(i, element, delay, timeUntilResult, false, element.innerHTML, 0, 0, -2);
       i++;
     }
   }, 1);
@@ -344,11 +346,11 @@ function show1By1(results, timeUntilShow, timeUntilResult, options) {
 /**
  * Cycles very quickly randomly through all options until showing final result after defined time has passed
 */
-function resultRandomAnimFunc(i, element, delay, y2, bool, options, result, y, x){
+function resultRandomAnimFunc(i, element, delay, y2, bool, result, y, x, z2){
   x = x;
   result = result;
   y = y;
-  y2 = y2;
+  var z3 = parseInt(z2);
   if (!(bool)) {
     delay = ((delay * 1000) + (zGlobal * 2000));
     zGlobal++;
@@ -360,14 +362,23 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, options, result, y, x
           delay = 1;
         }
         x = x + 1000;
-        resultRandomAnimFunc(i, element, delay, y2, true, options, result, y, x);
+        resultRandomAnimFunc(i, element, delay, y2, true, result, y, x, z3);
       } else {
         setTimeout(function() {
           y++;
           if (y <= (y2 * 18)) {
             element.style.color = randomColor;
-            element.innerHTML = options[Math.floor(Math.random() * options.length)];
-            resultRandomAnimFunc(i, element, delay, y2, true, options, result, y, x);
+            var z1 = Math.floor(Math.random() * allOptions.length);
+            var SafetyCount = 0
+            while (!(SafetyCount >= 10)){
+              if (!(z1 == z3)) { 
+                break; 
+              }
+              z1 = Math.floor(Math.random() * allOptions.length);
+              SafetyCount++;
+            }
+            element.innerHTML = allOptions[z1];
+            resultRandomAnimFunc(i, element, delay, y2, true, result, y, x, z1);
           } else {
             element.innerHTML = result;
             element.style.color = finalColor;
@@ -396,7 +407,6 @@ function countdown (countdownReset) {
         countdownHTML.innerHTML = "";
         countdownHTML.style.display = "none";
         resultsListHTML.style.display = "flex";
-        //sortOptions();
         createRandomResults();
       } else {
         countdownHTML.innerHTML = timeleft + "";
