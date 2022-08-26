@@ -157,6 +157,7 @@ input[type="color"] {
   justify-content: center;
   text-align: center;
   align-self: center;
+  overflow: hidden;
 }
 
 #result-mid {
@@ -166,6 +167,7 @@ input[type="color"] {
   grid-row-end: 3;
   width: 100%;
   align-self: center;
+  overflow: hidden;
 }
 
 #result-bottom {
@@ -177,6 +179,7 @@ input[type="color"] {
   justify-content: center;
   text-align: center;
   align-self: center;
+  overflow: hidden;
 }
 
 #results-list {
@@ -192,6 +195,8 @@ input[type="color"] {
 #gen-title-span {
   color: #ffc400;
   font-size: 5vw;
+  white-space: nowrap;
+
 }
 
 #countdown-generator {
