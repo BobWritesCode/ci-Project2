@@ -295,9 +295,7 @@ function sortOptions () {
  * Take random results in table and put them into a results table.
 */
 function createRandomResults() {
-  options = sortOptions();
-  
-  var timeUntilShow = document.getElementById("time-until-show").value;
+  var options = sortOptions();
   var timeUntilResult = document.getElementById("time-until-result").value;
   var loopAmount = document.getElementById("number-of-results").value;
   var multipleWinsHTML = document.getElementById("multiple-wins");
@@ -308,13 +306,14 @@ function createRandomResults() {
       options.splice(result, 1);
     }
   }
-  show1By1(results, timeUntilShow, timeUntilResult);
+  show1By1(results, timeUntilResult);
 }
 
 /**
  * Creates DIVs from results table and adds CSS styling to reveal results 1 by 1.
 */
-function show1By1(results, timeUntilShow, timeUntilResult) {
+function show1By1(results, timeUntilResult) {
+  var timeUntilShow = document.getElementById("time-until-show").value;
   var height = document.querySelector('#result-mid').offsetHeight;
   console.log(height);
   var x = 10 - (results.length * 0.3);
@@ -327,17 +326,14 @@ function show1By1(results, timeUntilShow, timeUntilResult) {
   setTimeout(function() {
     var elements = document.querySelectorAll("span#results-list > div");
     var delay = 0;
-    var i = 0;
+    var i = 1;
     for (var element of elements) {
       element.style.transitionDuration = `${timeUntilShow}s`;
       element.style.fontSize = `9vh`;
       element.style.lineHeight = `90%`;
-      //element.style.fontSize = `${x}vw`;
-      if (i >= 1) {
-        delay = delay + parseInt(timeUntilResult);
-      }
+      delay = i * timeUntilResult;
       element.classList.toggle("show");
-      resultRandomAnimFunc(i, element, delay, timeUntilResult, false, element.innerHTML, 0, 0, -2);
+      resultRandomAnimFunc(i, element, delay, delay, false, element.innerHTML, 0, 0, -2);
       i++;
     }
   }, 1);
@@ -351,10 +347,6 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, result, y, x, z2){
   result = result;
   y = y;
   var z3 = parseInt(z2);
-  if (!(bool)) {
-    delay = ((delay * 1000) + (zGlobal * 2000));
-    zGlobal++;
-  }
   if (!(globalReset)) {
     setTimeout(function(){
       if (x * 1000 < delay) {
@@ -369,7 +361,7 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, result, y, x, z2){
           if (y <= (y2 * 18)) {
             element.style.color = randomColor;
             var z1 = Math.floor(Math.random() * allOptions.length);
-            var SafetyCount = 0
+            var SafetyCount = 0;
             while (!(SafetyCount >= 10)){
               if (!(z1 == z3)) { 
                 break; 
