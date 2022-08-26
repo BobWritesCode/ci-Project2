@@ -79,7 +79,9 @@ function templateSelected(i){
 function formValidation(){
   var validation = true;
 
-  var options = document.getElementById("options");
+  var options = sortOptions();
+  var optionsHTML = document.getElementById("options");
+
   var numberOfResults = document.getElementById("number-of-results");
   var timeUntilResult = document.getElementById("time-until-result");
   var timeUntilShow = document.getElementById("time-until-show");
@@ -92,16 +94,18 @@ function formValidation(){
   var timeUntilShowMsg1 = document.getElementById("time-until-show-message-1");
   var timeUntilShowMsg2 = document.getElementById("time-until-show-message-2");
 
+  
+
   // Checking to make sure non of the vital imputs have been left blank, if so display error message.
-  if (!(options.value)) {
-    if (!(options.classList.contains("error"))) {
-      options.classList.add("error");
+  if (options.length < 2) {
+    if (!(optionsHTML.classList.contains("error"))) {
+      optionsHTML.classList.add("error");
     }
     optionsErrorMsg1.style.display = "block";
     validation = false;
   } else {
-    if (options.classList.contains("error")) {
-      options.classList.remove("error");
+    if (optionsHTML.classList.contains("error")) {
+      optionsHTML.classList.remove("error");
     }
     optionsErrorMsg1.style.display = "none";
   }
@@ -187,8 +191,7 @@ function formValidation(){
  * When user clicks Load Generator this sets up the webpage and set some variables.
 */
 function loadGenerator() {
-  var options = sortOptions();
-  if ((formValidation()) || (options.length < 2)) {
+  if (formValidation()) {
     globalReset = false;
     z = 0;
     pageContainer.style.display = "none";
