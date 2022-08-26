@@ -187,7 +187,8 @@ function formValidation(){
  * When user clicks Load Generator this sets up the webpage and set some variables.
 */
 function loadGenerator() {
-  if (formValidation()) {
+  var options = sortOptions();
+  if ((formValidation()) || (options.length < 2)) {
     globalReset = false;
     z = 0;
     pageContainer.style.display = "none";
@@ -273,20 +274,21 @@ function startGenerator() {
 }
 
 /**
- * Take user input options and sor them into a table.
+ * Take user input options and sorts them into an array then returns that to calling function.
 */
 function sortOptions () {
-  var timeUntilShow = document.getElementById("time-until-show").value;
-  var timeUntilResult = document.getElementById("time-until-result").value;
-  var options = document.getElementById("options").value;
-  options = options.split(',');
-  createRandomResults(options, timeUntilShow, timeUntilResult);
+  var sortOptions = document.getElementById("options").value;
+  sortOptions = sortOptions.split(',');
+  return sortOptions;
 }
 
 /**
  * Take random results in table and put them into a results table.
 */
-function createRandomResults(options, timeUntilShow, timeUntilResult) {
+function createRandomResults(options) {
+  options = sortOptions();
+  var timeUntilShow = document.getElementById("time-until-show").value;
+  var timeUntilResult = document.getElementById("time-until-result").value;
   var loopAmount = document.getElementById("number-of-results").value;
   var multipleWinsHTML = document.getElementById("multiple-wins");
   for (var i = 0; i < loopAmount; i++){
@@ -378,7 +380,8 @@ function countdown (countdownReset) {
       if(timeleft <= 0){
         clearInterval(countdownTimer);
         countdownHTML.innerHTML = "";
-        sortOptions();
+        //sortOptions();
+        createRandomResults();
       } else {
         countdownHTML.innerHTML = timeleft + "";
       }
