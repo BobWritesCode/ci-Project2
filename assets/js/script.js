@@ -148,7 +148,7 @@ function formValidation(){
     timeUntilResultMsg2.style.display = "none";
     validation = false;
   // Checking input value is within the min and max range, if so display error message.
-  } else if ((parseInt(timeUntilResult.value) < 1) || (parseInt(timeUntilResult.value) > 600)){
+  } else if ((parseInt(timeUntilResult.value) < 0) || (parseInt(timeUntilResult.value) > 600)){
     if (!(timeUntilResult.classList.contains("error"))) {
       timeUntilResult.classList.add("error");
     }
@@ -173,7 +173,7 @@ function formValidation(){
     timeUntilShowMsg2.style.display = "none";
     validation = false;
   // Checking input value is within the min and max range, if so display error message.
-} else if ((parseInt(timeUntilShow.value) < 1) || (parseInt(timeUntilShow.value) > 20)){
+} else if ((parseInt(timeUntilShow.value) < 0) || (parseInt(timeUntilShow.value) > 20)){
   if (!(timeUntilShow.classList.contains("error"))) {
     timeUntilShow.classList.add("error");
   }
@@ -331,14 +331,13 @@ function show1By1(results, timeUntilResult) {
     var x = 19; //Default font size
     var z = x * (y / 100); // Initial font size for 1 row.
     var w = parseInt(y / z); // Amount of rows of text will fit before font size needs to be smaller
+    var v = z; // Final font size
     if (elements.length > w){
       v = z * (w/elements.length); // Final font size
-    } else {
-      v = z; // Final font size
     }
     for (var element of elements) {
       element.style.transitionDuration = `${timeUntilShow}s`;
-      element.style.height = `${100/elements.length}%`
+      element.style.height = `${100/elements.length}%`;
       element.style.fontSize = `${v}vh`;
       element.style.lineHeight = `90%`;
       delay = i * timeUntilResult;
