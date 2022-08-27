@@ -211,7 +211,6 @@ input[type="color"] {
   font-size: 5vw;
 }
 
-
 button {
   background-color: #711A75; /* Green */
   border: none;
@@ -267,7 +266,7 @@ button {
   display: block;
   margin: 0;
   color: rgba(0, 0, 0, 0);
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0);
   transform-origin: center;
   transition-property: background-color, color, margin;
   transition-duration: 3s;
@@ -276,9 +275,8 @@ button {
 
 .show {
   color: rgba(255, 255, 255, 0);
-  background-color: rgba(0, 0, 0, 0);
   margin: auto;
-  transition-property: background-color, color, margin;
+  transition-property: color, margin;
   transition-timing-function: ease-in-out;
 }
 
