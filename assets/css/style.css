@@ -1,17 +1,5 @@
 /* Import Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Kanit&display=swap');
-/*
-font-family: 'Kanit', sans-serif;
-font-family: 'Luckiest Guy', cursive;
-*/
-
-/* Colour Pallette
-#0D050E
-#711A75
-#711A75
-#F47CA4
-#0D050E
-*/
 
 /* Resetting broswer default stylesheets */
 * {
@@ -195,14 +183,11 @@ input[type="color"] {
 }
 
 #gen-title-span {
-  color: #ffc400;
+  line-height: 70%;
   font-size: 5vw;
-  white-space: nowrap;
-
-}
+  }
 
 #countdown-generator {
-  color: #ffc400;
   font-size: 20vw;
   text-align: center;
   margin: auto;
@@ -217,15 +202,15 @@ input[type="color"] {
   color: #ffc400;
   font-size: 3vw;
   margin: 0 auto;
-  padding: 0 0 100px 0;
+  padding: 0 0 20px 0;
+  line-height: 120%;
 }
 
 #gen-tail-span {
-  display: inline-block;
-  color: #ffc400;
+  line-height: 70%;
   font-size: 5vw;
-  align-self: flex-end;
 }
+
 
 button {
   background-color: #711A75; /* Green */
@@ -272,7 +257,7 @@ button {
 #btn-start  {
   display: none;
   font-size: 20px;
-  background-color: #0D050E; 
+  background-color: rgba(255,255,255,0.15); 
   color: #FAFAFA; 
   border: 2px solid #FAFAFA;
   margin: 0 auto;

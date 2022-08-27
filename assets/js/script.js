@@ -1,3 +1,5 @@
+var headerHTML = document.getElementById('header');
+var footerHTML = document.getElementById('footer');
 var pageContainer = document.getElementById("page-container");
 var resultContainerHTML = document.getElementById("result-container");
 var resultsListHTML = document.getElementById("results-list");
@@ -81,15 +83,12 @@ function templateSelected(i){
 */
 function formValidation(){
   var validation = true;
-
   var options = sortOptions();
   allOptions = options;
   var optionsHTML = document.getElementById("options");
-
   var numberOfResults = document.getElementById("number-of-results");
   var timeUntilResult = document.getElementById("time-until-result");
   var timeUntilShow = document.getElementById("time-until-show");
-
   var optionsErrorMsg1 = document.getElementById("options-message-1");
   var numberOfResultsMsg1 = document.getElementById("number-of-results-message-1");
   var numberOfResultsMsg2 = document.getElementById("number-of-results-message-2");
@@ -97,8 +96,6 @@ function formValidation(){
   var timeUntilResultMsg2 = document.getElementById("time-until-result-message-2");
   var timeUntilShowMsg1 = document.getElementById("time-until-show-message-1");
   var timeUntilShowMsg2 = document.getElementById("time-until-show-message-2");
-
-  
 
   // Checking to make sure non of the vital imputs have been left blank, if so display error message.
   if (options.length < 2) {
@@ -113,7 +110,6 @@ function formValidation(){
     }
     optionsErrorMsg1.style.display = "none";
   }
-
   // Checking to make sure vital imput has been left blank, if so display error message.
   if (!(numberOfResults.value)) {
     if (!(numberOfResults.classList.contains("error"))) {
@@ -138,7 +134,6 @@ function formValidation(){
     numberOfResultsMsg1.style.display = "none";
     numberOfResultsMsg2.style.display = "none";
   }
-
   // Checking to make sure vital imput has been left blank, if so display error message.
   if (!(timeUntilResult.value)) {
     if (!(timeUntilResult.classList.contains("error"))) {
@@ -163,7 +158,6 @@ function formValidation(){
     timeUntilResultMsg1.style.display = "none";
     timeUntilResultMsg2.style.display = "none";
   }
-
   // Checking to make sure vital imput has been left blank, if so display error message.
   if (!(timeUntilShow.value)) {
     if (!(timeUntilShow.classList.contains("error"))) {
@@ -187,7 +181,6 @@ function formValidation(){
     timeUntilShowMsg1.style.display = "none";
     timeUntilShowMsg2.style.display = "none";
   }
-
   return validation;
 }
 
@@ -198,6 +191,8 @@ function loadGenerator() {
   if (formValidation()) {
     globalReset = false;
     zGlobal = 0;
+    headerHTML.style.display = "none";
+    footerHTML.style.display = "none";
     countdownHTML.style.display = "none";
     resultsListHTML.style.display = "none";
     resultMidPre.style.display = "block";
@@ -272,6 +267,8 @@ function exitGenerator() {
   criteriaGenerator.style.display = "none";
   btnLoad.style.display = "block";
   pageContainer.style.display = "block";
+  headerHTML.style.display = "block";
+  footerHTML.style.display = "block";
 }
 
 /**
@@ -415,7 +412,6 @@ function countdown (countdownReset) {
       timeleft -= 1;
     }, 2000);
   }
-
 }
 
 /**
