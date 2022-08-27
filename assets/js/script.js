@@ -23,21 +23,21 @@ var randomColor;
 var zGlobal = 0;
 
 window.addEventListener('DOMContentLoaded', function() {
-  btnLoad.addEventListener("click", function () {
+  btnLoad.addEventListener("click", function() {
     loadGenerator();
   });
-  btnStart.addEventListener("click", function () {
+  btnStart.addEventListener("click", function() {
     startGenerator();
   });
-  btnClose.addEventListener("click", function () {
+  btnClose.addEventListener("click", function() {
     exitGenerator();
   });
 });
 
 /**
  * When user chooses one of the preset templates this will set those values ready for when user loads generator.
-*/
-function templateSelected(i){
+ */
+function templateSelected(i) {
   switch (i) {
     case 1:
       template1ContainerHTML.style.border = "3px solid green";
@@ -80,8 +80,8 @@ function templateSelected(i){
 
 /**
  * Form Validation
-*/
-function formValidation(){
+ */
+function formValidation() {
   var validation = true;
   var options = sortOptions();
   allOptions = options;
@@ -104,7 +104,8 @@ function formValidation(){
     }
     optionsErrorMsg1.style.display = "block";
     validation = false;
-  } else {
+  }
+  else {
     if (optionsHTML.classList.contains("error")) {
       optionsHTML.classList.remove("error");
     }
@@ -118,16 +119,18 @@ function formValidation(){
     numberOfResultsMsg1.style.display = "block";
     numberOfResultsMsg2.style.display = "none";
     validation = false;
-  // Checking input value is within the min and max range, if so display error message.
-  } else if ((parseInt(numberOfResults.value) < 1) || (parseInt(numberOfResults.value) > 20)){
+    // Checking input value is within the min and max range, if so display error message.
+  }
+  else if ((parseInt(numberOfResults.value) < 1) || (parseInt(numberOfResults.value) > 20)) {
     if (!(numberOfResults.classList.contains("error"))) {
       numberOfResults.classList.add("error");
     }
     numberOfResultsMsg1.style.display = "none";
     numberOfResultsMsg2.style.display = "block";
     validation = false;
-  // If no errors and there were errors previously stop displaying errors messages.
-  } else {
+    // If no errors and there were errors previously stop displaying errors messages.
+  }
+  else {
     if (numberOfResults.classList.contains("error")) {
       numberOfResults.classList.remove("error");
     }
@@ -142,16 +145,18 @@ function formValidation(){
     timeUntilResultMsg1.style.display = "block";
     timeUntilResultMsg2.style.display = "none";
     validation = false;
-  // Checking input value is within the min and max range, if so display error message.
-  } else if ((parseInt(timeUntilResult.value) < 0) || (parseInt(timeUntilResult.value) > 600)){
+    // Checking input value is within the min and max range, if so display error message.
+  }
+  else if ((parseInt(timeUntilResult.value) < 0) || (parseInt(timeUntilResult.value) > 600)) {
     if (!(timeUntilResult.classList.contains("error"))) {
       timeUntilResult.classList.add("error");
     }
     timeUntilResultMsg1.style.display = "none";
     timeUntilResultMsg2.style.display = "block";
     validation = false;
-  // If no errors and there were errors previously stop displaying errors messages.
-  } else {
+    // If no errors and there were errors previously stop displaying errors messages.
+  }
+  else {
     if (timeUntilResult.classList.contains("error")) {
       timeUntilResult.classList.remove("error");
     }
@@ -166,15 +171,17 @@ function formValidation(){
     timeUntilShowMsg1.style.display = "block";
     timeUntilShowMsg2.style.display = "none";
     validation = false;
-  // Checking input value is within the min and max range, if so display error message.
-} else if ((parseInt(timeUntilShow.value) < 0) || (parseInt(timeUntilShow.value) > 20)){
-  if (!(timeUntilShow.classList.contains("error"))) {
-    timeUntilShow.classList.add("error");
+    // Checking input value is within the min and max range, if so display error message.
   }
-  timeUntilShowMsg1.style.display = "none";
-  timeUntilShowMsg2.style.display = "block";
-  validation = false;
-  } else {
+  else if ((parseInt(timeUntilShow.value) < 0) || (parseInt(timeUntilShow.value) > 20)) {
+    if (!(timeUntilShow.classList.contains("error"))) {
+      timeUntilShow.classList.add("error");
+    }
+    timeUntilShowMsg1.style.display = "none";
+    timeUntilShowMsg2.style.display = "block";
+    validation = false;
+  }
+  else {
     if (timeUntilShow.classList.contains("error")) {
       timeUntilShow.classList.remove("error");
     }
@@ -186,7 +193,7 @@ function formValidation(){
 
 /**
  * When user clicks Load Generator this sets up the webpage and set some variables.
-*/
+ */
 function loadGenerator() {
   if (formValidation()) {
     globalReset = false;
@@ -211,15 +218,19 @@ function loadGenerator() {
     resultContainerHTML.style.right = "0px";
     resultContainerHTML.style.bottom = "0px";
     resultContainerHTML.style.left = "0px";
-    var fullScreen = document.getElementById("full-screen"); 
+    var fullScreen = document.getElementById("full-screen");
     if (fullScreen.checked) {
       // Credit for fullscreen code: https://www.w3schools.com/howto/howto_js_fullscreen.asp
       if (resultContainerHTML.requestFullscreen) {
         resultContainerHTML.requestFullscreen();
-      } else if (resultContainerHTML.webkitRequestFullscreen) { /* Safari */
-      resultContainerHTML.webkitRequestFullscreen();
-      } else if (resultContainerHTML.msRequestFullscreen) { /* IE11 */
-      resultContainerHTML.msRequestFullscreen();
+      }
+      else if (resultContainerHTML.webkitRequestFullscreen) {
+        /* Safari */
+        resultContainerHTML.webkitRequestFullscreen();
+      }
+      else if (resultContainerHTML.msRequestFullscreen) {
+        /* IE11 */
+        resultContainerHTML.msRequestFullscreen();
       }
     }
     resultTop.style.display = "block";
@@ -242,7 +253,7 @@ function loadGenerator() {
 
 /**
  * Close generator and reset values.
-*/
+ */
 function exitGenerator() {
   globalReset = true;
   results.length = 0;
@@ -252,10 +263,14 @@ function exitGenerator() {
   if ((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
     if (document.exitFullscreen) {
       document.exitFullscreen();
-    } else if (document.webkitExitFullscreen) { /* Safari */
-    document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) { /* IE11 */
-    document.msExitFullscreen();
+    }
+    else if (document.webkitExitFullscreen) {
+      /* Safari */
+      document.webkitExitFullscreen();
+    }
+    else if (document.msExitFullscreen) {
+      /* IE11 */
+      document.msExitFullscreen();
     }
   }
   resultContainerHTML.style.display = "none";
@@ -273,7 +288,7 @@ function exitGenerator() {
 
 /**
  * When user clicks start on generator this fuctions starts everything.
-*/
+ */
 function startGenerator() {
   resultMidPre.style.display = "none";
   countdown(false);
@@ -281,8 +296,8 @@ function startGenerator() {
 
 /**
  * Take user input options and sorts them into an array then returns that to calling function.
-*/
-function sortOptions () {
+ */
+function sortOptions() {
   var sortOptions = document.getElementById("options").value;
   sortOptions = sortOptions.split(',');
   return sortOptions;
@@ -290,14 +305,14 @@ function sortOptions () {
 
 /**
  * Take random results in table and put them into a results table.
-*/
+ */
 function createRandomResults() {
   var options = sortOptions();
   var timeUntilResult = document.getElementById("time-until-result").value;
   var loopAmount = document.getElementById("number-of-results").value;
   var multipleWinsHTML = document.getElementById("multiple-wins");
-  for (var i = 0; i < loopAmount; i++){
-    var result = Math.floor(Math.random() * options.length); 
+  for (var i = 0; i < loopAmount; i++) {
+    var result = Math.floor(Math.random() * options.length);
     results.push(options[result].trim());
     if (!multipleWinsHTML.checked) {
       options.splice(result, 1);
@@ -308,13 +323,10 @@ function createRandomResults() {
 
 /**
  * Creates DIVs from results table and adds CSS styling to reveal results 1 by 1.
-*/
+ */
 function show1By1(results, timeUntilResult) {
   var timeUntilShow = document.getElementById("time-until-show").value;
-  var height = document.querySelector('#result-mid').offsetHeight;
-  console.log(height);
-
-  for (var result of results){
+  for (var result of results) {
     var newDiv = document.createElement('div');
     newDiv.className = "box";
     newDiv.appendChild(document.createTextNode(result));
@@ -329,8 +341,8 @@ function show1By1(results, timeUntilResult) {
     var z = x * (y / 100); // Initial font size for 1 row.
     var w = parseInt(y / z); // Amount of rows of text will fit before font size needs to be smaller
     var v = z; // Final font size
-    if (elements.length > w){
-      v = z * (w/elements.length); // Final font size
+    if (elements.length > w) {
+      v = z * (w / elements.length); // Final font size
     }
     for (var element of elements) {
       element.style.transitionDuration = `${timeUntilShow}s`;
@@ -347,50 +359,52 @@ function show1By1(results, timeUntilResult) {
 
 /**
  * Cycles very quickly randomly through all options until showing final result after defined time has passed
-*/
-function resultRandomAnimFunc(i, element, delay, y2, bool, result, y, x, z2){
+ */
+function resultRandomAnimFunc(i, element, delay, y2, bool, result, y, x, z2) {
   x = x;
   result = result;
   y = y;
   var z3 = parseInt(z2);
   if (!(globalReset)) {
-    setTimeout(function(){
+    setTimeout(function() {
       if (x * 1000 < delay) {
         if (!(bool)) {
           delay = 1;
         }
         x = x + 1000;
         resultRandomAnimFunc(i, element, delay, y2, true, result, y, x, z3);
-      } else {
+      }
+      else {
         setTimeout(function() {
           y++;
           if (y <= (y2 * 18)) {
             element.style.color = randomColor;
             var z1 = Math.floor(Math.random() * allOptions.length);
             var SafetyCount = 0;
-            while (!(SafetyCount >= 10)){
-              if (!(z1 == z3)) { 
-                break; 
+            while (!(SafetyCount >= 10)) {
+              if (!(z1 == z3)) {
+                break;
               }
               z1 = Math.floor(Math.random() * allOptions.length);
               SafetyCount++;
             }
             element.innerHTML = allOptions[z1];
             resultRandomAnimFunc(i, element, delay, y2, true, result, y, x, z1);
-          } else {
+          }
+          else {
             element.innerHTML = result;
             element.style.color = finalColor;
           }
         }, 50);
       }
-    },delay);
+    }, delay);
   }
 }
 
 /**
  * Creates a countdown before results are shown.
-*/
-function countdown (countdownReset) {
+ */
+function countdown(countdownReset) {
   countdownHTML.style.display = "block";
   // Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and then modified by me
   var timeleft = 2;
@@ -398,15 +412,17 @@ function countdown (countdownReset) {
     timeleft = 0;
     clearInterval(countdownTimer);
     countdownHTML.innerHTML = "";
-  } else {
-    countdownTimer = setInterval(function(){
-      if(timeleft <= 0){
+  }
+  else {
+    countdownTimer = setInterval(function() {
+      if (timeleft <= 0) {
         clearInterval(countdownTimer);
         countdownHTML.innerHTML = "";
         countdownHTML.style.display = "none";
         resultsListHTML.style.display = "flex";
         createRandomResults();
-      } else {
+      }
+      else {
         countdownHTML.innerHTML = timeleft + "";
       }
       timeleft -= 1;
@@ -416,7 +432,7 @@ function countdown (countdownReset) {
 
 /**
  * Scrolls webpage to top
-*/
+ */
 function scrollToTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;

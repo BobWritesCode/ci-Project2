@@ -15,14 +15,14 @@ body {
   background-color: #373E98;
 }
 
-body > * {
+body>* {
   display: flex;
   justify-content: center;
 }
 
 header {
   text-transform: uppercase;
-  font-size:xx-large ;
+  font-size: xx-large;
   letter-spacing: 2px;
   background-color: #2a308a;
   margin-bottom: 20px;
@@ -47,6 +47,7 @@ label {
 i {
   color: #FAFAFA;
 }
+
 .options-container {
   display: flex;
   justify-content: center;
@@ -66,25 +67,27 @@ i {
   text-align: center;
 }
 
-input, textarea {
+input,
+textarea {
   background-color: #FAFAFA;
   border: solid #333 1px;
   padding: 0 5px;
 }
 
 textarea {
-  width: 99%; 
+  width: 99%;
   max-width: 99%;
 }
 
-input[type="text"], input[type="number"]{
+input[type="text"],
+input[type="number"] {
   border-top: 0;
   border-left: 0;
   border-right: 0;
 }
 
 input[type="text"] {
-  width: 50%; 
+  width: 50%;
   max-width: 50%;
 }
 
@@ -118,19 +121,19 @@ input[type="color"] {
 
 #template1 {
   background-color: #0D050E;
-  color:#FAFAFA;
+  color: #FAFAFA;
 }
 
 #template2 {
   background-color: #6441a5;
-  color:#FAFAFA;
+  color: #FAFAFA;
 }
 
 #template3 {
   background-color: #00FF00;
-  color:#FAFAFA;
+  color: #FAFAFA;
 }
- 
+
 #result-container {
   display: none;
   grid-template-columns: 100%;
@@ -178,14 +181,14 @@ input[type="color"] {
   margin: auto
 }
 
-#results-list > * {
+#results-list>* {
   flex: 1 1 30%;
 }
 
 #gen-title-span {
   line-height: 70%;
   font-size: 5vw;
-  }
+}
 
 #countdown-generator {
   font-size: 20vw;
@@ -212,7 +215,8 @@ input[type="color"] {
 }
 
 button {
-  background-color: #711A75; /* Green */
+  background-color: #711A75;
+  /* Green */
   border: none;
   color: white;
   padding: 16px 32px;
@@ -224,10 +228,10 @@ button {
   cursor: pointer;
 }
 
-#btn-load  {
+#btn-load {
   font-size: 30px;
-  background-color: #FFC400; 
-  color: #000000; 
+  background-color: #FFC400;
+  color: #000000;
   margin-bottom: 20px;
   border: 2px solid #FAFAFA;
 }
@@ -238,11 +242,11 @@ button {
   border: 2px solid #711A75;
 }
 
-#btn-close  {
+#btn-close {
   display: none;
   font-size: 10px;
-  background-color: rgba(0, 0, 0, 0); 
-  color: #FAFAFA; 
+  background-color: rgba(0, 0, 0, 0);
+  color: #FAFAFA;
   border: 2px solid #FAFAFA;
   position: absolute;
   padding: 0;
@@ -253,11 +257,11 @@ button {
   height: 20px;
 }
 
-#btn-start  {
+#btn-start {
   display: none;
   font-size: 20px;
-  background-color: rgba(255,255,255,0.15); 
-  color: #FAFAFA; 
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FAFAFA;
   border: 2px solid #FAFAFA;
   margin: 0 auto;
 }
