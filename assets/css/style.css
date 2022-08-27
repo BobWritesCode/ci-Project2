@@ -143,9 +143,9 @@ input[type="color"] {
 #result-container {
   display: none;
   grid-template-columns: 100%;
-  grid-template-rows: 70px auto 70px; 
+  grid-template-rows: 10% 78% 10%;
   column-gap: 10px;
-  row-gap: 5px;
+  row-gap: 1%;
 }
 
 #result-top {
@@ -275,9 +275,9 @@ button {
   display: block;
   margin: 0;
   color: rgba(0, 0, 0, 0);
-  background-color: #00000000;
+  background-color: #000000;
   transform-origin: center;
-  transition-property: background-color, color,  padding, margin;
+  transition-property: background-color, color, margin;
   transition-duration: 3s;
   text-align: center;
 }
@@ -286,7 +286,7 @@ button {
   color: rgba(255, 255, 255, 0);
   background-color: rgba(0, 0, 0, 0);
   margin: auto;
-  transition-property: background-color, color, padding, margin;
+  transition-property: background-color, color, margin;
   transition-timing-function: ease-in-out;
 }
 

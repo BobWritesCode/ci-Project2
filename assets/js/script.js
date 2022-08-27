@@ -316,7 +316,7 @@ function show1By1(results, timeUntilResult) {
   var timeUntilShow = document.getElementById("time-until-show").value;
   var height = document.querySelector('#result-mid').offsetHeight;
   console.log(height);
-  var x = 10 - (results.length * 0.3);
+
   for (var result of results){
     var newDiv = document.createElement('div');
     newDiv.className = "box";
@@ -326,10 +326,20 @@ function show1By1(results, timeUntilResult) {
   setTimeout(function() {
     var elements = document.querySelectorAll("span#results-list > div");
     var delay = 0;
-    var i = 1;
+    var i = 1; // Setting var for counter in loop
+    var y = 78; //Container % size of screen
+    var x = 19; //Default font size
+    var z = x * (y / 100); // Initial font size for 1 row.
+    var w = parseInt(y / z); // Amount of rows of text will fit before font size needs to be smaller
+    if (elements.length > w){
+      v = z * (w/elements.length); // Final font size
+    } else {
+      v = z; // Final font size
+    }
     for (var element of elements) {
       element.style.transitionDuration = `${timeUntilShow}s`;
-      element.style.fontSize = `9vh`;
+      element.style.height = `${100/elements.length}%`
+      element.style.fontSize = `${v}vh`;
       element.style.lineHeight = `90%`;
       delay = i * timeUntilResult;
       element.classList.toggle("show");
