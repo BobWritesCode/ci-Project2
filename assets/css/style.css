@@ -56,6 +56,9 @@ label {
   font-weight: 700;
 }
 
+i {
+  color: #FAFAFA;
+}
 .options-container {
   display: flex;
   justify-content: center;
@@ -253,13 +256,17 @@ button {
 
 #btn-close  {
   display: none;
-  font-size: 20px;
-  background-color: #0D050E; 
+  font-size: 10px;
+  background-color: rgba(0, 0, 0, 0); 
   color: #FAFAFA; 
   border: 2px solid #FAFAFA;
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  padding: 0;
+  bottom: 20px;
+  right: 20px;
+  text-align: center;
+  width: 20px;
+  height: 20px;
 }
 
 #btn-start  {
