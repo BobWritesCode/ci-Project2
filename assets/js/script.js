@@ -16,16 +16,19 @@ var bgTemplate2ContainerHTML = document.getElementById('bg-custom-2-constainer')
 var bgTemplate3ContainerHTML = document.getElementById('bg-custom-3-constainer');
 var bgTemplate4ContainerHTML = document.getElementById('bg-custom-4-constainer');
 var countdownHTML = document.getElementById('countdown-generator');
-var results = [];
-var allOptions = [];
 var resultTop = document.getElementById('result-top');
 var criteriaGenerator = document.getElementById('criteria-generator');
 var resultBottom = document.getElementById('result-bottom');
-var countdownTimer;
-var globalReset = true;
+
+// Global Variables
+var zGlobal = 0;
+var bgSelectedGlobal;
 var finalColor;
 var randomColor;
-var zGlobal = 0;
+var countdownTimer;
+var globalReset = true;
+var results = [];
+var allOptions = [];
 
 window.addEventListener('DOMContentLoaded', function() {
   btnLoad.addEventListener("click", function() {
@@ -94,6 +97,7 @@ function templateSelected(i) {
       bgTemplate2ContainerHTML.style.border = "3px solid transparent";
       bgTemplate3ContainerHTML.style.border = "3px solid transparent";
       bgTemplate4ContainerHTML.style.border = "3px solid transparent";
+      bgSelectedGlobal = 0;
       break;
     case 1:
       bgTemplate0ContainerHTML.style.border = "3px solid transparent";
@@ -101,6 +105,7 @@ function templateSelected(i) {
       bgTemplate2ContainerHTML.style.border = "3px solid transparent";
       bgTemplate3ContainerHTML.style.border = "3px solid transparent";
       bgTemplate4ContainerHTML.style.border = "3px solid transparent";
+      bgSelectedGlobal = 1;
       break;
     case 2:
       bgTemplate0ContainerHTML.style.border = "3px solid transparent";
@@ -108,6 +113,7 @@ function templateSelected(i) {
       bgTemplate2ContainerHTML.style.border = "3px solid green";
       bgTemplate3ContainerHTML.style.border = "3px solid transparent";
       bgTemplate4ContainerHTML.style.border = "3px solid transparent";
+      bgSelectedGlobal = 2;
       break;
     case 3:
       bgTemplate0ContainerHTML.style.border = "3px solid transparent";
@@ -115,6 +121,7 @@ function templateSelected(i) {
       bgTemplate2ContainerHTML.style.border = "3px solid transparent";
       bgTemplate3ContainerHTML.style.border = "3px solid green";
       bgTemplate4ContainerHTML.style.border = "3px solid transparent";
+      bgSelectedGlobal = 3;
       break;
     case 4:
       bgTemplate0ContainerHTML.style.border = "3px solid transparent";
@@ -122,6 +129,7 @@ function templateSelected(i) {
       bgTemplate2ContainerHTML.style.border = "3px solid transparent";
       bgTemplate3ContainerHTML.style.border = "3px solid transparent";
       bgTemplate4ContainerHTML.style.border = "3px solid green";
+      bgSelectedGlobal = 4;
       break;
   }
 }
@@ -254,7 +262,7 @@ function loadGenerator() {
     pageContainer.style.display = "none";
     btnLoad.style.display = "none";
     resultContainerHTML.style.display = "grid";
-    resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
+    setGenBackground()
     document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
     document.getElementById('gen-criteria-span').style.color = document.getElementById('body-text-color').value;
     document.getElementById('gen-tail-span').style.color = document.getElementById('tail-color').value;
@@ -300,6 +308,32 @@ function loadGenerator() {
 }
 
 /**
+ * Sets the Generators background based on the user's selection in the form
+ */
+ function setGenBackground() {
+  switch(bgSelectedGlobal) {
+    case 0:
+      resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
+      break;
+    case 1:
+      resultContainerHTML.classList.add("bg-custom-1");
+      break;
+    case 2:
+      resultContainerHTML.classList.add("bg-custom-2");
+      break;
+    case 3:
+      resultContainerHTML.classList.add("bg-custom-3");
+      break;
+    case 4:
+      resultContainerHTML.classList.add("bg-custom-4");
+      break;
+    default:
+      resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
+      break;
+  }
+}
+
+/**
  * Close generator and reset values.
  */
 function exitGenerator() {
@@ -307,7 +341,6 @@ function exitGenerator() {
   results.length = 0;
   countdown(true);
   resultsListHTML.innerHTML = "";
-  resultContainerHTML.style.backgroundColor = "#FAFAFA";
   if ((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
     if (document.exitFullscreen) {
       document.exitFullscreen();
@@ -321,6 +354,8 @@ function exitGenerator() {
       document.msExitFullscreen();
     }
   }
+  resultContainerHTML.removeAttribute('class');
+  resultContainerHTML.removeAttribute('style');
   resultContainerHTML.style.display = "none";
   resultContainerHTML.style.position = "initial";
   btnClose.style.display = "none";
