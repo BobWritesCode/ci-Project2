@@ -28,7 +28,6 @@ header {
   text-transform: uppercase;
   font-size: xx-large;
   letter-spacing: 2px;
-
   margin-bottom: 20px;
 }
 
@@ -50,6 +49,10 @@ label {
 
 i {
   color: #FAFAFA;
+}
+
+#color-table th {
+  font-weight: 600;
 }
 
 .options-container {
