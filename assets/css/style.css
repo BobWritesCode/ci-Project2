@@ -44,6 +44,20 @@ h2 {
   text-align: center;
 }
 
+#intro {
+  margin: auto;
+  margin-bottom: 20px;
+
+}
+
+#intro *{
+  font-size: xx-large;
+  color: #FAFAFA;
+  text-align: center;
+  font-weight: 600;
+  width: 80%;
+}
+
 label {
   font-weight: 700;
 }
@@ -336,4 +350,9 @@ hr {
   h1 {
     font-size: 40px;
   }
+
+  #intro *{
+    font-size: 20px;
+  }
+
 }
