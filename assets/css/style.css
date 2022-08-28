@@ -37,6 +37,7 @@ h1 {
   color: #FAFAFA;
   text-align: center;
   -webkit-text-stroke-color: #FAFAFA;
+  line-height: 1;
 }
 
 h2 {
