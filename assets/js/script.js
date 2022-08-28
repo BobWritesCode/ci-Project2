@@ -10,6 +10,11 @@ var resultMidPre = document.getElementById('result-mid-pre');
 var template1ContainerHTML = document.getElementById('template1-container');
 var template2ContainerHTML = document.getElementById('template2-container');
 var template3ContainerHTML = document.getElementById('template3-container');
+var bgTemplate0ContainerHTML = document.getElementById('bg-custom-0-constainer');
+var bgTemplate1ContainerHTML = document.getElementById('bg-custom-1-constainer');
+var bgTemplate2ContainerHTML = document.getElementById('bg-custom-2-constainer');
+var bgTemplate3ContainerHTML = document.getElementById('bg-custom-3-constainer');
+var bgTemplate4ContainerHTML = document.getElementById('bg-custom-4-constainer');
 var countdownHTML = document.getElementById('countdown-generator');
 var results = [];
 var allOptions = [];
@@ -74,6 +79,49 @@ function templateSelected(i) {
       document.getElementById('countdown-color').value = "#FAFAFA";
       document.getElementById('result-random-color').value = "#FF0000";
       document.getElementById('result-final-color').value = "#FFFF00";
+      break;
+  }
+}
+
+/**
+ * When user chooses one of the preset BACKGROUN templates this will set those values ready for when user loads generator.
+ */
+ function bgTemplateSelected(i) {
+  switch (i) {
+    case 0:
+      bgTemplate0ContainerHTML.style.border = "3px solid green";
+      bgTemplate1ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate2ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate3ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate4ContainerHTML.style.border = "3px solid transparent";
+      break;
+    case 1:
+      bgTemplate0ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate1ContainerHTML.style.border = "3px solid green";
+      bgTemplate2ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate3ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate4ContainerHTML.style.border = "3px solid transparent";
+      break;
+    case 2:
+      bgTemplate0ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate1ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate2ContainerHTML.style.border = "3px solid green";
+      bgTemplate3ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate4ContainerHTML.style.border = "3px solid transparent";
+      break;
+    case 3:
+      bgTemplate0ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate1ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate2ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate3ContainerHTML.style.border = "3px solid green";
+      bgTemplate4ContainerHTML.style.border = "3px solid transparent";
+      break;
+    case 4:
+      bgTemplate0ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate1ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate2ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate3ContainerHTML.style.border = "3px solid transparent";
+      bgTemplate4ContainerHTML.style.border = "3px solid green";
       break;
   }
 }
