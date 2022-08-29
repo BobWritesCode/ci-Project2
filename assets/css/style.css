@@ -237,7 +237,6 @@ input[type="color"] {
   justify-content: center;
   text-align: center;
   align-self: center;
-  overflow: hidden;
 }
 
 #result-mid {
@@ -258,7 +257,6 @@ input[type="color"] {
   justify-content: center;
   text-align: center;
   align-self: center;
-  overflow: hidden;
 }
 
 #results-list {
