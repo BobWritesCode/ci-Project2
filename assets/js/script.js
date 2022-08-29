@@ -1,33 +1,33 @@
 // Global HTML Elements
-var headerHTML = document.getElementById('header');
-var footerHTML = document.getElementById('footer');
-var pageContainer = document.getElementById("page-container");
-var resultContainerHTML = document.getElementById("result-container");
-var resultsListHTML = document.getElementById("results-list");
-var btnClose = document.getElementById('btn-close');
-var btnLoad = document.getElementById('btn-load');
-var btnStart = document.getElementById('btn-start');
-var resultMidPre = document.getElementById('result-mid-pre');
-var template1ContainerHTML = document.getElementById('template1-container');
-var template2ContainerHTML = document.getElementById('template2-container');
-var template3ContainerHTML = document.getElementById('template3-container');
-var bgTemplate0ContainerHTML = document.getElementById('bg-custom-0-constainer');
-var bgTemplate1ContainerHTML = document.getElementById('bg-custom-1-constainer');
-var bgTemplate2ContainerHTML = document.getElementById('bg-custom-2-constainer');
-var bgTemplate3ContainerHTML = document.getElementById('bg-custom-3-constainer');
-var bgTemplate4ContainerHTML = document.getElementById('bg-custom-4-constainer');
-var countdownHTML = document.getElementById('countdown-generator');
-var resultTop = document.getElementById('result-top');
-var criteriaGenerator = document.getElementById('criteria-generator');
-var resultBottom = document.getElementById('result-bottom');
+const headerHTML = document.getElementById('header');
+const footerHTML = document.getElementById('footer');
+const pageContainer = document.getElementById("page-container");
+const resultContainerHTML = document.getElementById("result-container");
+const resultsListHTML = document.getElementById("results-list");
+const btnClose = document.getElementById('btn-close');
+const btnLoad = document.getElementById('btn-load');
+const btnStart = document.getElementById('btn-start');
+const resultMidPre = document.getElementById('result-mid-pre');
+const template1ContainerHTML = document.getElementById('template1-container');
+const template2ContainerHTML = document.getElementById('template2-container');
+const template3ContainerHTML = document.getElementById('template3-container');
+const bgTemplate0ContainerHTML = document.getElementById('bg-custom-0-constainer');
+const bgTemplate1ContainerHTML = document.getElementById('bg-custom-1-constainer');
+const bgTemplate2ContainerHTML = document.getElementById('bg-custom-2-constainer');
+const bgTemplate3ContainerHTML = document.getElementById('bg-custom-3-constainer');
+const bgTemplate4ContainerHTML = document.getElementById('bg-custom-4-constainer');
+const countdownHTML = document.getElementById('countdown-generator');
+const resultTop = document.getElementById('result-top');
+const criteriaGenerator = document.getElementById('criteria-generator');
+const resultBottom = document.getElementById('result-bottom');
 
 // Global Variables
-var bgSelectedGlobal = Number;
-var finalColor = String;
-var randomColor = String;
-var globalReset = true;
-var results = [];
-var allOptions = [];
+let bgSelectedGlobal = Number;
+let finalColor = String;
+let randomColor = String;
+let globalReset = true;
+let results = [];
+let allOptions = [];
 
 window.addEventListener('DOMContentLoaded', function() {
   btnLoad.addEventListener("click", function() {
@@ -137,20 +137,20 @@ function templateSelected(i) {
  * Form Validation
  */
 function formValidation() {
-  var validation = true;
-  var options = sortOptions();
+  let validation = true;
+  let options = sortOptions();
   allOptions = options;
-  var optionsHTML = document.getElementById("options");
-  var numberOfResults = document.getElementById("number-of-results");
-  var timeUntilResult = document.getElementById("time-until-result");
-  var timeUntilShow = document.getElementById("time-until-show");
-  var optionsErrorMsg1 = document.getElementById("options-message-1");
-  var numberOfResultsMsg1 = document.getElementById("number-of-results-message-1");
-  var numberOfResultsMsg2 = document.getElementById("number-of-results-message-2");
-  var timeUntilResultMsg1 = document.getElementById("time-until-result-message-1");
-  var timeUntilResultMsg2 = document.getElementById("time-until-result-message-2");
-  var timeUntilShowMsg1 = document.getElementById("time-until-show-message-1");
-  var timeUntilShowMsg2 = document.getElementById("time-until-show-message-2");
+  let optionsHTML = document.getElementById("options");
+  let numberOfResults = document.getElementById("number-of-results");
+  let timeUntilResult = document.getElementById("time-until-result");
+  let timeUntilShow = document.getElementById("time-until-show");
+  const optionsErrorMsg1 = document.getElementById("options-message-1");
+  const numberOfResultsMsg1 = document.getElementById("number-of-results-message-1");
+  const numberOfResultsMsg2 = document.getElementById("number-of-results-message-2");
+  const timeUntilResultMsg1 = document.getElementById("time-until-result-message-1");
+  const timeUntilResultMsg2 = document.getElementById("time-until-result-message-2");
+  const timeUntilShowMsg1 = document.getElementById("time-until-show-message-1");
+  const timeUntilShowMsg2 = document.getElementById("time-until-show-message-2");
 
   // Checking to make sure non of the vital imputs have been left blank, if so display error message.
   if (options.length < 2) {
@@ -261,7 +261,7 @@ function loadGenerator() {
     btnLoad.style.display = "none";
     resultContainerHTML.style.display = "grid";
     setGenBackground()
-    var mainColor = document.getElementById('body-text-color').value;
+    let mainColor = document.getElementById('body-text-color').value;
     document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
     document.getElementById('gen-criteria-span').style.color = mainColor;
     document.getElementById('btn-start').style.color = mainColor;
@@ -275,7 +275,7 @@ function loadGenerator() {
     resultContainerHTML.style.right = "0px";
     resultContainerHTML.style.bottom = "0px";
     resultContainerHTML.style.left = "0px";
-    var fullScreen = document.getElementById("full-screen");
+    let fullScreen = document.getElementById("full-screen");
     if (fullScreen.checked) {
       // Credit for fullscreen code: https://www.w3schools.com/howto/howto_js_fullscreen.asp
       if (resultContainerHTML.requestFullscreen) {
@@ -295,14 +295,14 @@ function loadGenerator() {
     resultBottom.style.display = "block";
     btnStart.style.display = "block";
     btnClose.style.display = "block";
-    var userGenTitle = document.getElementById('gen-title-user').value;
-    var spanGenTitle = document.getElementById('gen-title-span');
+    let userGenTitle = document.getElementById('gen-title-user').value;
+    let spanGenTitle = document.getElementById('gen-title-span');
     spanGenTitle.innerText = userGenTitle;
-    var userGenCriteria = document.getElementById('criteria-user').value;
-    var spanGenCriteria = document.getElementById('gen-criteria-span');
+    let userGenCriteria = document.getElementById('criteria-user').value;
+    let spanGenCriteria = document.getElementById('gen-criteria-span');
     spanGenCriteria.innerText = userGenCriteria;
-    var userGenTail = document.getElementById('gen-tail-user').value;
-    var spanGenTail = document.getElementById('gen-tail-span');
+    let userGenTail = document.getElementById('gen-tail-user').value;
+    let spanGenTail = document.getElementById('gen-tail-span');
     spanGenTail.innerText = userGenTail;
   }
   scrollToTop();
@@ -382,8 +382,7 @@ function startGenerator() {
  * Take user input options and sorts them into an array then returns that to calling function.
  */
 function sortOptions() {
-  var sortOptions = document.getElementById("options").value;
-  sortOptions = sortOptions.split(',');
+  let sortOptions = document.getElementById("options").value.split(',');
   return sortOptions;
 }
 
@@ -391,12 +390,12 @@ function sortOptions() {
  * Take random results in table and put them into a results table.
  */
 function createRandomResults() {
-  var options = sortOptions();
-  var timeUntilResult = document.getElementById("time-until-result").value;
-  var loopAmount = document.getElementById("number-of-results").value;
-  var multipleWinsHTML = document.getElementById("multiple-wins");
-  for (var i = 0; i < loopAmount; i++) {
-    var result = Math.floor(Math.random() * options.length);
+  let options = sortOptions();
+  let timeUntilResult = document.getElementById("time-until-result").value;
+  let loopAmount = document.getElementById("number-of-results").value;
+  let multipleWinsHTML = document.getElementById("multiple-wins");
+  for (let i = 0; i < loopAmount; i++) {
+    let result = Math.floor(Math.random() * options.length);
     results.push(options[result].trim());
     if (!multipleWinsHTML.checked) {
       options.splice(result, 1);
@@ -409,26 +408,26 @@ function createRandomResults() {
  * Creates DIVs from results table and adds CSS styling to reveal results 1 by 1.
  */
 function show1By1(results, timeUntilResult) {
-  var timeUntilShow = document.getElementById("time-until-show").value;
-  for (var result of results) {
-    var newDiv = document.createElement('div');
+  let timeUntilShow = document.getElementById("time-until-show").value;
+  for (let result of results) {
+    let newDiv = document.createElement('div');
     newDiv.className = "box";
     newDiv.appendChild(document.createTextNode(result));
     resultsListHTML.appendChild(newDiv);
   }
   setTimeout(function() {
-    var elements = document.querySelectorAll("span#results-list > div");
-    var delay = 0;
-    var i = 1; // Setting var for counter in loop
-    var y = 78; //Container % size of screen
-    var x = 19; //Default font size
-    var z = x * (y / 100); // Initial font size for 1 row.
-    var w = parseInt(y / z); // Amount of rows of text will fit before font size needs to be smaller
-    var v = z; // Final font size
+    let elements = document.querySelectorAll("span#results-list > div");
+    let delay = 0;
+    let i = 1; // Setting let for counter in loop
+    let y = 78; //Container % size of screen
+    let x = 19; //Default font size
+    let z = x * (y / 100); // Initial font size for 1 row.
+    let w = parseInt(y / z); // Amount of rows of text will fit before font size needs to be smaller
+    let v = z; // Final font size
     if (elements.length > w) {
       v = z * (w / elements.length); // Final font size
     }
-    for (var element of elements) {
+    for (let element of elements) {
       element.style.transitionDuration = `${timeUntilShow}s`;
       element.style.height = `${100/elements.length}%`;
       element.style.fontSize = `${v}vh`;
@@ -448,7 +447,7 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, result, y, x, z2) {
   x = x;
   result = result;
   y = y;
-  var z3 = parseInt(z2);
+  let z3 = parseInt(z2);
   if (!(globalReset)) {
     setTimeout(function() {
       if (x * 1000 < delay) {
@@ -463,8 +462,8 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, result, y, x, z2) {
           y++;
           if (y <= (y2 * 18)) {
             element.style.color = randomColor;
-            var z1 = Math.floor(Math.random() * allOptions.length);
-            var SafetyCount = 0;
+            let z1 = Math.floor(Math.random() * allOptions.length);
+            let SafetyCount = 0;
             while (!(SafetyCount >= 10)) {
               if (!(z1 == z3)) {
                 break;
@@ -491,8 +490,8 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, result, y, x, z2) {
 function countdown(countdownReset) {
   countdownHTML.style.display = "block";
   // Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and then modified by me
-  var timeleft = 2;
-  var countdownTimer;
+  let timeleft = 2;
+  let countdownTimer;
   if (countdownReset) {
     timeleft = 0;
     clearInterval(countdownTimer);
