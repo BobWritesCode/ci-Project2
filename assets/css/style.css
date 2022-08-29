@@ -98,6 +98,7 @@ input, textarea {
 textarea {
   width: 99%;
   max-width: 99%;
+  border-radius: 5px;
 }
 
 input[type="text"], input[type="number"] {
