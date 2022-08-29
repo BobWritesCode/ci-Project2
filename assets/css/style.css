@@ -331,7 +331,7 @@ button {
 #btn-close {
   display: none;
   font-size: 10px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, .6);
   color: #FAFAFA;
   border: 2px solid #FAFAFA;
   position: absolute;
@@ -346,7 +346,7 @@ button {
 #btn-start {
   display: none;
   font-size: 20px;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.6);
   color: #FAFAFA;
   border: 2px solid #FAFAFA;
   margin: 0 auto;

@@ -261,8 +261,11 @@ function loadGenerator() {
     btnLoad.style.display = "none";
     resultContainerHTML.style.display = "grid";
     setGenBackground()
+    var mainColor = document.getElementById('body-text-color').value;
     document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
-    document.getElementById('gen-criteria-span').style.color = document.getElementById('body-text-color').value;
+    document.getElementById('gen-criteria-span').style.color = mainColor;
+    document.getElementById('btn-start').style.color = mainColor;
+    document.getElementById('btn-start').style.borderColor = mainColor;
     document.getElementById('gen-tail-span').style.color = document.getElementById('tail-color').value;
     document.getElementById('countdown-generator').style.color = document.getElementById('countdown-color').value;
     randomColor = document.getElementById('result-random-color').value;
