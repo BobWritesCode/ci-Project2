@@ -1,3 +1,4 @@
+// Global HTML Elements
 var headerHTML = document.getElementById('header');
 var footerHTML = document.getElementById('footer');
 var pageContainer = document.getElementById("page-container");
@@ -325,7 +326,7 @@ function loadGenerator() {
       resultContainerHTML.classList.add("bg-custom-4");
       break;
     default:
-      resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
+      resultContainerHTML.style.backgroundColor = document.getElementById('bg-custom-0').value;
       break;
   }
 }
