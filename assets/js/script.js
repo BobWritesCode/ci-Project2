@@ -50,7 +50,7 @@ function templateSelected(i) {
       template1ContainerHTML.style.border = "3px solid green";
       template2ContainerHTML.style.border = "3px solid transparent";
       template3ContainerHTML.style.border = "3px solid transparent";
-      document.getElementById('background-color').value = "#0D050E";
+      document.getElementById('bg-custom-0').value = "#0D050E";
       document.getElementById('title-color').value = "#FAFAFA";
       document.getElementById('body-text-color').value = "#FAFAFA";
       document.getElementById('tail-color').value = "#FAFAFA";
@@ -62,7 +62,7 @@ function templateSelected(i) {
       template1ContainerHTML.style.border = "3px solid transparent";
       template2ContainerHTML.style.border = "3px solid green";
       template3ContainerHTML.style.border = "3px solid transparent";
-      document.getElementById('background-color').value = "#6441a5";
+      document.getElementById('bg-custom-0').value = "#6441a5";
       document.getElementById('title-color').value = "#FAFAFA";
       document.getElementById('body-text-color').value = "#FAFAFA";
       document.getElementById('tail-color').value = "#FAFAFA";
@@ -74,7 +74,7 @@ function templateSelected(i) {
       template1ContainerHTML.style.border = "3px solid transparent";
       template2ContainerHTML.style.border = "3px solid transparent";
       template3ContainerHTML.style.border = "3px solid green";
-      document.getElementById('background-color').value = "#00FF00";
+      document.getElementById('bg-custom-0').value = "#00FF00";
       document.getElementById('title-color').value = "#FAFAFA";
       document.getElementById('body-text-color').value = "#FAFAFA";
       document.getElementById('tail-color').value = "#FAFAFA";
