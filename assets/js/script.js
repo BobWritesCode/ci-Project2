@@ -21,11 +21,9 @@ var criteriaGenerator = document.getElementById('criteria-generator');
 var resultBottom = document.getElementById('result-bottom');
 
 // Global Variables
-var zGlobal = 0;
-var bgSelectedGlobal;
-var finalColor;
-var randomColor;
-var countdownTimer;
+var bgSelectedGlobal = Number;
+var finalColor = String;
+var randomColor = String;
 var globalReset = true;
 var results = [];
 var allOptions = [];
@@ -253,7 +251,6 @@ function formValidation() {
 function loadGenerator() {
   if (formValidation()) {
     globalReset = false;
-    zGlobal = 0;
     headerHTML.style.display = "none";
     footerHTML.style.display = "none";
     countdownHTML.style.display = "none";
@@ -491,6 +488,7 @@ function countdown(countdownReset) {
   countdownHTML.style.display = "block";
   // Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and then modified by me
   var timeleft = 2;
+  var countdownTimer;
   if (countdownReset) {
     timeleft = 0;
     clearInterval(countdownTimer);
