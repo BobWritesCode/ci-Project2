@@ -18,7 +18,6 @@
     </div>
     <div id="page-container">
       <div class="options-container">
-        
         <div class="options-box">
           <h2>Edit options and how they appear:</h2>
           <hr>
@@ -121,10 +120,6 @@
               <th>Colour</th>
             </tr>
             <tr>
-              <td>Background colour:</td>
-              <td><input type="color" id="background-color" name="gen-title-color" value="#000000"></td>
-            </tr>
-            <tr>
               <td>Title colour:</td>
               <td><input type="color" id="title-color" name="gen-title-color" value="#ffc400"></td>
             </tr>
@@ -151,12 +146,12 @@
           </table>
         </div>
         <div class="break"></div>
-        <div class="options-box" id="fullscreen-options-box">
+        <div class="options-box">
           <label for="full-screen">Choose background pattern:</label>
           <hr>
           <div style="display: flex; justify-content: center; flex-wrap: wrap;">
             <div id="bg-custom-0-constainer" class="bg-template-container">
-              <div id="bg-custom-0" class="bg-template-size" onclick="bgTemplateSelected(0)"></div>
+              <input type="color" id="bg-custom-0" class="bg-template-size" onclick="bgTemplateSelected(0)" name="gen-title-color" value="#ffffff">
             </div>
             <div id="bg-custom-1-constainer" class="bg-template-container">
               <div id="bg-custom-1" class="bg-template-size" onclick="bgTemplateSelected(1)"></div>

@@ -313,7 +313,7 @@ function loadGenerator() {
  function setGenBackground() {
   switch(bgSelectedGlobal) {
     case 0:
-      resultContainerHTML.style.backgroundColor = document.getElementById('background-color').value;
+      resultContainerHTML.style.backgroundColor = document.getElementById('bg-custom-0').value;
       break;
     case 1:
       resultContainerHTML.classList.add("bg-custom-1");
