@@ -75,12 +75,12 @@ function templateSelected(i) {
       template2ContainerHTML.style.border = "3px solid transparent";
       template3ContainerHTML.style.border = "3px solid green";
       document.getElementById('bg-custom-0').value = "#00FF00";
-      document.getElementById('title-color').value = "#FAFAFA";
-      document.getElementById('body-text-color').value = "#FAFAFA";
-      document.getElementById('tail-color').value = "#FAFAFA";
-      document.getElementById('countdown-color').value = "#FAFAFA";
+      document.getElementById('title-color').value = "#000000";
+      document.getElementById('body-text-color').value = "#000000";
+      document.getElementById('tail-color').value = "#000000";
+      document.getElementById('countdown-color').value = "#000000";
       document.getElementById('result-random-color').value = "#FF0000";
-      document.getElementById('result-final-color').value = "#FFFF00";
+      document.getElementById('result-final-color').value = "#9600FC";
       break;
   }
 }

@@ -57,7 +57,7 @@
             </span>
             <span class="error-message" id="time-until-show-message-2">Make sure input is between or equal to min and max allowance <br>
             </span>
-            <label for="time-until-show">How quickly results fade in and change color:</label>
+            <label for="time-until-show">How quickly results fade in and change colour:</label>
             <br>
             <input id="time-until-show" name="time-until-show" type="number" value="1"> second(s). <em>(min: 0 / max 20)</em>
           </p>
@@ -111,7 +111,7 @@
         <div class="break"></div>
         <div class="options-box" style="text-align: -webkit-center;">
           <div>
-            <h2>Or choose your generator colors:</h2>
+            <h2>Or choose your generator colours:</h2>
             <hr>
           </div>
           <table id="color-table" style="border-spacing: 30px 2px;">
@@ -120,28 +120,28 @@
               <th>Colour</th>
             </tr>
             <tr>
-              <td>Title colour:</td>
-              <td><input type="color" id="title-color" name="gen-title-color" value="#ffc400"></td>
+              <td><label for="title-color">Title colour:</label></td>
+              <td><input type="color" id="title-color" name="title-color" value="#ffc400"></td>
             </tr>
             <tr>
-              <td>Body text colour:</td>
-              <td><input type="color" id="body-text-color" name="gen-title-color" value="#ffc400"></td>
+              <td><label for="body-text-color">Body text colour:</label></td>
+              <td><input type="color" id="body-text-color" name="body-text-color" value="#ffc400"></td>
             </tr>
             <tr>
-              <td>Tail text colour:</td>
-              <td><input type="color" id="tail-color" name="gen-title-color" value="#ffc400"></td>
+              <td><label for="tail-color">Tail text colour:</label></td>
+              <td><input type="color" id="tail-color" name="tail-color" value="#ffc400"></td>
             </tr>
             <tr>
-              <td>Countdown colour:</td>
-              <td><input type="color" id="countdown-color" name="gen-title-color" value="#ffc400"></td>
+              <td><label for="countdown-color">Countdown colour:</label></td>
+              <td><input type="color" id="countdown-color" name="countdown-color" value="#ffc400"></td>
             </tr>
             <tr>
-              <td>Result colour (while randomising):</td>
-              <td><input type="color" id="result-random-color" name="gen-title-color" value="#BF1212"></td>
+              <td><label for="result-random-color">Result colour (while randomising):</label></td>
+              <td><input type="color" id="result-random-color" name="result-random-color" value="#BF1212"></td>
             </tr>
             <tr>
-              <td>Result colour (after randomising):</td>
-              <td><input type="color" id="result-final-color" name="gen-title-color" value="#25DB00"></td>
+              <td><label for="result-final-color">Result colour (after randomising):</label></td>
+              <td><input type="color" id="result-final-color" name="result-final-color" value="#25DB00"></td>
             </tr>
           </table>
         </div>
@@ -151,18 +151,23 @@
           <hr>
           <div style="display: flex; justify-content: center; flex-wrap: wrap;">
             <div id="bg-custom-0-constainer" class="bg-template-container">
-              <input type="color" id="bg-custom-0" class="bg-template-size" onclick="bgTemplateSelected(0)" name="gen-title-color" value="#001861">
+              <label for="bg-custom-0">Solid background colour:</label><br>
+              <input type="color" id="bg-custom-0" class="bg-template-size" onclick="bgTemplateSelected(0)" name="bg-custom-0" value="#001861">
             </div>
             <div id="bg-custom-1-constainer" class="bg-template-container">
+              <label for="bg-custom-1"></label><br>
               <div id="bg-custom-1" class="bg-template-size" onclick="bgTemplateSelected(1)"></div>
             </div>
             <div id="bg-custom-2-constainer" class="bg-template-container">
+              <label for="bg-custom-2"></label><br>
               <div id="bg-custom-2" class="bg-template-size" onclick="bgTemplateSelected(2)"></div>
             </div>
             <div id="bg-custom-3-constainer" class="bg-template-container">
+              <label for="bg-custom-3"></label><br>
               <div id="bg-custom-3" class="bg-template-size" onclick="bgTemplateSelected(3)"></div>
             </div>
             <div id="bg-custom-4-constainer" class="bg-template-container">
+              <label for="bg-custom-4"></label><br>
               <div id="bg-custom-4" class="bg-template-size" onclick="bgTemplateSelected(4)"></div>
             </div>
           </div>
