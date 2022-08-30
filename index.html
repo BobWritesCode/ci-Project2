@@ -101,13 +101,13 @@
           </div>
           <div id="templates-container">
             <div id="template1-container" class="template-container">
-              <div id="template1" class="template" onclick="templateSelected(1)"> Example text </div>
+              <div id="template1" class="template" onclick="templateSelected(1)" aria-label="Button: Example 1, Sets colours for generator to preset color, white text, black background"> Example text </div>
             </div>
             <div id="template2-container" class="template-container">
-              <div id="template2" class="template" onclick="templateSelected(2)"> Example text </div>
+              <div id="template2" class="template" onclick="templateSelected(2)" aria-label="Button: Example 2, Sets colours for generator to preset color, white text, purple background"> Example text </div>
             </div>
             <div id="template3-container" class="template-container">
-              <div id="template3" class="template" onclick="templateSelected(3)"> Example text </div>
+              <div id="template3" class="template" onclick="templateSelected(3)" aria-label="Button: Example 2, Sets colours for generator to preset color, black text, green background"> Example text </div>
             </div>
           </div>
         </div>
@@ -154,24 +154,19 @@
           <hr>
           <div style="display: flex; justify-content: center; flex-wrap: wrap;">
             <div id="bg-custom-0-constainer" class="bg-template-container">
-              <label for="bg-custom-0">Solid background colour:</label><br>
-              <input type="color" id="bg-custom-0" class="bg-template-size" onclick="bgTemplateSelected(0)" name="bg-custom-0" value="#001861">
+              <input type="color" id="bg-custom-0" class="bg-template-size" onclick="bgTemplateSelected(0)" name="bg-custom-0" value="#001861" aria-label="Button: Solid background colour  for generator. Opens colour picker">
             </div>
             <div id="bg-custom-1-constainer" class="bg-template-container">
-              <label for="bg-custom-1"></label><br>
-              <div id="bg-custom-1" class="bg-template-size" onclick="bgTemplateSelected(1)"></div>
+              <div id="bg-custom-1" class="bg-template-size" onclick="bgTemplateSelected(1)" aria-label="Button: White to light blue triangle background for generator"></div>
             </div>
             <div id="bg-custom-2-constainer" class="bg-template-container">
-              <label for="bg-custom-2"></label><br>
-              <div id="bg-custom-2" class="bg-template-size" onclick="bgTemplateSelected(2)"></div>
+              <div id="bg-custom-2" class="bg-template-size" onclick="bgTemplateSelected(2)" aria-label="Button: Orange brick background for generator"></div>
             </div>
             <div id="bg-custom-3-constainer" class="bg-template-container">
-              <label for="bg-custom-3"></label><br>
-              <div id="bg-custom-3" class="bg-template-size" onclick="bgTemplateSelected(3)"></div>
+              <div id="bg-custom-3" class="bg-template-size" onclick="bgTemplateSelected(3)" aria-label="Button: Purple background with connecting dots"></div>
             </div>
             <div id="bg-custom-4-constainer" class="bg-template-container">
-              <label for="bg-custom-4"></label><br>
-              <div id="bg-custom-4" class="bg-template-size" onclick="bgTemplateSelected(4)"></div>
+              <div id="bg-custom-4" class="bg-template-size" onclick="bgTemplateSelected(4)" aria-label="Button: Light to dark purple patterned background"></div>
             </div>
           </div>
         </div>
