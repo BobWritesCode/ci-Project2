@@ -1,216 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A customisable random result generator using your own options">
-    <meta name="keywords" content="Random, Raffle, RNG">
-    <meta name="author" content="Warwick Hart">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://kit.fontawesome.com/3f3c2144d6.js" crossorigin="anonymous"></script>
-    <title>Random Result Generator</title>
-  </head>
-  <body>
-    <header id="header">
-      <h1>Random<br>Result<br>Generator</h1>
-    </header>
-    <hr style="width:80%;margin:auto;">
-    <div id="intro">
-      <p>Welcome to the <b>Random Result Generator</b>. This page will allow you to create a customisable raffle. You can input what the potential results will be, how many will be displayed per raffle, and many customisable options.</p>
-    </div>
-    <div id="page-container">
-      <div class="options-container">
-        <div class="options-box">
-          <h2>Edit options and how they appear:</h2>
-          <hr>
-          <span class="error-message" id="options-message-1">Make sure to have at least 2 options and seperated by a comma " , " <br>
-          </span>
-          <p>
-            <label for="options">Enter potential results for Random Result Generator:</label>
-            <br>
-            <em>Make sure to seperate each option with a comma. For example: Apple, Banana, Carrot, Durian, etc...' <br>
-              <u>DO NOT</u> put a comma after the last listed item or a blank item will be added to the random list </em>
-          </p>
-          <textarea id="options" name="options" rows="5">Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu</textarea>
-          <hr>
-          <p>
-            <span class="error-message" id="number-of-results-message-1">Do not leave blank <br>
-            </span>
-            <span class="error-message" id="number-of-results-message-2">Make sure input is between or equal to min and max allowance <br>
-            </span>
-            <label for="number-of-results">How many final results:</label>
-            <br>
-            <input id="number-of-results" name="number-of-results" type="number" value="10">
-            <em>(min: 1 / max 20)</em>
-          </p>
-          <hr>
-          <p>
-            <span class="error-message" id="time-until-result-message-1">Do not leave blank <br>
-            </span>
-            <span class="error-message" id="time-until-result-message-2">Make sure input is between or equal to min and max allowance <br>
-            </span>
-            <label for="time-until-result">How long each result randomises before showing final result:</label>
-            <br>
-            <input id="time-until-result" name="time-until-result" type="number" value="2"> second(s). <em>(min: 0 / max: 600)</em>
-          </p>
-          <hr>
-          <p>
-            <span class="error-message" id="time-until-show-message-1">Do not leave blank <br>
-            </span>
-            <span class="error-message" id="time-until-show-message-2">Make sure input is between or equal to min and max allowance <br>
-            </span>
-            <label for="time-until-show">How quickly results fade in and change colour:</label>
-            <br>
-            <input id="time-until-show" name="time-until-show" type="number" value="1"> second(s). <em>(min: 0 / max 20)</em>
-          </p>
-          <hr>
-          <label for="multiple-wins">Can an option win multiple times:</label>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A customisable random result generator using your own options">
+  <meta name="keywords" content="Random, Raffle, RNG">
+  <meta name="author" content="Warwick Hart">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://kit.fontawesome.com/3f3c2144d6.js" crossorigin="anonymous"></script>
+  <title>Random Result Generator</title>
+</head>
+
+<body>
+  <header id="header">
+    <h1>Random<br>Result<br>Generator</h1>
+  </header>
+  <hr style="width:80%;margin:auto;">
+  <div id="intro">
+    <p>Welcome to the <b>Random Result Generator</b>. This page will allow you to create a customisable raffle. You can input what the potential results will be, how many will be displayed per raffle, and many customisable options.</p>
+  </div>
+  <div id="page-container">
+    <div class="options-container">
+      <div class="options-box">
+        <h2>Edit options and how they appear:</h2>
+        <hr>
+        <span class="error-message" id="options-message-1">Make sure to have at least 2 options and seperated by a comma " , " <br>
+        </span>
+        <p>
+          <label for="options">Enter potential results for Random Result Generator:</label>
           <br>
-          <input type="checkbox" id="multiple-wins" name="multiple-wins" value="yes">
-        </div>
-        <div class="options-box">
-          <h2>Edit your text you wish to display:</h2>
-          <hr>
-          <p>
-            <label for="gen-title-user">Title of generator:</label>
-            <br>
-            <input id="gen-title-user" name="gen-title-user" type="text" value="STREAMER GIVEAWAY">
-          </p>
-          <hr>
-          <p>
-            <label for="criteria-user">Enter body text for Random Result Generator:</label>
-          </p>
-          <textarea id="criteria-user" name="criteria-user" rows="10" cols="50">Eligbility Criteria
+          <em>Make sure to seperate each option with a comma. For example: Apple, Banana, Carrot, Durian, etc...' <br>
+            <u>DO NOT</u> put a comma after the last listed item or a blank item will be added to the random list </em>
+        </p>
+        <textarea id="options" name="options" rows="5">Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliet, Kilo, Lima, Mike, November, Oscar, Papa, Quebec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zulu</textarea>
+        <hr>
+        <p>
+          <span class="error-message" id="number-of-results-message-1">Do not leave blank <br>
+          </span>
+          <span class="error-message" id="number-of-results-message-2">Make sure input is between or equal to min and max allowance <br>
+          </span>
+          <label for="number-of-results">How many final results:</label>
+          <br>
+          <input id="number-of-results" name="number-of-results" type="number" value="10">
+          <em>(min: 1 / max 20)</em>
+        </p>
+        <hr>
+        <p>
+          <span class="error-message" id="time-until-result-message-1">Do not leave blank <br>
+          </span>
+          <span class="error-message" id="time-until-result-message-2">Make sure input is between or equal to min and max allowance <br>
+          </span>
+          <label for="time-until-result">How long each result randomises before showing final result:</label>
+          <br>
+          <input id="time-until-result" name="time-until-result" type="number" value="2"> second(s). <em>(min: 0 / max: 600)</em>
+        </p>
+        <hr>
+        <p>
+          <span class="error-message" id="time-until-show-message-1">Do not leave blank <br>
+          </span>
+          <span class="error-message" id="time-until-show-message-2">Make sure input is between or equal to min and max allowance <br>
+          </span>
+          <label for="time-until-show">How quickly results fade in and change colour:</label>
+          <br>
+          <input id="time-until-show" name="time-until-show" type="number" value="1"> second(s). <em>(min: 0 / max 20)</em>
+        </p>
+        <hr>
+        <label for="multiple-wins">Can an option win multiple times:</label>
+        <br>
+        <input type="checkbox" id="multiple-wins" name="multiple-wins" value="yes">
+      </div>
+      <div class="options-box">
+        <h2>Edit your text you wish to display:</h2>
+        <hr>
+        <p>
+          <label for="gen-title-user">Title of generator:</label>
+          <br>
+          <input id="gen-title-user" name="gen-title-user" type="text" value="STREAMER GIVEAWAY">
+        </p>
+        <hr>
+        <p>
+          <label for="criteria-user">Enter body text for Random Result Generator:</label>
+        </p>
+        <textarea id="criteria-user" name="criteria-user" rows="10" cols="50">Eligbility Criteria
           - Like the channel
           - Subscribe to the channel
           - Type !giveaway in chat
         </textarea>
+        <hr>
+        <p>
+          <label for="gen-tail-user">Tail of generator:</label>
+          <br>
+          <input id="gen-tail-user" name="gen-tail-user" type="text" value="www.StreamerWebsite.com">
+        </p>
+      </div>
+      <div class="break"></div>
+      <div class="options-box">
+        <div>
+          <h2>Select preset template to use:</h2>
           <hr>
-          <p>
-            <label for="gen-tail-user">Tail of generator:</label>
-            <br>
-            <input id="gen-tail-user" name="gen-tail-user" type="text" value="www.StreamerWebsite.com">
-          </p>
         </div>
-        <div class="break"></div>
-        <div class="options-box">
-          <div>
-            <h2>Select preset template to use:</h2>
-            <hr>
+        <div id="templates-container">
+          <div id="template1-container" class="template-container">
+            <div id="template1" class="template" onclick="templateSelected(1)" aria-label="Button: Example 1, Sets colours for generator to preset color, white text, black background"> Example text </div>
           </div>
-          <div id="templates-container">
-            <div id="template1-container" class="template-container">
-              <div id="template1" class="template" onclick="templateSelected(1)" aria-label="Button: Example 1, Sets colours for generator to preset color, white text, black background"> Example text </div>
-            </div>
-            <div id="template2-container" class="template-container">
-              <div id="template2" class="template" onclick="templateSelected(2)" aria-label="Button: Example 2, Sets colours for generator to preset color, white text, purple background"> Example text </div>
-            </div>
-            <div id="template3-container" class="template-container">
-              <div id="template3" class="template" onclick="templateSelected(3)" aria-label="Button: Example 2, Sets colours for generator to preset color, black text, green background"> Example text </div>
-            </div>
+          <div id="template2-container" class="template-container">
+            <div id="template2" class="template" onclick="templateSelected(2)" aria-label="Button: Example 2, Sets colours for generator to preset color, white text, purple background"> Example text </div>
+          </div>
+          <div id="template3-container" class="template-container">
+            <div id="template3" class="template" onclick="templateSelected(3)" aria-label="Button: Example 2, Sets colours for generator to preset color, black text, green background"> Example text </div>
           </div>
         </div>
-        <div class="break"></div>
-        <div class="options-box" style="text-align: -webkit-center;">
-          <div>
-            <h2>Or choose your generator colours:</h2>
-            <hr>
-          </div>
-          <table id="color-table" style="border-spacing: 30px 2px;">
-            <tr style="text-align: left;">
-              <th>Property</th>
-              <th>Colour</th>
-            </tr>
-            <tr>
-              <td><label for="title-color">Title colour:</label></td>
-              <td><input type="color" id="title-color" name="title-color" value="#ffc400"></td>
-            </tr>
-            <tr>
-              <td><label for="body-text-color">Body text colour:</label></td>
-              <td><input type="color" id="body-text-color" name="body-text-color" value="#ffc400"></td>
-            </tr>
-            <tr>
-              <td><label for="tail-color">Tail text colour:</label></td>
-              <td><input type="color" id="tail-color" name="tail-color" value="#ffc400"></td>
-            </tr>
-            <tr>
-              <td><label for="countdown-color">Countdown colour:</label></td>
-              <td><input type="color" id="countdown-color" name="countdown-color" value="#ffc400"></td>
-            </tr>
-            <tr>
-              <td><label for="result-random-color">Result colour (while randomising):</label></td>
-              <td><input type="color" id="result-random-color" name="result-random-color" value="#BF1212"></td>
-            </tr>
-            <tr>
-              <td><label for="result-final-color">Result colour (after randomising):</label></td>
-              <td><input type="color" id="result-final-color" name="result-final-color" value="#25DB00"></td>
-            </tr>
-          </table>
-        </div>
-        <div class="break"></div>
-        <div class="options-box">
-          <h2>Choose background pattern:</h2>
+      </div>
+      <div class="break"></div>
+      <div class="options-box" style="text-align: -webkit-center;">
+        <div>
+          <h2>Or choose your generator colours:</h2>
           <hr>
-          <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-            <div id="bg-custom-0-constainer" class="bg-template-container">
-              <input type="color" id="bg-custom-0" class="bg-template-size" onclick="bgTemplateSelected(0)" name="bg-custom-0" value="#001861" aria-label="Button: Solid background colour  for generator. Opens colour picker">
-            </div>
-            <div id="bg-custom-1-constainer" class="bg-template-container">
-              <div id="bg-custom-1" class="bg-template-size" onclick="bgTemplateSelected(1)" aria-label="Button: White to light blue triangle background for generator"></div>
-            </div>
-            <div id="bg-custom-2-constainer" class="bg-template-container">
-              <div id="bg-custom-2" class="bg-template-size" onclick="bgTemplateSelected(2)" aria-label="Button: Orange brick background for generator"></div>
-            </div>
-            <div id="bg-custom-3-constainer" class="bg-template-container">
-              <div id="bg-custom-3" class="bg-template-size" onclick="bgTemplateSelected(3)" aria-label="Button: Purple background with connecting dots"></div>
-            </div>
-            <div id="bg-custom-4-constainer" class="bg-template-container">
-              <div id="bg-custom-4" class="bg-template-size" onclick="bgTemplateSelected(4)" aria-label="Button: Light to dark purple patterned background"></div>
-            </div>
+        </div>
+        <table id="color-table" style="border-spacing: 30px 2px;">
+          <tr style="text-align: left;">
+            <th>Property</th>
+            <th>Colour</th>
+          </tr>
+          <tr>
+            <td><label for="title-color">Title colour:</label></td>
+            <td><input type="color" id="title-color" name="title-color" value="#ffc400"></td>
+          </tr>
+          <tr>
+            <td><label for="body-text-color">Body text colour:</label></td>
+            <td><input type="color" id="body-text-color" name="body-text-color" value="#ffc400"></td>
+          </tr>
+          <tr>
+            <td><label for="tail-color">Tail text colour:</label></td>
+            <td><input type="color" id="tail-color" name="tail-color" value="#ffc400"></td>
+          </tr>
+          <tr>
+            <td><label for="countdown-color">Countdown colour:</label></td>
+            <td><input type="color" id="countdown-color" name="countdown-color" value="#ffc400"></td>
+          </tr>
+          <tr>
+            <td><label for="result-random-color">Result colour (while randomising):</label></td>
+            <td><input type="color" id="result-random-color" name="result-random-color" value="#BF1212"></td>
+          </tr>
+          <tr>
+            <td><label for="result-final-color">Result colour (after randomising):</label></td>
+            <td><input type="color" id="result-final-color" name="result-final-color" value="#25DB00"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="break"></div>
+      <div class="options-box">
+        <h2>Choose background pattern:</h2>
+        <hr>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap;">
+          <div id="bg-custom-0-constainer" class="bg-template-container">
+            <input type="color" id="bg-custom-0" class="bg-template-size" onclick="bgTemplateSelected(0)" name="bg-custom-0" value="#001861" aria-label="Button: Solid background colour  for generator. Opens colour picker">
+          </div>
+          <div id="bg-custom-1-constainer" class="bg-template-container">
+            <div id="bg-custom-1" class="bg-template-size" onclick="bgTemplateSelected(1)" aria-label="Button: White to light blue triangle background for generator"></div>
+          </div>
+          <div id="bg-custom-2-constainer" class="bg-template-container">
+            <div id="bg-custom-2" class="bg-template-size" onclick="bgTemplateSelected(2)" aria-label="Button: Orange brick background for generator"></div>
+          </div>
+          <div id="bg-custom-3-constainer" class="bg-template-container">
+            <div id="bg-custom-3" class="bg-template-size" onclick="bgTemplateSelected(3)" aria-label="Button: Purple background with connecting dots"></div>
+          </div>
+          <div id="bg-custom-4-constainer" class="bg-template-container">
+            <div id="bg-custom-4" class="bg-template-size" onclick="bgTemplateSelected(4)" aria-label="Button: Light to dark purple patterned background"></div>
           </div>
         </div>
-        <div class="break"></div>
-        <div class="options-box" id="fullscreen-options-box">
-          <label for="full-screen">Load generator in full screen mode:</label>
-          <input type="checkbox" id="full-screen" name="full-screen" value="yes">
+      </div>
+      <div class="break"></div>
+      <div class="options-box" id="fullscreen-options-box">
+        <label for="full-screen">Load generator in full screen mode:</label>
+        <input type="checkbox" id="full-screen" name="full-screen" value="yes">
+      </div>
+      <div class="break"></div>
+    </div>
+  </div>
+  <div>
+    <button id="btn-load" aria-label="Load Generator">Load the generator</button>
+  </div>
+  <div id="result-container">
+    <div id="result-top">
+      <span id="gen-title-span"></span>
+    </div>
+    <div id="result-mid">
+      <div id="result-mid-pre" style="margin:auto;">
+        <div id="criteria-generator">
+          <span id="gen-criteria-span"></span>
         </div>
-        <div class="break"></div>
+        <button id="btn-start" aria-label="Start Generator">Start</button>
       </div>
+      <div id="countdown-generator"></div>
+      <span id="results-list"></span>
     </div>
-    <div>
-      <button id="btn-load" aria-label="Load Generator">Load the generator</button>
+    <div id="result-bottom">
+      <span id="gen-tail-span"></span>
     </div>
-    <div id="result-container">
-      <div id="result-top">
-        <span id="gen-title-span"></span>
-      </div>
-      <div id="result-mid">
-        <div id="result-mid-pre" style="margin:auto;">
-          <div id="criteria-generator">
-            <span id="gen-criteria-span"></span>
-          </div>
-          <button id="btn-start" aria-label="Start Generator">Start</button>
-        </div>
-        <div id="countdown-generator"></div>
-        <span id="results-list"></span>
-      </div>
-      <div id="result-bottom">
-        <span id="gen-tail-span"></span>
-      </div>
-      <button id="btn-close" aria-label="Close Generator">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
+    <button id="btn-close" aria-label="Close Generator">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <footer id="footer">
+    <div> Random Result Generator <br>See my other projects on <a href="https://github.com/BobWritesCode?tab=repositories" target="_blank" aria-label="Link to Warwick Hart's GitHib projects (opens in new tab)">GitHub</a>
+      <i class="fa-brands fa-github"></i>
+      <i class="fa-solid fa-window-restore"></i>
+      <br>Connect to me on <a href="https://www.linkedin.com/in/warwickhart/" target="_blank" aria-label="Link to Warwick Hart's LinkedIn (opens in new tab)">LinkedIn</a>
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-solid fa-window-restore"></i>
     </div>
-    <footer id="footer">
-      <div> Random Result Generator <br>See my other projects on <a href="https://github.com/BobWritesCode?tab=repositories" target="_blank" aria-label="Link to Warwick Hart's GitHib projects (opens in new tab)">GitHub</a>
-        <i class="fa-brands fa-github"></i>
-        <i class="fa-solid fa-window-restore"></i>
-        <br>Connect to me on <a href="https://www.linkedin.com/in/warwickhart/" target="_blank" aria-label="Link to Warwick Hart's LinkedIn (opens in new tab)">LinkedIn</a>
-        <i class="fa-brands fa-linkedin"></i>
-        <i class="fa-solid fa-window-restore"></i>
-      </div>
-    </footer>
-    <script src="assets/js/script.js"></script>
-  </body>
+  </footer>
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>

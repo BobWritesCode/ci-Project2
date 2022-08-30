@@ -50,7 +50,7 @@ h2 {
 
 }
 
-#intro *{
+#intro * {
   font-size: xx-large;
   color: #FAFAFA;
   text-align: center;
@@ -89,7 +89,8 @@ i {
   text-align: center;
 }
 
-input, textarea {
+input,
+textarea {
   background-color: #FAFAFA;
   border: solid #333 1px;
   padding: 0 5px;
@@ -101,7 +102,8 @@ textarea {
   border-radius: 5px;
 }
 
-input[type="text"], input[type="number"] {
+input[type="text"],
+input[type="number"] {
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -413,7 +415,7 @@ hr {
     font-size: 40px;
   }
 
-  #intro *{
+  #intro * {
     font-size: 20px;
   }
 
