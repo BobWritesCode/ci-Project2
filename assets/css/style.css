@@ -252,13 +252,15 @@ input[type="color"] {
 
 #result-bottom {
   display: none;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 3;
-  grid-row-end: 4;
-  justify-content: center;
-  text-align: center;
-  align-self: center;
+}
+
+#gen-tail-span {
+  font-size: 5vw;
+  position: absolute;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 #results-list {
@@ -293,11 +295,6 @@ input[type="color"] {
   margin: 0 auto;
   padding: 0 0 20px 0;
   line-height: 120%;
-}
-
-#gen-tail-span {
-  line-height: 70%;
-  font-size: 5vw;
 }
 
 button {

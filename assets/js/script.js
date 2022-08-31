@@ -281,14 +281,6 @@ function loadGenerator() {
       if (resultContainerHTML.requestFullscreen) {
         resultContainerHTML.requestFullscreen();
       }
-      else if (resultContainerHTML.webkitRequestFullscreen) {
-        /* Safari */
-        resultContainerHTML.webkitRequestFullscreen();
-      }
-      else if (resultContainerHTML.msRequestFullscreen) {
-        /* IE11 */
-        resultContainerHTML.msRequestFullscreen();
-      }
     }
     resultTop.style.display = "block";
     criteriaGenerator.style.display = "flex";
@@ -343,16 +335,8 @@ function exitGenerator() {
   countdown(true);
   resultsListHTML.innerHTML = "";
   if ((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
-    if (document.exitFullscreen) {
+    if (document.exitFullscreen != null ) {
       document.exitFullscreen();
-    }
-    else if (document.webkitExitFullscreen) {
-      /* Safari */
-      document.webkitExitFullscreen();
-    }
-    else if (document.msExitFullscreen) {
-      /* IE11 */
-      document.msExitFullscreen();
     }
   }
   resultContainerHTML.removeAttribute('class');
