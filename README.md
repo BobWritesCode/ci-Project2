@@ -1,6 +1,6 @@
 # Random Result Generator
 
-![Multiple Device Demo](assets/images/showcase.webp "Multiple Device Demo")
+![Multiple Device Demo](assets/images/readme/showcase.webp "Multiple Device Demo")
 
 ## Live Site
 Random Result Generator - [https://bobwritescode.github.io/ci-Project2](https://bobwritescode.github.io/ci-Project2)
@@ -62,8 +62,42 @@ My goals for the site are to have:
 
 ***
 ## Features
-  ### Existing Features
-  ### Features Left to Implement
+
+Random Result Generator is filled with features for the end user and there is a lot of stuff also happening in the background. In this section we will breakddown  the different features and what is happening in the background.
+
+### Existing Features
+
+#### Desktop vs Mobile
+
+![Desktop Snapshot](/assets/images/readme/dekstop-snapshot.webp)\
+![Mobile Snapshot](/assets/images/readme/mobile-snapshot.webp)
+
+It was important to make sure that this site worked across mobile and desktop. Using Flex and a combination of viewport typography the site displays very well across different screensizes.
+
+#### User options - Part 1
+
+- **"Edit options and how they appear:"**\
+![User options - Part1](/assets/images/readme/options_1.webp)\
+The first section is designed for the user to input their potential outcomes and some basic options on how the results will output.
+
+  - **"Enter potential results for Random Result Regenerator"**\
+In this section the user can input their own options to what they wish to get random results for. For the ease of testing I have provided some sample options as an example. The user just needs to make sure each option is separted with a comma and the last option on the list does not end in a comma.
+
+  - **"How many final results:"**\
+  User can decide how many results will appear. Using CSS and JS I have made sure that the generator scales the divs and font size appropriately.
+
+  - **"How long each result randomises before showing final result:"**\
+  User can decide how long between each result until the next one is shown. As default it is set to 2 seconds.
+
+  - **"Can an option win multiple times:"**\
+  User can decide if options from their list can appear multiple times in the same random generated results.
+
+#### User options - Part 2
+
+- Tested with 5000 entries\
+![User options - Part1](/assets/images/readme/5000.webp)
+
+### Features Left to Implement
 
 ***
 ## Technologies Used
