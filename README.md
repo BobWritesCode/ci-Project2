@@ -77,7 +77,7 @@ It was important to make sure that this site worked across mobile and desktop. U
 #### User options - Part 1
 
 - **"Edit options and how they appear:"**\
-![User options - Part1](/assets/images/readme/options_1.webp)\
+![User options - Part 1](/assets/images/readme/options_1.webp)\
 The first section is designed for the user to input their potential outcomes and some basic options on how the results will output.
 
   - **"Enter potential results for Random Result Regenerator"**\
@@ -93,6 +93,17 @@ In this section the user can input their own options to what they wish to get ra
   User can decide if options from their list can appear multiple times in the same random generated results.
 
 #### User options - Part 2
+![User options - Part 2](/assets/images/readme/options_2.webp)\
+This section is more dedicated to user text input for the Generator, what they want to see as the Title, the text they want to display in the center before starting the randomising and the tail text at the bottom of the screen.
+![Snapshot of generator](/assets/images/readme/generator_1.webp)\
+
+#### Preset template select
+![User options - Part1](/assets/images/readme/preset.gif)
+The user can choose from currently 1 or 3 preset color templates. Using CSS and JS there is onscreen feedback to the user by a green border apeparing around the selected option.
+
+#### User colour choices
+![User options - Part1](/assets/images/readme/colour-picker.gif)
+The user can decided what colour scheme they wish to have for the generator. This can be very helpful if the user wants to keep it on brand. It's also very useful if the user wants to display results on a livestream and have a transparant background using chroma key[^1].
 
 - Tested with 5000 entries\
 ![User options - Part1](/assets/images/readme/5000.webp)
@@ -159,3 +170,5 @@ You can break the credits section up into Content and Media, depending on what y
 - The images used for the gallery page were taken from this other open source site
 
 ### Miscellaneous
+
+[^1]: [Wikipedia - Chroma Key](https://en.wikipedia.org/wiki/Chroma_key).
