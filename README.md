@@ -40,6 +40,7 @@ Random Result Generator is a site to help the end user be able to run a raffle t
 
 ***
 ## Brief
+
 My goals for the site are to have:
 - a generator that provides random results based on the user's input.
 - a way for the user to input their own potential results.
@@ -62,26 +63,28 @@ My goals for the site are to have:
 
 ***
 ## Features
-
 Random Result Generator is filled with features for the end user and there is a lot of stuff also happening in the background. In this section we will breakddown  the different features and what is happening in the background.
 
 ### Existing Features
 
-#### Desktop vs Mobile
-
-![Desktop Snapshot](/assets/images/readme/dekstop-snapshot.webp)\
-![Mobile Snapshot](/assets/images/readme/mobile-snapshot.webp)
+#### Desktop and Mobile viewing
 
 It was important to make sure that this site worked across mobile and desktop. Using Flex and a combination of viewport typography the site displays very well across different screensizes.
 
-#### User options - Part 1
+  - **Desktop**\
+  ![Desktop Snapshot](/assets/images/readme/dekstop-snapshot.webp)\
+  
+  - **Mobile**\
+  ![Mobile Snapshot](/assets/images/readme/mobile-snapshot.webp)
 
-- **"Edit options and how they appear:"**\
+#### User options
+
 ![User options - Part 1](/assets/images/readme/options_1.webp)\
+**"Edit options and how they appear:"**\
 The first section is designed for the user to input their potential outcomes and some basic options on how the results will output.
 
   - **"Enter potential results for Random Result Regenerator"**\
-In this section the user can input their own options to what they wish to get random results for. For the ease of testing I have provided some sample options as an example. The user just needs to make sure each option is separted with a comma and the last option on the list does not end in a comma.
+  In this section the user can input their own options to what they wish to get random results for. For the ease of testing I have provided some sample options as an example. The user just needs to make sure each option is separted with a comma and the last option on the list does not end in a comma.
 
   - **"How many final results:"**\
   User can decide how many results will appear. Using CSS and JS I have made sure that the generator scales the divs and font size appropriately.
@@ -92,21 +95,39 @@ In this section the user can input their own options to what they wish to get ra
   - **"Can an option win multiple times:"**\
   User can decide if options from their list can appear multiple times in the same random generated results.
 
-#### User options - Part 2
-![User options - Part 2](/assets/images/readme/options_2.webp)\
-This section is more dedicated to user text input for the Generator, what they want to see as the Title, the text they want to display in the center before starting the randomising and the tail text at the bottom of the screen.
-![Snapshot of generator](/assets/images/readme/generator_1.webp)\
+  ![User options - Part 2](/assets/images/readme/options_2.webp)
 
-#### Preset template select
-![User options - Part1](/assets/images/readme/preset.gif)
-The user can choose from currently 1 or 3 preset color templates. Using CSS and JS there is onscreen feedback to the user by a green border apeparing around the selected option.
+  - **"Edit your text you wish to deiplay:"**\
+  This section is more dedicated to user text input for the Generator, what they want to see as the Title, the text they want to display in the center before starting the randomising and the tail text at the bottom of the screen.
+  ![Snapshot of generator](/assets/images/readme/generator_1.webp)
 
-#### User colour choices
-![User options - Part1](/assets/images/readme/colour-picker.gif)
-The user can decided what colour scheme they wish to have for the generator. This can be very helpful if the user wants to keep it on brand. It's also very useful if the user wants to display results on a livestream and have a transparant background using chroma key[^1].
+  - **Preset template select**\
+  ![Preset template select](/assets/images/readme/preset.gif)\
+  The user can choose from currently 1 or 3 preset color templates. Using CSS and JS there is onscreen feedback to the user by a green border apeparing around the selected option.
 
-- Tested with 5000 entries\
-![User options - Part1](/assets/images/readme/5000.webp)
+  - **User colour picker**\
+  ![User colour picker](/assets/images/readme/colour-picker.gif)\
+  The user can decided what colour scheme they wish to have for the generator. This can be very helpful if the user wants to keep it on brand. 
+
+  - **User background picker**\
+  ![User colour picker](/assets/images/readme/background-picker.gif)\
+  The user can pick either a solid colour background, which they can use the color picker to choose. This is useful if the user wants to display results on a livestream and have a transparant background using chroma key[^1]. Or there are some patterend backgrounds created using CSS (Credit to [SVG Backgrounds](https://www.svgbackgrounds.com/)).
+
+  - **Optional fullscreen**\
+  ![Optional fullscreen](/assets/images/readme/user-fullscreen.webp)\
+  The user has the option to open the generator fullscreen. This could be useful if the results are being revealed in person and the results are being shown on a big screen to an audience of people.
+
+  - **Button - Load the generator**\
+  ![Button - Load the generator](/assets/images/readme/button-load.webp)\
+  This button will run the JS function loadGenerator().
+
+  - **Footer**\
+  ![Button - Load the generator](/assets/images/readme/footer.webp)\
+  The footer is just to help the user experience and let them know they have reach the bottom of the page.
+
+  - Tested with 5000 entries
+  ![User options - Part1](/assets/images/readme/5000.webp)
+
 
 ### Features Left to Implement
 
