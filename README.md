@@ -24,14 +24,12 @@ Random Result Generator - [https://bobwritescode.github.io/ci-Project2](https://
     - [Features Left to Implement](#Features-Left-to-Implement)
 - [Technologies Used](#Technologies-Used)
 - [Testing](#Testing)
-- [Bugs](#Bugs)
-    - [Current](#Current)
-    - [Resolved](#Resolved)
+    - [Validator Testing](#Validator-Testing)
+    - [Screen Size](#Screen-Size)
+    - [Browsers](#Browsers)
+    - [Bugs](#Bugs)
 - [Deployment](#Deployment)
 - [Credits](#Credits)
-    - [Code](#Content)
-    - [Media](#Media)
-    - [Miscellaneous](#Miscellaneous)
 
 ***
 ## Objective 
