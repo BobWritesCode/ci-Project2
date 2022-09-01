@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * When user chooses one of the preset templates this will set those values ready for when user loads generator.
+ * When user chooses one of the pre-set templates this will set those values ready for when user loads generator.
  */
 function templateSelected(i) {
   switch (i) {
@@ -86,7 +86,7 @@ function templateSelected(i) {
 }
 
 /**
- * When user chooses one of the preset BACKGROUN templates this will set those values ready for when user loads generator.
+ * When user chooses one of the pre-set background templates this will set those values ready for when user loads generator.
  */
  function bgTemplateSelected(i) {
   switch (i) {
@@ -152,7 +152,7 @@ function formValidation() {
   const timeUntilShowMsg1 = document.getElementById("time-until-show-message-1");
   const timeUntilShowMsg2 = document.getElementById("time-until-show-message-2");
 
-  // Checking to make sure non of the vital imputs have been left blank, if so display error message.
+  // Checking to make sure none of the vital inputs have been left blank, if so, display error message.
   if (options.length < 2) {
     if (!(optionsHTML.classList.contains("error"))) {
       optionsHTML.classList.add("error");
@@ -166,7 +166,7 @@ function formValidation() {
     }
     optionsErrorMsg1.style.display = "none";
   }
-  // Checking to make sure vital imput has been left blank, if so display error message.
+  // Checking to make sure no vital input has been left blank, if so, display error message.
   if (!(numberOfResults.value)) {
     if (!(numberOfResults.classList.contains("error"))) {
       numberOfResults.classList.add("error");
@@ -174,7 +174,7 @@ function formValidation() {
     numberOfResultsMsg1.style.display = "block";
     numberOfResultsMsg2.style.display = "none";
     validation = false;
-    // Checking input value is within the min and max range, if so display error message.
+    // Checking input value within the min and max range, if so, display error message.
   }
   else if ((parseInt(numberOfResults.value) < 1) || (parseInt(numberOfResults.value) > 20)) {
     if (!(numberOfResults.classList.contains("error"))) {
@@ -192,7 +192,7 @@ function formValidation() {
     numberOfResultsMsg1.style.display = "none";
     numberOfResultsMsg2.style.display = "none";
   }
-  // Checking to make sure vital imput has been left blank, if so display error message.
+  // Checking to make sure no vital input has been left blank, if so, display error message.
   if (!(timeUntilResult.value)) {
     if (!(timeUntilResult.classList.contains("error"))) {
       timeUntilResult.classList.add("error");
@@ -200,7 +200,7 @@ function formValidation() {
     timeUntilResultMsg1.style.display = "block";
     timeUntilResultMsg2.style.display = "none";
     validation = false;
-    // Checking input value is within the min and max range, if so display error message.
+    // Checking input value within the min and max range, if so, display error message.
   }
   else if ((parseInt(timeUntilResult.value) < 0) || (parseInt(timeUntilResult.value) > 600)) {
     if (!(timeUntilResult.classList.contains("error"))) {
@@ -218,7 +218,7 @@ function formValidation() {
     timeUntilResultMsg1.style.display = "none";
     timeUntilResultMsg2.style.display = "none";
   }
-  // Checking to make sure vital imput has been left blank, if so display error message.
+  // Checking to make sure no vital input has been left blank, if so, display error message.
   if (!(timeUntilShow.value)) {
     if (!(timeUntilShow.classList.contains("error"))) {
       timeUntilShow.classList.add("error");
@@ -226,7 +226,7 @@ function formValidation() {
     timeUntilShowMsg1.style.display = "block";
     timeUntilShowMsg2.style.display = "none";
     validation = false;
-    // Checking input value is within the min and max range, if so display error message.
+    // Checking input value within the min and max range, if so, display error message.
   }
   else if ((parseInt(timeUntilShow.value) < 0) || (parseInt(timeUntilShow.value) > 20)) {
     if (!(timeUntilShow.classList.contains("error"))) {
@@ -247,7 +247,7 @@ function formValidation() {
 }
 
 /**
- * When user clicks Load Generator this sets up the webpage and set some variables.
+ * When user clicks 'Load the generator', this function sets up the webpage and set some variables.
  */
 function loadGenerator() {
   if (formValidation()) {
@@ -355,7 +355,7 @@ function exitGenerator() {
 }
 
 /**
- * When user clicks start on generator this fuctions starts everything.
+ * When user clicks 'Start' on generator, this functions starts everything.
  */
 function startGenerator() {
   resultMidPre.style.display = "none";
@@ -363,7 +363,7 @@ function startGenerator() {
 }
 
 /**
- * Take user input options and sorts them into an array then returns that to calling function.
+ * Takes user's input values and sorts them into an array, then returns that to calling function.
  */
 function sortOptions() {
   let sortOptions = document.getElementById("options").value.split(',');
