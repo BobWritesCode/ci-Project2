@@ -36,7 +36,7 @@ Random Result Generator - [https://bobwritescode.github.io/ci-Project2](https://
 ***
 ## Objective 
 
-Random Result Generator is a site to help the end user be able to run a raffle type giveaway or just to help make a choice. The site has a range of multiple targets including companies looking to provide a virtual giveaway live, all the way to someone who just wants to make a decision on what takeaway they are having that evening. The site has a lot of potential to go further from it's current state and this is mentioned in the [Features Left to Implement](#Features-Left-to-Implement) of this README.
+Random Result Generator is a site to help the end user be able to run a raffle type giveaway or just to help make a choice. The site has a range of multiple targets including companies looking to provide a virtual giveaway live, all the way to someone who just wants to decide on what takeaway they are having that evening. The site has a lot of potential to go further from its current state and this is mentioned in the [Features Left to Implement](#Features-Left-to-Implement) of this README.
 
 ***
 ## Brief
@@ -46,7 +46,7 @@ My goals for the site are to have:
 - a way for the user to input their own potential results.
 - a way for the user to customise how many results they get from the generator.
 - a way for the user to customise the generator to fit their own brand.
-- a way for the user to easily modify thier choices.
+- a way for the user to easily modify their choices.
 
 ***
 ## User Experience Design
@@ -54,9 +54,9 @@ My goals for the site are to have:
 ### User Requirements
 
 Some example user stories which will affect the design and functions of this site:
-- *"As a first time visitor, I want to know what this site is about. I may use several different devices (mobile/tablet etc.) to view the site. I would like to be able to navigate easily"*
+- *"As a first-time visitor, I want to know what this site is about. I may use several different devices (mobile/tablet etc.) to view the site. I would like to be able to navigate easily"*
 - *"I want to have easy-to-follow steps and nothing being over complicated"*
-- *"I want it to be dummy-proof. If there are any errors please help me in correcting them."*
+- *"I want it to be dummy-proof. If there are any errors, please help me in correcting them."*
 - *"I am a streamer want to be able to share the results on my live broadcast to my viewers."*
 - *"I am a officer manager and I want to be able to share the results on a TV screen."*
 
@@ -67,18 +67,18 @@ Some example user stories which will affect the design and functions of this sit
 
 You will see that when I first set out to design this site, I had an idea of what I was going for but as time progress and new ideas came to mind, the final outcome is much different.
 
-#### Inital wireframe
+#### Initial wireframe
 ![Initial Wireframe](/assets/images/readme/wireframe-initial.webp)
 
 From the original wireframe the following changes have been made:
   - Options Area 1 became the area dedicated for user outcomes and how the results are revealed
   - Options Area 2 became the area for user text input that will be shown at the top, middle (pre result generation starting) and the bottom (tail) of the generator.
-  - Results Area was made into it's own container that appears when the generator is launchers.
+  - Results Area was made into its own container that appears when the generator is launchers.
   - There are have been several new sections added as well including:
-    - Color preset templates,
-    - User color inputs,
-    - Background preset templates,
-    - Option to launch fullscreen.
+    - Colour pre-set templatess,
+    - User colour inputs,
+    - Background pre-set templates,
+    - Option to launch full screen.
 
 ### Colour Scheme
 ![Colour Scheme](/assets/images/readme/colours.webp)\
@@ -89,10 +89,10 @@ The idea behind this colour scheme is give a modern and impactful feel without b
 The site uses [Google Fonts](https://fonts.google.com/).
 
   - Main header - [Archivo Black](https://fonts.google.com/specimen/Archivo+Black)\
-  This font was choosen as the main header as for it's impact and clarity.
+  This font was chosen as the main header as for its impact and clarity.
 
   - Rest of text - [Kanit](https://fonts.google.com/specimen/Kanit)\
-  This font was choose as it felt to me it gave a party typrewriter, party code feel. Which I felt suited a site that is focused on user input and then automated generation of results.
+  This font was chosen as it felt to me it gave a party typewriter, party code feel. Which I felt suited a site that is focused on user input and then automated generation of results.
 
 ### Imagery
 
@@ -100,13 +100,13 @@ No imagery is planned to be used.
 
 ***
 ## Features
-Random Result Generator is filled with features for the end user and there is a lot of stuff also happening in the background. In this section we will breakddown  the different features and what is happening in the background.
+Random Result Generator is filled with features for the end user and there is a lot of stuff also happening in the background. In this section we will breakdown the different features and what is happening in the background.
 
 ### Existing Features
 
 #### Desktop and Mobile viewing
 
-It was important to make sure that this site worked across mobile and desktop. Using Flex and a combination of viewport typography the site displays very well across different screensizes.
+It was important to make sure that this site worked across mobile and desktop. Using Flex and a combination of viewport typography the site displays very well across different screen sizes.
 
   - **Desktop**\
   ![Desktop Snapshot](/assets/images/readme/dekstop-snapshot.webp)\
@@ -122,10 +122,10 @@ It was important to make sure that this site worked across mobile and desktop. U
 The first section is designed for the user to input their potential outcomes and some basic options on how the results will output.
 
   - **"Enter potential results for Random Result Regenerator"**\
-    In this section the user can input their own options to what they wish to get random results for. For the ease of testing I have provided some sample options as an example. The user just needs to make sure each option is separted with a comma and the last option on the list does not end in a comma.
+    In this section the user can input their own options to what they wish to get random results for. For the ease of testing, I have provided some sample options as an example. The user just needs to make sure each option is separated with a comma and the last option on the list does not end in a comma.
 
   - **"How many final results:"**\
-    User can decide how many results will appear. Using CSS and JS I have made sure that the generator scales the divs and font size appropriately.
+    User can decide how many results will appear. Using CSS and JavaScript I have made sure that the generator scales the `div`s and font size appropriately.
 
   - **"How long each result randomises before showing final result:"**\
     User can decide how long between each result until the next one is shown. As default it is set to 2 seconds.
@@ -135,85 +135,85 @@ The first section is designed for the user to input their potential outcomes and
 
   - ![User options - Part 2](/assets/images/readme/options_2.webp)
 
-  - **"Edit your text you wish to deiplay:"**\
-    This section is more dedicated to user text input for the Generator, what they want to see as the Title, the text they want to display in the center before starting the randomising and the tail text at the bottom of the screen.
+  - **"Edit your text you wish to display:"**\
+    This section is more dedicated to user text input for the Generator, what they want to see as the Title, the text they want to display in the centre before starting the randomising and the tail text at the bottom of the screen. 
     ![Snapshot of generator](/assets/images/readme/generator_1.webp)
 
-  - **Preset template select**\
-    ![Preset template select](/assets/images/readme/preset.gif)\
-    The user can choose from currently 1 or 3 preset color templates. Using CSS and JS there is onscreen feedback to the user by a green border apeparing around the selected option.
+  - **Pre-set template select**\
+    ![Pre-set template select](/assets/images/readme/preset.gif)\
+    The user can choose from currently 1 or 3 pre-set colour templates. Using CSS and JavaScript there is onscreen feedback to the user by a green border appearing around the selected option.
 
   - **User colour picker**\
     ![User colour picker](/assets/images/readme/colour-picker.gif)\
-    The user can decided what colour scheme they wish to have for the generator. This can be very helpful if the user wants to keep it on brand. 
+    The user can decide what colour scheme they wish to have for the generator. This can be very helpful if the user wants to keep it on brand. 
 
   - **User background picker**\
     ![User background picker](/assets/images/readme/background-picker.gif)\
-    The user can pick either a solid colour background, which they can use the color picker to choose. This is useful if the user wants to display results on a livestream and have a transparant background using chroma key[^1]. Or there are some patterend backgrounds created using CSS (Credit to [SVG Backgrounds](https://www.svgbackgrounds.com/)).
+  The user can pick a solid colour background, which they can use the colour picker to choose. This is useful if the user wants to display results on a livestream and have a transparent background using chroma key[^1]. Or there are some pattern backgrounds created using CSS (Credit to [SVG Backgrounds](https://www.svgbackgrounds.com/)).
 
-  - **Optional fullscreen**\
-    ![Optional fullscreen](/assets/images/readme/user-fullscreen.webp)\
-    The user has the option to open the generator fullscreen. This could be useful if the results are being revealed in person and the results are being shown on a big screen to an audience of people.
+  - **Optional full screen**\
+    ![Optional full screen](/assets/images/readme/user-fullscreen.webp)\
+    The user has the option to open the generator full screen. This could be useful if the results are being revealed in person and the results are being shown on a big screen to an audience of people.
 
   - **Button - Load the generator**\
     ![Button - Load the generator](/assets/images/readme/button-load.webp)\
-    This button will run the JS function loadGenerator().
+    This button will run the JavaScript function `loadGenerator()`.
 
   - **Footer**\
     ![Footer](/assets/images/readme/footer.webp)\
-    The footer is just to help the user experience and let them know they have reach the bottom of the page.
+    The footer is just to help the user experience and let them know they have reached the bottom of the page.
 
   - **Error Handling**\
     ![Error Handling](/assets/images/readme/error-handling.webp)\
-    JavaScript makes sure there are no errors within the form before trying to load the generator in the function formValidation().\
-    Any errors identified an appropriate error message is shown and the field is highlisted to the user to assist in easier correction.
+    JavaScript makes sure there are no errors within the form before trying to load the generator in the function `formValidation()`.\
+    Any errors identified an appropriate error message is shown and the field is highlighted to the user to assist in easier correction.
 
 #### Generator
 
   - **Button - Start**\
     ![Button - Start](/assets/images/readme/button-start.webp)\
-    This button runs the JS function startGenerator().
-    The startGenerator() runs the countdown() function.
+    This button runs the JavaScript function `startGenerator()`.
+    The `startGenerator()` runs the `countdown()` function.
 
   - **Button - Close**\
     ![Button - Close](/assets/images/readme/button-close.webp)\
-    This button will run the JS function exitGenerator().
-    The exitGenerator() function will hide the generator element and display the initial front end elements.
+    This button will run the JavaScript function `exitGenerator()`.
+    The `exitGenerator()` function will hide the generator element and display the initial front end elements.
 
   - **Countdown**\
     ![Countdown](/assets/images/readme/gen-countdown.gif)\
-    Once the countdown has reached zero, the coundown() function will run the createRandomResults() function.
+    Once the countdown has reached zero, the `countdown()` function will run the `createRandomResults()` function.
 
   - **Randomising results**\
     ![Randomising animation](/assets/images/readme/gen-random.gif)\
-    Using the function resultRandomAnimFunc(). Which takes all the options the user input in the textarea and randonly showing them until the counter runs out. At which point the transition delay time would have reached 0 set by show1By1(). 
+    Using the function `resultRandomAnimFunc()`. Which takes all the options the user input in the text area and randomly showing them until the counter runs out. At which point the transition delay time would have reached 0 set by `show1By1()`.
 
   - **Result reveal**\
     ![Reveal animation](/assets/images/readme/gen-reveal.gif)\
-    Once the random animation has stopped the real result will be revealed and change the color to the final colour set by the user or preset.
+    Once the random animation has stopped the real result will be revealed and change the colour to the final colour set by the user or pre-set.
 
   - **Tested with 5000 entries**\
     ![5000 entries](/assets/images/readme/5000.webp)\
-    I tested with 5000 potential results in 1 generator and ran into no issues with the code being able to handle a large amount of results in 1 array.
+    I tested with 5000 potential results in 1 generator and ran into no issues with the code being able to handle a large number of results in 1 array. 
 
 ### Features Left to Implement
 
 The random result generator future possible features are potentially endless. Here are just some of the ideas I have for this site:
-  - Image upload : Allow users to upload their own image for as a background and / or company logo.
-  - Premium features : Provide premium features so the site can start to earn a passive income.
-  - Share : Have a shareable link for each generator that will either send with or without already determined results.
-  - Improved result layout : Currently results are shown in a column structure only. Future updates will have the results in a grid format that could be set for the user
-  - More ways to reveal results : The user will be able to choose how the results are revealed instead of the current random animation. i.e. If they want to have the results scroll down the page and stop at the final result.
-  - Countdown for each result : An option where the user can have a countdown until the final result appears while the randomising animation is happneing. This could be useful if the user puts in a longer timer to reveal the result.
+  - Image upload: Allow users to upload their own image for as a background and / or company logo.
+  - Premium features: Provide premium features so the site can start to earn a passive income.
+  - Share: Have a shareable link for each generator that will either send with or without already determined results.
+  - Improved result layout: Currently results are shown in a column structure only. Future updates will have the results in a grid format that could be set for the user
+  - More ways to reveal results: The user will be able to choose how the results are revealed instead of the current random animation. i.e. If they want to have the results scroll down the page and stop at the final result.
+  - Countdown for each result: An option where the user can have a countdown until the final result appears while the randomising animation is happening. This could be useful if the user puts in a longer timer to reveal the result.
 
 ***
 ## Technologies Used
 
-**HTML** for the front end. This is the structure of the site of what the end-user sees in their browswer.
+**HTML** for the front end. This is the structure of the site of what the end-user sees in their browser.
 
-**CSS** for the front end. This provides the style, the colours, the font, everything that the end-user see in their broswer.
+**CSS** for the front end. This provides the style, the colours, the font, everything that the end-user see in their browser.
 
-**JavaScript** as the engine. Javascript plays a very heavy role in this site. It is responsible for making sure everything is displayed correctly, and the generator works as intended.
+**JavaScript** as the engine. JavaScript plays a very heavy role in this site. It is responsible for making sure everything is displayed correctly, and the generator works as intended.
 
 
 ***
@@ -245,7 +245,7 @@ The site has been made to be responsive for all screen sizes, including screen s
   - Opera (Version 90.0.4480.54)
     - No issues identified
   - Firefox (Version 104.0.1 (64-bit))
-    - Just some styling decrepencies but no issues identified with functionalty or useability.
+    - There are some styling discrepancies but no issues identified with functionality or useability.
 - Android Phone - Goggle Chrome (Version 105.0.5195.68)
   - No issues identified
 
@@ -253,10 +253,10 @@ The site has been made to be responsive for all screen sizes, including screen s
 
 #### Unfixed
 
-Through testing all modern browsers have been able to runt he site with no problems to functionality. Though while testing Firefox there were some minor css styling issues
-  - `<hr>` line was not white
+Through testing all modern browsers have been able to run the site with no problems to functionality. Though while testing Firefox there were some minor CSS styling issues:
+  - `<hr>` line was not white,
   - Some text aligned to left instead of centre.
-As these do not currently affect the functionality of the site their is no immediate need to fix but will be something to look into for the future if this project moves forward to becoming a fully functional site.
+As these do not currently affect the functionality of the site there is no immediate need to fix but will be something to investigate for the future if this project moves forward to becoming a fully functional site.
 
 #### Resolved
 
@@ -264,7 +264,7 @@ There are currently no functionality bugs I am aware of in the modern browsers I
 
 #### Troubleshooting errors
 
-Throughout the projects while coding in JavaScript I have come across errors in coding and got unexpected results. Which I have troubleshoot by using common practices like `console.log()` in combbination with Google Chrome console.
+Throughout the projects while coding in JavaScript I have come across errors in coding and got unexpected results. Which I have troubleshoot by using common practices like `console.log()` in combination with Google Chrome console.
 I also used Google search engine to help find solutions from popular websites like [Stack Overflow](https://stackoverflow.com/).
 
 ***
