@@ -480,9 +480,9 @@ function exitGenerator() {
   results.length = 0;
   countdown(true);
   resultsListHTML.innerHTML = "";
-    if (document.fullscreenElement != null) {
-      document.exitFullscreen();
-    }
+  if (document.fullscreenElement != null) {
+    document.exitFullscreen();
+  }
   resultContainerHTML.removeAttribute('class');
   resultContainerHTML.removeAttribute('style');
   resultContainerHTML.style.display = "none";
