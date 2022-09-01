@@ -340,7 +340,7 @@ function startGenerator() {
 function countdown(countdownReset) {
   countdownHTML.style.display = "block";
   // Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and then modified by me
-  let timeleft = 2;
+  let timeleft = 4;
   let countdownTimer;
   if (countdownReset) {
     timeleft = 0;
@@ -355,12 +355,14 @@ function countdown(countdownReset) {
         countdownHTML.style.display = "none";
         resultsListHTML.style.display = "flex";
         createRandomResults();
-      }
-      else {
+      } else if (globalReset) {
+        clearInterval(countdownTimer);
+        countdownHTML.innerHTML = "";
+      } else {
         countdownHTML.innerHTML = timeleft + "";
       }
       timeleft -= 1;
-    }, 2000);
+    }, 1000);
   }
 }
 
