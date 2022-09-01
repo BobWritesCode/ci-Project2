@@ -480,11 +480,9 @@ function exitGenerator() {
   results.length = 0;
   countdown(true);
   resultsListHTML.innerHTML = "";
-  if ((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
-    if (document.exitFullscreen != null) {
+    if (document.fullscreenElement != null) {
       document.exitFullscreen();
     }
-  }
   resultContainerHTML.removeAttribute('class');
   resultContainerHTML.removeAttribute('style');
   resultContainerHTML.style.display = "none";
