@@ -1,13 +1,13 @@
 /* Import Google fonts */
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Kanit&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Kanit&display=swap");
 
 /* Resetting broswer default stylesheets */
 * {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
-  color: #0D050E;
-  font-family: 'Kanit', sans-serif;
+  color: #0d050e;
+  font-family: "Kanit", sans-serif;
   font-weight: 500;
 }
 
@@ -19,7 +19,7 @@ body {
   background-size: contain;
 }
 
-body>* {
+body > * {
   display: flex;
   justify-content: center;
 }
@@ -32,11 +32,11 @@ header {
 }
 
 h1 {
-  font-family: 'Archivo Black', sans-serif;
+  font-family: "Archivo Black", sans-serif;
   font-size: 70px;
-  color: #FAFAFA;
+  color: #fafafa;
   text-align: center;
-  -webkit-text-stroke-color: #FAFAFA;
+  -webkit-text-stroke-color: #fafafa;
   line-height: 1;
 }
 
@@ -47,12 +47,11 @@ h2 {
 #intro {
   margin: auto;
   margin-bottom: 20px;
-
 }
 
 #intro * {
   font-size: xx-large;
-  color: #FAFAFA;
+  color: #fafafa;
   text-align: center;
   font-weight: 600;
   width: 80%;
@@ -63,7 +62,7 @@ label {
 }
 
 i {
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
 #color-table th {
@@ -78,7 +77,7 @@ i {
 }
 
 .options-box {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   flex-grow: 1;
   margin: 0 2.5% 20px 0;
   padding: 10px;
@@ -91,7 +90,7 @@ i {
 
 input,
 textarea {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   border: solid #333 1px;
   padding: 0 5px;
 }
@@ -210,17 +209,17 @@ input[type="color"] {
 }
 
 #template1 {
-  background-color: #0D050E;
-  color: #FAFAFA;
+  background-color: #0d050e;
+  color: #fafafa;
 }
 
 #template2 {
   background-color: #6441a5;
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
 #template3 {
-  background-color: #00FF00;
+  background-color: #00ff00;
   color: #000000;
 }
 
@@ -268,10 +267,10 @@ input[type="color"] {
 #results-list {
   display: flex;
   flex-direction: column;
-  margin: auto
+  margin: auto;
 }
 
-#results-list>* {
+#results-list > * {
   flex: 1 1 30%;
 }
 
@@ -300,7 +299,7 @@ input[type="color"] {
 }
 
 button {
-  background-color: #711A75;
+  background-color: #711a75;
   /* Green */
   border: none;
   color: white;
@@ -315,24 +314,24 @@ button {
 
 #btn-load {
   font-size: 30px;
-  background-color: #FFC400;
+  background-color: #ffc400;
   color: #000000;
   margin-bottom: 20px;
-  border: 2px solid #FAFAFA;
+  border: 2px solid #fafafa;
 }
 
 #btn-load:hover {
-  background-color: #FAFAFA;
-  color: #711A75;
-  border: 2px solid #711A75;
+  background-color: #fafafa;
+  color: #711a75;
+  border: 2px solid #711a75;
 }
 
 #btn-close {
   display: none;
   font-size: 10px;
-  background-color: rgba(0, 0, 0, .6);
-  color: #FAFAFA;
-  border: 2px solid #FAFAFA;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fafafa;
+  border: 2px solid #fafafa;
   position: absolute;
   padding: 0;
   bottom: 20px;
@@ -346,8 +345,8 @@ button {
   display: none;
   font-size: 20px;
   background-color: rgba(0, 0, 0, 0.6);
-  color: #FAFAFA;
-  border: 2px solid #FAFAFA;
+  color: #fafafa;
+  border: 2px solid #fafafa;
   margin: 0 auto;
 }
 
@@ -380,9 +379,9 @@ button {
 }
 
 .hide {
-  position:fixed;
-  right: -200;
-  bottom: -200;
+  position: fixed;
+  right: -200px;
+  bottom: -200px;
   width: 0%;
   overflow: hidden;
 }
@@ -425,5 +424,4 @@ hr {
   #intro * {
     font-size: 20px;
   }
-
 }
