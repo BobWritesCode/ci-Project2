@@ -377,6 +377,12 @@ button {
   border: solid red 1px;
 }
 
+.hide {
+  position:fixed;
+  right: -200;
+  bottom: -200;
+}
+
 /* Footer */
 footer {
   font-weight: 300;
