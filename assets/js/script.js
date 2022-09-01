@@ -88,7 +88,7 @@ function templateSelected(i) {
 /**
  * When user chooses one of the pre-set background templates this will set those values ready for when user loads generator.
  */
- function bgTemplateSelected(i) {
+function bgTemplateSelected(i) {
   switch (i) {
     case 0:
       bgTemplate0ContainerHTML.style.border = "3px solid green";
@@ -131,6 +131,60 @@ function templateSelected(i) {
       bgSelectedGlobal = 4;
       break;
   }
+}
+
+/**
+ * When user clicks 'Load the generator', this function sets up the webpage and set some variables.
+ */
+function loadGenerator() {
+  if (formValidation()) {
+    globalReset = false;
+    headerHTML.style.display = "none";
+    footerHTML.style.display = "none";
+    countdownHTML.style.display = "none";
+    resultsListHTML.style.display = "none";
+    resultMidPre.style.display = "block";
+    pageContainer.style.display = "none";
+    btnLoad.style.display = "none";
+    resultContainerHTML.style.display = "grid";
+    setGenBackground()
+    let mainColor = document.getElementById('body-text-color').value;
+    document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
+    document.getElementById('gen-criteria-span').style.color = mainColor;
+    document.getElementById('btn-start').style.color = mainColor;
+    document.getElementById('btn-start').style.borderColor = mainColor;
+    document.getElementById('gen-tail-span').style.color = document.getElementById('tail-color').value;
+    document.getElementById('countdown-generator').style.color = document.getElementById('countdown-color').value;
+    randomColor = document.getElementById('result-random-color').value;
+    finalColor = document.getElementById('result-final-color').value;
+    resultContainerHTML.style.position = "absolute";
+    resultContainerHTML.style.top = "0px";
+    resultContainerHTML.style.right = "0px";
+    resultContainerHTML.style.bottom = "0px";
+    resultContainerHTML.style.left = "0px";
+    let fullScreen = document.getElementById("full-screen");
+    if (fullScreen.checked) {
+      // Credit for fullscreen code: https://www.w3schools.com/howto/howto_js_fullscreen.asp
+      if (resultContainerHTML.requestFullscreen) {
+        resultContainerHTML.requestFullscreen();
+      }
+    }
+    resultTop.style.display = "block";
+    criteriaGenerator.style.display = "flex";
+    resultBottom.style.display = "block";
+    btnStart.style.display = "block";
+    btnClose.style.display = "block";
+    let userGenTitle = document.getElementById('gen-title-user').value;
+    let spanGenTitle = document.getElementById('gen-title-span');
+    spanGenTitle.innerText = userGenTitle;
+    let userGenCriteria = document.getElementById('criteria-user').value;
+    let spanGenCriteria = document.getElementById('gen-criteria-span');
+    spanGenCriteria.innerText = userGenCriteria;
+    let userGenTail = document.getElementById('gen-tail-user').value;
+    let spanGenTail = document.getElementById('gen-tail-span');
+    spanGenTail.innerText = userGenTail;
+  }
+  scrollToTop();
 }
 
 /**
@@ -247,64 +301,10 @@ function formValidation() {
 }
 
 /**
- * When user clicks 'Load the generator', this function sets up the webpage and set some variables.
- */
-function loadGenerator() {
-  if (formValidation()) {
-    globalReset = false;
-    headerHTML.style.display = "none";
-    footerHTML.style.display = "none";
-    countdownHTML.style.display = "none";
-    resultsListHTML.style.display = "none";
-    resultMidPre.style.display = "block";
-    pageContainer.style.display = "none";
-    btnLoad.style.display = "none";
-    resultContainerHTML.style.display = "grid";
-    setGenBackground()
-    let mainColor = document.getElementById('body-text-color').value;
-    document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
-    document.getElementById('gen-criteria-span').style.color = mainColor;
-    document.getElementById('btn-start').style.color = mainColor;
-    document.getElementById('btn-start').style.borderColor = mainColor;
-    document.getElementById('gen-tail-span').style.color = document.getElementById('tail-color').value;
-    document.getElementById('countdown-generator').style.color = document.getElementById('countdown-color').value;
-    randomColor = document.getElementById('result-random-color').value;
-    finalColor = document.getElementById('result-final-color').value;
-    resultContainerHTML.style.position = "absolute";
-    resultContainerHTML.style.top = "0px";
-    resultContainerHTML.style.right = "0px";
-    resultContainerHTML.style.bottom = "0px";
-    resultContainerHTML.style.left = "0px";
-    let fullScreen = document.getElementById("full-screen");
-    if (fullScreen.checked) {
-      // Credit for fullscreen code: https://www.w3schools.com/howto/howto_js_fullscreen.asp
-      if (resultContainerHTML.requestFullscreen) {
-        resultContainerHTML.requestFullscreen();
-      }
-    }
-    resultTop.style.display = "block";
-    criteriaGenerator.style.display = "flex";
-    resultBottom.style.display = "block";
-    btnStart.style.display = "block";
-    btnClose.style.display = "block";
-    let userGenTitle = document.getElementById('gen-title-user').value;
-    let spanGenTitle = document.getElementById('gen-title-span');
-    spanGenTitle.innerText = userGenTitle;
-    let userGenCriteria = document.getElementById('criteria-user').value;
-    let spanGenCriteria = document.getElementById('gen-criteria-span');
-    spanGenCriteria.innerText = userGenCriteria;
-    let userGenTail = document.getElementById('gen-tail-user').value;
-    let spanGenTail = document.getElementById('gen-tail-span');
-    spanGenTail.innerText = userGenTail;
-  }
-  scrollToTop();
-}
-
-/**
  * Sets the Generators background based on the user's selection in the form
  */
- function setGenBackground() {
-  switch(bgSelectedGlobal) {
+function setGenBackground() {
+  switch (bgSelectedGlobal) {
     case 0:
       resultContainerHTML.style.backgroundColor = document.getElementById('bg-custom-0').value;
       break;
@@ -327,34 +327,6 @@ function loadGenerator() {
 }
 
 /**
- * Close generator and reset values.
- */
-function exitGenerator() {
-  globalReset = true;
-  results.length = 0;
-  countdown(true);
-  resultsListHTML.innerHTML = "";
-  if ((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
-    if (document.exitFullscreen != null ) {
-      document.exitFullscreen();
-    }
-  }
-  resultContainerHTML.removeAttribute('class');
-  resultContainerHTML.removeAttribute('style');
-  resultContainerHTML.style.display = "none";
-  resultContainerHTML.style.position = "initial";
-  btnClose.style.display = "none";
-  btnStart.style.display = "none";
-  resultTop.style.display = "none";
-  resultBottom.style.display = "none";
-  criteriaGenerator.style.display = "none";
-  btnLoad.style.display = "block";
-  pageContainer.style.display = "block";
-  headerHTML.style.display = "block";
-  footerHTML.style.display = "block";
-}
-
-/**
  * When user clicks 'Start' on generator, this functions starts everything.
  */
 function startGenerator() {
@@ -363,11 +335,33 @@ function startGenerator() {
 }
 
 /**
- * Takes user's input values and sorts them into an array, then returns that to calling function.
+ * Creates a countdown before results are shown.
  */
-function sortOptions() {
-  let sortOptions = document.getElementById("options").value.split(',');
-  return sortOptions;
+function countdown(countdownReset) {
+  countdownHTML.style.display = "block";
+  // Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and then modified by me
+  let timeleft = 2;
+  let countdownTimer;
+  if (countdownReset) {
+    timeleft = 0;
+    clearInterval(countdownTimer);
+    countdownHTML.innerHTML = "";
+  }
+  else {
+    countdownTimer = setInterval(function() {
+      if (timeleft <= 0) {
+        clearInterval(countdownTimer);
+        countdownHTML.innerHTML = "";
+        countdownHTML.style.display = "none";
+        resultsListHTML.style.display = "flex";
+        createRandomResults();
+      }
+      else {
+        countdownHTML.innerHTML = timeleft + "";
+      }
+      timeleft -= 1;
+    }, 2000);
+  }
 }
 
 /**
@@ -386,6 +380,14 @@ function createRandomResults() {
     }
   }
   show1By1(results, timeUntilResult);
+}
+
+/**
+ * Takes user's input values and sorts them into an array, then returns that to calling function.
+ */
+function sortOptions() {
+  let sortOptions = document.getElementById("options").value.split(',');
+  return sortOptions;
 }
 
 /**
@@ -469,33 +471,31 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, result, y, x, z2) {
 }
 
 /**
- * Creates a countdown before results are shown.
+ * Close generator and reset values.
  */
-function countdown(countdownReset) {
-  countdownHTML.style.display = "block";
-  // Original code from: https://stackoverflow.com/questions/31106189/create-a-simple-10-second-countdown and then modified by me
-  let timeleft = 2;
-  let countdownTimer;
-  if (countdownReset) {
-    timeleft = 0;
-    clearInterval(countdownTimer);
-    countdownHTML.innerHTML = "";
+function exitGenerator() {
+  globalReset = true;
+  results.length = 0;
+  countdown(true);
+  resultsListHTML.innerHTML = "";
+  if ((window.fullScreen) || (window.innerWidth == screen.width && window.innerHeight == screen.height)) {
+    if (document.exitFullscreen != null) {
+      document.exitFullscreen();
+    }
   }
-  else {
-    countdownTimer = setInterval(function() {
-      if (timeleft <= 0) {
-        clearInterval(countdownTimer);
-        countdownHTML.innerHTML = "";
-        countdownHTML.style.display = "none";
-        resultsListHTML.style.display = "flex";
-        createRandomResults();
-      }
-      else {
-        countdownHTML.innerHTML = timeleft + "";
-      }
-      timeleft -= 1;
-    }, 2000);
-  }
+  resultContainerHTML.removeAttribute('class');
+  resultContainerHTML.removeAttribute('style');
+  resultContainerHTML.style.display = "none";
+  resultContainerHTML.style.position = "initial";
+  btnClose.style.display = "none";
+  btnStart.style.display = "none";
+  resultTop.style.display = "none";
+  resultBottom.style.display = "none";
+  criteriaGenerator.style.display = "none";
+  btnLoad.style.display = "block";
+  pageContainer.style.display = "block";
+  headerHTML.style.display = "block";
+  footerHTML.style.display = "block";
 }
 
 /**
