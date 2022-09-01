@@ -36,7 +36,7 @@ Random Result Generator - [https://bobwritescode.github.io/ci-Project2](https://
 ***
 ## Objective 
 
-Random Result Generator is a site to help the end user be able to run a raffle type giveaway or just to help make a choice. The site has a range of multiple targets including companies looking to provide a virtual giveaway live, all the way to someone who just wants to make a decision on what takeaway they are having that evening. The site has a lot of potential to go further from where it currently is and this is mentioned in the [Features Left to Implement](#Features-Left-to-Implement) of this README.
+Random Result Generator is a site to help the end user be able to run a raffle type giveaway or just to help make a choice. The site has a range of multiple targets including companies looking to provide a virtual giveaway live, all the way to someone who just wants to make a decision on what takeaway they are having that evening. The site has a lot of potential to go further from it's current state and this is mentioned in the [Features Left to Implement](#Features-Left-to-Implement) of this README.
 
 ***
 ## Brief
@@ -51,18 +51,48 @@ My goals for the site are to have:
 ***
 ## User Experience Design
 
-***
 ### User Requirements
+
+Some example user stories which will affect the design and functions of this site:
+- *"As a first time visitor, I want to know what this site is about. I may use several different devices (mobile/tablet etc.) to view the site. I would like to be able to navigate easily"*
+- *"I want to have easy-to-follow steps and nothing being over complicated"*
+- *"I want it to be dummy-proof. If there are any errors please help me in correcting them."*
+- *"I am a streamer want to be able to share the results on my live broadcast to my viewers."*
+- *"I am a officer manager and I want to be able to share the results on a TV screen."*
 
 ***
 ## Initial Concept
 
 ### Wireframes
 
+You will see that when I first set out to design this site, I had an idea of what I was going for but as time progress and new ideas came to mind, the final outcome is much different.
+
+#### Inital wireframe
+![Initial Wireframe](/assets/images/readme/wireframe-initial.webp)
+
+From the original wireframe the following changes have been made:
+  - Options Area 1 became the area dedicated for user outcomes and how the results are revealed
+  - Options Area 2 became the area for user text input that will be shown at the top, middle (pre result generation starting) and the bottom (tail) of the generator.
+  - Results Area was made into it's own container that appears when the generator is launchers.
+  - There are have been several new sections added as well including:
+    - Color preset templates,
+    - User color inputs,
+    - Background preset templates,
+    - Option to launch fullscreen.
+
 ### Colour Scheme
+![Colour Scheme](/assets/images/readme/colours.webp)\
+The idea behind this colour scheme is give a modern and impactful feel without being distracting for the end-user.
 
 ### Typography
 
+The site uses [Google Fonts](https://fonts.google.com/).
+
+  - Main header - [Archivo Black](https://fonts.google.com/specimen/Archivo+Black)\
+  This font was choosen as the main header as for it's impact and clarity.
+
+  - Rest of text - [Kanit](https://fonts.google.com/specimen/Kanit)\
+  This font was choose as it felt to me it gave a party typrewriter, party code feel. Which I felt suited a site that is focused on user input and then automated generation of results.
 
 ### Imagery
 
@@ -163,7 +193,7 @@ The first section is designed for the user to input their potential outcomes and
     Once the random animation has stopped the real result will be revealed and change the color to the final colour set by the user or preset.
 
   - **Tested with 5000 entries**\
-    ![User options - Part1](/assets/images/readme/5000.webp)\
+    ![5000 entries](/assets/images/readme/5000.webp)\
     I tested with 5000 potential results in 1 generator and ran into no issues with the code being able to handle a large amount of results in 1 array.
 
 ### Features Left to Implement
@@ -292,16 +322,17 @@ Click [Here](https://docs.github.com/en/github-ae@latest/get-started/quickstart/
 
 ### Content
 
-- All content is original and written by me.
+  - All content is original and written by me.
 
 ### Code
 
-- Pattern CSS backgrounds - [SVG Backgrounds](https://www.svgbackgrounds.com/)
-- Fullscreen - [W3 Schools](https://www.w3schools.com/howto/howto_js_fullscreen.asp)
+  - Pattern CSS backgrounds - [SVG Backgrounds](https://www.svgbackgrounds.com/)
+  - Fullscreen - [W3 Schools](https://www.w3schools.com/howto/howto_js_fullscreen.asp)
 
-### Media
+### Media and other
 
-- Favicon generated using [Favicon Generator](https://favicon.io/favicon-generator/)
+  - Favicon generated using [Favicon Generator](https://favicon.io/favicon-generator/)
+  - Fonts - [Google Fonts](https://fonts.google.com/)
 
 ***
 [^1]: [Wikipedia - Chroma Key](https://en.wikipedia.org/wiki/Chroma_key).
