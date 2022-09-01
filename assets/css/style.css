@@ -383,6 +383,8 @@ button {
   position:fixed;
   right: -200;
   bottom: -200;
+  width: 0%;
+  overflow: hidden;
 }
 
 /* Footer */
