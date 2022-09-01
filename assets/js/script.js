@@ -39,6 +39,30 @@ window.addEventListener('DOMContentLoaded', function() {
   btnClose.addEventListener("click", function() {
     exitGenerator();
   });
+  template1ContainerHTML.addEventListener("click", function() {
+    templateSelected(1);
+  });
+  template2ContainerHTML.addEventListener("click", function() {
+    templateSelected(2);
+  });
+  template3ContainerHTML.addEventListener("click", function() {
+    templateSelected(3);
+  });
+  bgTemplate0ContainerHTML.addEventListener("click", function() {
+    bgTemplateSelected(0);
+  });
+  bgTemplate1ContainerHTML.addEventListener("click", function() {
+    bgTemplateSelected(1);
+  });
+  bgTemplate2ContainerHTML.addEventListener("click", function() {
+    bgTemplateSelected(2);
+  });
+  bgTemplate3ContainerHTML.addEventListener("click", function() {
+    bgTemplateSelected(3);
+  });
+  bgTemplate4ContainerHTML.addEventListener("click", function() {
+    bgTemplateSelected(4);
+  });
 });
 
 /**
@@ -147,7 +171,7 @@ function loadGenerator() {
     pageContainer.style.display = "none";
     btnLoad.style.display = "none";
     resultContainerHTML.style.display = "grid";
-    setGenBackground()
+    setGenBackground();
     let mainColor = document.getElementById('body-text-color').value;
     document.getElementById('gen-title-span').style.color = document.getElementById('title-color').value;
     document.getElementById('gen-criteria-span').style.color = mainColor;
@@ -452,8 +476,8 @@ function resultRandomAnimFunc(i, element, delay, y2, bool, result, y, x, z2) {
             element.style.color = randomColor;
             let z1 = Math.floor(Math.random() * allOptions.length);
             let SafetyCount = 0;
-            while (!(SafetyCount >= 10)) {
-              if (!(z1 == z3)) {
+            while (SafetyCount <= 10) {
+              if (z1 != z3) {
                 break;
               }
               z1 = Math.floor(Math.random() * allOptions.length);
