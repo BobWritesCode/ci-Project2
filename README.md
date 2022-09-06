@@ -107,7 +107,7 @@ Random Result Generator is filled with features for the end user and there is a 
 It was important to make sure that this site worked across mobile and desktop. Using Flex and a combination of viewport typography the site displays very well across different screen sizes.
 
   - **Desktop**\
-  ![Desktop Snapshot](/assets/images/readme/dekstop-snapshot.webp)\
+  ![Desktop Snapshot](/assets/images/readme/dekstop-snapshot.webp)
   
   - **Mobile**\
   ![Mobile Snapshot](/assets/images/readme/mobile-snapshot.webp)
@@ -115,9 +115,9 @@ It was important to make sure that this site worked across mobile and desktop. U
 
 #### User options
 
-![User options - Part 1](/assets/images/readme/options_1.webp)\
-**"Edit options and how they appear:"**\
-The first section is designed for the user to input their potential outcomes and some basic options on how the results will output.
+  - ![User options - Part 1](/assets/images/readme/options_1.webp)\
+    **"Edit options and how they appear:"**\
+    The first section is designed for the user to input their potential outcomes and some basic options on how the results will output.
 
   - **"Enter potential results for Random Result Regenerator"**\
     In this section the user can input their own options to what they wish to get random results for. For the ease of testing, I have provided some sample options as an example. The user just needs to make sure each option is separated with a comma and the last option on the list does not end in a comma.
@@ -147,7 +147,7 @@ The first section is designed for the user to input their potential outcomes and
 
   - **User background picker**\
     ![User background picker](/assets/images/readme/background-picker.gif)\
-  The user can pick a solid colour background, which they can use the colour picker to choose. This is useful if the user wants to display results on a livestream and have a transparent background using chroma key[^1]. Or there are some pattern backgrounds created using CSS (Credit to [SVG Backgrounds](https://www.svgbackgrounds.com/)).
+    The user can pick a solid colour background, which they can use the colour picker to choose. This is useful if the user wants to display results on a livestream and have a transparent background using chroma key[^1]. Or there are some pattern backgrounds created using CSS (Credit to [SVG Backgrounds](https://www.svgbackgrounds.com/)).
 
   - **Optional full screen**\
     ![Optional full screen](/assets/images/readme/user-fullscreen.webp)\
